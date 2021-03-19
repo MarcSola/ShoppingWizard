@@ -1,24 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="scrpt.js"></script>
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Wizard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <section>
-        <div id='uno'class='uno'>primero</div>
-        <div id='dos'class='dos'>segundo</div>
+    <div class="header"></div>
+    <div class="screen">
 
-        <div class='trs'>tercero</div>
-        <div class='cuatr'>cuarto</div>
-        <div class='cinc'>quinto</div>
 
-        <input id='bot' onclick= 'chge_styles()' type="button">
-    </section>  
+        <div class="main" id="main">
+            <div class="mainTop">
+                <div class="imageContainer">
+                    <img src="https://cdn.pixabay.com/photo/2018/01/11/09/52/three-3075752_960_720.jpg" alt="clothe">
+                </div>
+                <div class="productInfo">
+                    <div class="productName">Product Name</div>
+                    <div class="price">1,000$</div>
+                    <div class="size">
+                        <label for="size">Size</label>
+
+                        <select id="size">
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                        </select>
+                    </div>
+                    <div class="colors">color
+                        <span class="color"></span>
+                        <span class="color"></span>
+                        <span class="color"></span>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="mainBottom">
+                <button class="buyBtn" id="buyButton">BUY</button>
+            </div>
+
+        </div>
+        <div class="main" id="profile">
+            <form>
+                <input type="text" name="name" id="name">
+                <input type="email" name="" id="">
+                <input type="password" name="" id="">
+            </form>
+        </div>
+    </div>
     
+
+    
+    <div class="footer">Copyright © 2021. All Rights Reserved.</div>
 </body>
+<script src="app.js"></script>
+
 </html>
