@@ -27,9 +27,14 @@ body, html {
     margin: 50px auto;
 }
 
-#profile {
-    flex-direction: row;
+
+
+#profileForm {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
 }
+
 
 .mainTop {
     display: flex;
@@ -113,6 +118,9 @@ img:hover {
 }
 
 @media (max-width: 400px) {
+    .screen {
+        height: 80%;
+    }
     .main {
         margin: 0;
         height: 100%;
@@ -133,8 +141,14 @@ img:hover {
     .productName, .price, .size, .colors {
         text-align: center
     }
+    #profileForm {
+        width: 100%;
+    }
   }
   @media screen and (min-width: 401px) and (max-width: 1024px) {
+    .screen {
+        height: 80%;
+    }
     .main {
         margin: 0;
     }
