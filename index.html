@@ -4,21 +4,73 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="scrpt.js"></script>
-    <title>Documen</title>
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/einar-style.css">
+    <link rel="stylesheet" href="Styles/erick-style.css">
+    <link rel="stylesheet" href="Styles/marc-style.css">
+    <link rel="stylesheet" href="Styles/jon-style.css">
+    <link rel="stylesheet" href="Styles/kim-style.css">
+    <link rel="stylesheet" href="Styles/footer.css">
+    <link rel="stylesheet" href="Styles/header.css">
+    <link rel="stylesheet" href="Styles/body.css">
+    <link rel="stylesheet" href="Styles/aside.css">
+    <link rel="stylesheet" href="Styles/typography.css">
+    <title>Shopping Wizard</title>
 </head>
-<body>
+<!-- --------------------------------------------------------------- -->
+<body class="body" id="body">
+
+  <!-- Separation with FLEX of the main body and the Aside section  -->
+<div>
+  <!----------------
+  ----  ASIDE  ----
+  ----------------->
+  <aside class="aside" id="aside">
     <section>
-        <div id='uno'class='uno'>primero</div>
-        <div id='dos'class='dos'>segundo</div>
+      <p> This is my aside</p>
+      <p> This has and absolute position on left. but maybe on responsive design this gonna be hidden</p>
+    </section>
+  </aside>
+</div>
+  <!-- Separation with FLEX of the main body and the Aside section  -->
+<div class="grid-body">
+      <!----------------
+    ----  HEADER  ----
+    ----------------->
+  <header class="header" id="header">
+    <section class="title-header">
+        <p> This is my header</p>
+        <p> this could be a transparent background</p>
+    </section>
+  </header>
 
-        <div class='trs'>tercero</div>
-        <div class='cuatr'>cuarto</div>
-        <div class='cinc'>quinto</div>
+  <!----------------
+  ----  MAIN  ----
+  ----------------->
+  <main class="main" id="main">
+    <section>
+      <p> This is my body</p>
+    </section>
+  </main>
 
-        <input id='bot' onclick= 'chge_styles()' type="button">
-    </section>  
-    
+  <!----------------
+  ----  FOOTER  ----
+  ----------------->
+  <footer class="footer" id="footer">
+    <section>
+      <p> This is my footer</p>
+      <p> this could be a transparent background</p>
+    </section>
+  </footer>
+</div>
+
+  <!---------------------
+  ----  SCRIPT zone  ----
+  ---------------------->
+  <script src="Scripts/einar-script.js"></script>
+  <script src="Scripts/marc-script.js"></script>
+  <script src="Scripts/kim-script.js"></script>
+  <script src="Scripts/ercik-script.js"></script>
+  <script src="Scripts/jon-script.js"></script>
 </body>
 </html>

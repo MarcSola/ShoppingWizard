@@ -1,0 +1,14 @@
+.header{
+background-color: rgba(206, 206, 206, 0.473);
+position: absolute;
+min-height: 90px;
+top: 0;
+right: 0;
+width: 90%;
+z-index: 9000;
+}
+
+.header section p{
+	margin: 0 auto;
+	text-align: center;
+}
