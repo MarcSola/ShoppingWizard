@@ -19,100 +19,58 @@
 </head>
 <!-- --------------------------------------------------------------- -->
 <body class="body" id="body">
-    <!----------------
+
+  <!-- Separation with FLEX of the main body and the Aside section  -->
+<div>
+  <!----------------
+  ----  ASIDE  ----
+  ----------------->
+  <aside class="aside" id="aside">
+    <section>
+      <p> This is my aside</p>
+      <p> This has and absolute position on left. but maybe on responsive design this gonna be hidden</p>
+    </section>
+  </aside>
+</div>
+  <!-- Separation with FLEX of the main body and the Aside section  -->
+<div class="grid-body">
+      <!----------------
     ----  HEADER  ----
     ----------------->
-    <header class="header" id="header">
-        <section class="header title-header">
-            <p> This is my header</p>
-        </section>
-    </header>
+  <header class="header" id="header">
+    <section class="title-header">
+        <p> This is my header</p>
+        <p> this could be a transparent background</p>
+    </section>
+  </header>
 
-    <!----------------
-    ----  MAIN  ----
-    ----------------->
-    <main class="main" id="main">
+  <!----------------
+  ----  MAIN  ----
+  ----------------->
+  <main class="main" id="main">
+    <section>
+      <p> This is my body</p>
+    </section>
+  </main>
 
+  <!----------------
+  ----  FOOTER  ----
+  ----------------->
+  <footer class="footer" id="footer">
+    <section>
+      <p> This is my footer</p>
+      <p> this could be a transparent background</p>
+    </section>
+  </footer>
+</div>
 
-        <!-------------------------------- Jon work ------------------------------------>
-        <section>
-          <div id='uno'class='uno'>primero</div>
-          <div id='dos'class='dos'>segundo</div>
-
-          <div class='trs'>tercero</div>
-          <div class='cuatr'>cuarto</div>
-          <div class='cinc'>quinto</div>
-
-          <input id='bot' onclick= 'chge_styles()' type="button">
-      </section>
-
-      <!---------------------------------- Einar work ---------------------------------------->
-      <div class="card">
-        <div class="left">
-            <img src="../ShoppingWizard/assets/teclado1.jpg" height="300px" width="350px" alt="keyboard"> <i class="fa fa-long-arrow-left"></i>
-            <i class="fa fa-long-arrow-right"></i>
-        </div>
-        <div class="right">
-            <div class="product-info">
-                <div class="product-name">
-                    <h1>Tech-Board</h1>
-                    <i class="fa fa-search"></i>
-                    <i class="fa fa-user"></i>
-                    <i class="fa fa-shopping-cart"></i>
-                </div>
-                <div class="details">
-                    <h3>Special for developers</h3>
-                    <h2>High quality</h2>
-                    <h4><span class="fa fa-dollar"></span>150</h4>
-                    <h4 class="dis"><span class="fa fa-dollar"></span>200</h4>
-                </div>
-                <ul>
-                    <li>SIZE</li>
-                    <li class="bg">7</li>
-                    <li class="bg">8</li>
-                    <li class="bg">9</li>
-                    <li class="bg">10</li>
-                    <li class="bg">11</li>
-                </ul>
-                <ul>
-                    <li>COLOR</li>
-                    <li class="yellow"></li>
-                    <li class="black"></li>
-                    <li class="blue"></li>
-                </ul>
-                <span class="foot"><i class="fa fa-shopping-bag"></i>Buy Now</span>
-                <span class="foot"><i class="fa fa-shopping-cart"></i>Add TO Cart</span>
-            </div>
-        </div>
-    </div>
-
-    </main>
-
-    <!----------------
-    ----  ASIDE  ----
-    ----------------->
-    <aside class="aside" id="aside">
-      <section>
-
-      </section>
-    </aside>
-
-    <!----------------
-    ----  FOOTER  ----
-    ----------------->
-    <footer class="footer" id="footer">
-      <section>
-
-      </section>
-    </footer>
-
-    <!---------------------
-    ----  SCRIPT zone  ----
-    ---------------------->
-    <script src="Scripts/einar-script.js"></script>
-    <script src="Scripts/marc-script.js"></script>
-    <script src="Scripts/kim-script.js"></script>
-    <script src="Scripts/ercik-script.js"></script>
-    <script src="Scripts/jon-script.js"></script>
+  <!---------------------
+  ----  SCRIPT zone  ----
+  ---------------------->
+  <script src="Scripts/einar-script.js"></script>
+  <script src="Scripts/marc-script.js"></script>
+  <script src="Scripts/kim-script.js"></script>
+  <script src="Scripts/ercik-script.js"></script>
+  <script src="Scripts/jon-script.js"></script>
 </body>
 </html>
