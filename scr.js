@@ -6,7 +6,7 @@ imagArry.forEach(function(elem){
     console.log(elem.parentNode)
     
 });
-function no_hov(){
+function no_hov(event){
     option=event.target;
     option.style.transform='';
     option.style.transition='0.5s';
