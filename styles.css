@@ -3,35 +3,46 @@ div{
     position:absolute;
     width: 400px;
     height: 400px;
+    
+    transition: 0.5s;
+    
+    
 }
+
 .uno{
     
     z-index: 4;
     transform: scale(1);
-    transform: 2s;
+    
+    
 }
 .dos{
     
-    left: 100px;
+    left: 200px;
     z-index: 3;
-    transform: scale(0.6);
+    transform: scale(0.5);
+    
 
 }
 .tres{
-    background-color: rgb(255, 174, 127);
-    left: 150px;
+    
+    left: 300px;
     z-index: 2;
     transform: scale(0.4);
+     
+    
 }
 .cuatr{
-    background-color: rgb(127, 208, 255);
-    left: 200px;
+    
+    left: 350px;
     z-index: 1;
-    transform: scale(0.2);
+    transform: scale(0.3);
+    
 }
 .cinc{
-    background-color: rgb(246, 255, 127);
-    left: 250px;
+    
+    left: 400px;
     z-index: 0;
     transform: scale(0.1);
+    
 }
