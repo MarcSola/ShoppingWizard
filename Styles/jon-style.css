@@ -1,0 +1,51 @@
+main.main section div {
+    position:absolute;
+    transition: 0.5s;
+    top:200px
+}
+
+main.main section div input{
+
+    position:absolute;
+    max-width: 200px;
+    max-height: 200px;
+   
+}
+
+.uno{
+    
+    z-index: 4;
+    transform: scale(1);
+    left: 200px;
+    
+}
+.dos{
+    
+    left: 400px;
+    z-index: 3;
+    transform: scale(0.5);
+    
+
+}
+.tres{
+    
+    left: 450px;
+    z-index: 2;
+    transform: scale(0.4);
+     
+    
+}
+.cuatr{
+    
+    left: 500px;
+    z-index: 1;
+    transform: scale(0.3);
+    
+}
+.cinc{
+    
+    left: 550px;
+    z-index: 0;
+    transform: scale(0.2);
+    
+}
