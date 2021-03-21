@@ -13,7 +13,8 @@ function no_hov(event){
 }
 function hov(event){
     option=event.target;
-    option.style.transform='translateY(-50px)';
+    option.style.transform='translateY(-50px) translateX(50px)';
+    
     option.style.transition='0.5s';
    
     
