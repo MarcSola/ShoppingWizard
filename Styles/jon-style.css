@@ -1,0 +1,65 @@
+
+main.main section{
+    position: relative;
+}
+main.main section div{
+
+   position: absolute;
+    transition: 0.5s;
+    
+    
+}
+main.main section div input{
+   max-width: 200px;
+   max-height: 200px;
+    
+
+}
+
+.uno{
+    
+    z-index: 4;
+    /*transform: scale(1);*/
+    
+    left: 100px;
+    transform: scale(1);
+    
+    
+}
+.dos{
+    
+    
+    z-index: 3;
+    /*transform: scale(0.5);*/
+    left: 150px;
+    transform: scale(0.8);
+
+}
+.tres{
+    
+    
+    z-index: 2;
+    /*transform: scale(0.4);*/
+    left: 200px;
+    transform: scale(0.7);
+     
+    
+}
+.cuatr{
+    
+    
+    z-index: 1;
+    /*transform: scale(0.3);*/
+    left: 210px;
+    transform: scale(0.6);
+    
+}
+.cinc{
+    
+    
+    z-index: 0;
+    /*transform: scale(0.1);*/
+    left: 220px;
+    transform: scale(0.5);
+    
+}
