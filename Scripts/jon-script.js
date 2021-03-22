@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-var imagArry=document.querySelectorAll('main.main section div input');
-=======
 var imagArry=document.querySelectorAll('main.main section.jon_slide div input');
->>>>>>> develop
 imagArry.forEach(function(elem){
     elem.addEventListener('mouseover',hov)
     elem.addEventListener('mouseleave',no_hov)
@@ -32,6 +28,8 @@ function change(event){
         
     var imag=event.target;
         //por otro lado la imagen que recive el click
+    var back=imag.getAttribute('src');
+    console.log(back)
     var container=imag.parentNode;
         //con este apunto al div que contiene el input
     var total_cont=container.parentNode;
@@ -46,7 +44,8 @@ function change(event){
    
     total_cont.insertBefore(container, total_cont.firstChild);
     frst_picture.classList=container.classList;
-    container.classList='uno'
+    container.classList='uno';
+    document.getElementById('main').style.backgroundImage="url('Resources/images/product-images/aether_air_purifying_bike_1.jpg')";
     
     
     
