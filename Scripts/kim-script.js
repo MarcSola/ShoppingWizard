@@ -93,7 +93,6 @@ function goBackToProduct() {
   main.className = "main"
   main.style.display = "block";
   productPage.style.display = "flex"
-  progressInBox.style.display = "none"
   profileInputs[0].style.display = "none"
 }
 
