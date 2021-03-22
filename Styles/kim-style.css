@@ -187,13 +187,15 @@ ul li {
 #main-footer-picture {
     width: 25%;
     height: 100%;
-    background-color: white
+    background-color: white;
+    display: block;
 }
 
 #main-footer-disc {
     width: 50%;
     height: 100%;
     padding: 3%;
+    display: block;
 }
 
 #main-footer-disc p {
@@ -240,6 +242,13 @@ ul li {
 .profile-p {
     display: none;
 }
+
+.profile-p form {
+    margin: 10%;
+    
+}
+
+
 .progress-box {
     background-color: transparent;
     height: 100%;

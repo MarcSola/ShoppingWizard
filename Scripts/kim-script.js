@@ -13,6 +13,7 @@ const mainFooterPicture = document.getElementById("main-footer-picture");
 const mainFooterDisc = document.getElementById("main-footer-disc");
 
 const productPage = document.getElementById("product-p");
+console.log(productPage)
 const profilePage = document.getElementById("profile-p");
 
 
@@ -88,14 +89,17 @@ function goToFinish() {
   displayFinish();
 }
 
-function goBackToProduct() {
-  main.className = "main"
-  main.style.display = "block";
-  productPage.style.display= "block";
-  mainFooterBox.style.display = "block";
-  mainFooterDisc.style.display = "block";
-  mainFooterPicture.style.display = "block";
-}
+// function goBackToProduct() {
+//   main.className = "main"
+//   main.style.display = "block";
+//   productPage.style.display= "block";
+//   mainFooterBox.style.display = "block" 
+//   mainFooterDisc.style.display = "block"
+//   mainFooterPicture.style.display = "block";
+// }
+
+
+
 
 function displayProfile() {
   profileBar.style.backgroundColor = "rgb(250, 184, 4)";
