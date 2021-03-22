@@ -13,7 +13,6 @@ const mainFooterPicture = document.getElementById("main-footer-picture");
 const mainFooterDisc = document.getElementById("main-footer-disc");
 
 const productPage = document.getElementById("product-p");
-console.log(productPage)
 const profilePage = document.getElementById("profile-p");
 
 
@@ -24,6 +23,7 @@ const shippingBar = document.getElementById("shipping").childNodes[1];
 const finishBar = document.getElementById("finish").childNodes[1];
 
 const nextButton = document.getElementsByName("next");
+const resetButton = document.getElementsByName("reset");
 
 const profileButtons = document.querySelectorAll("#profile-li .buttons");
 const addressButtons = document.querySelectorAll("#address-li .buttons");
@@ -34,15 +34,15 @@ const timerMessage = document.querySelector("#timer-msg");
 const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
 
 
-const profileInputs = document.querySelectorAll(".profile-p")
-console.log(profileInputs[0])
+const profileInputs = document.querySelectorAll(".profile-p");
+console.log(profileInputs)
 buyButton.addEventListener("click", clickBuy);
 nextButton[0].addEventListener("click", goToAddress);
 nextButton[1].addEventListener("click", goToShipping);
 nextButton[2].addEventListener("click", goToFinish);
 toggleSwitch.addEventListener("change", changeTheme);
 
-
+console.log(resetButton)
 
 function changeTheme() {
   if (toggleSwitch.checked) {
@@ -89,14 +89,13 @@ function goToFinish() {
   displayFinish();
 }
 
-// function goBackToProduct() {
-//   main.className = "main"
-//   main.style.display = "block";
-//   productPage.style.display= "block";
-//   mainFooterBox.style.display = "block" 
-//   mainFooterDisc.style.display = "block"
-//   mainFooterPicture.style.display = "block";
-// }
+function goBackToProduct() {
+  main.className = "main"
+  main.style.display = "block";
+  productPage.style.display = "flex"
+  progressInBox.style.display = "none"
+  profileInputs[0].style.display = "none"
+}
 
 
 
@@ -127,7 +126,6 @@ function registerTimer() {
     time--;
     timerMessage.style.visibility = "visible"
     timerMessage.style.backgroundColor = "rgb(39, 38, 38)"
-    timerMessage.style.border ="1px solid rgb(250, 184, 4)"
     timerMessage.innerHTML =`You started registering ${(min += 1)} minutes ago!`;
     
     setTimeout(function () {
