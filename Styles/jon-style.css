@@ -29,40 +29,30 @@ main.main section div input{
     
 }
 .dos{
-    
-    
     z-index:3 ;
     /*transform: scale(0.5);*/
-    
-    
+    left: 22px;
     transform: scale(0.7);
 
 }
 .tres{
-    
-    
     z-index: 2;
     /*transform: scale(0.4);*/
-    left: 40px;
+    left: 35px;
     transform: scale(0.6);
-     
-    
+         
 }
 .cuatr{
-    
-    
     z-index: 1;
     /*transform: scale(0.3);*/
-    left: 80px;
+    left: 50px;
     transform: scale(0.5);
     
 }
 .cinc{
-    
-    
     z-index: 0;
     /*transform: scale(0.1);*/
-    left: 100px;
+    left: 65px;
     transform: scale(0.4);
     
 }
