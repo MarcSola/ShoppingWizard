@@ -1,0 +1,188 @@
+
+.main {
+    background-image: url("../Resources//images/product-images//aether_air_purifying_bike_1.jpg");
+    animation: transitionMainPage 7s;
+    background-repeat: no-repeat;
+}
+.profile-background {
+    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_11.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: contrast(0.5); 
+    transition: all 2s;
+    /* transform: rotateY(20deg); */
+
+}
+.address-background {
+    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_6.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: contrast(0.5); 
+    transition: all 2s;
+}
+
+.shipping-background {
+    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_9.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: contrast(0.5);
+    transition: all 2s;
+}
+
+.finish-background {
+    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_8.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: contrast(0.5);
+    transition: all 2s;
+}
+
+
+ul {
+    text-align: center;
+}
+
+ul li {
+    display: inline-block;
+    width: 300px;
+}
+
+
+#product-p {
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+}
+
+#main-footer-box {
+    width: 25%;
+    background-color: rgb(39, 38, 38);
+    color: #ddd;
+    font-size: 15px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+
+#buyButton {
+    width: 50%;
+    margin: 0 25%;
+    border-radius: 5px;
+    border-style: none;
+    height: 25px;
+    letter-spacing: 5px;
+    background-color: rgb(250, 184, 4);
+}
+
+.buttons{
+    width: 30%;
+    margin: 0 1%;
+    border-radius: 5px;
+    border-style: none;
+    height: 25px;
+    letter-spacing: 2px;
+    background-color: rgb(250, 184, 4);
+}
+
+
+/* #footer-buttons {
+    text-align: left;
+}  */
+
+#profile-li .buttons{
+    visibility: visible;
+}
+
+#address-li .buttons{
+    visibility: hidden;
+}
+
+#shipping-li .buttons{
+    visibility: hidden;
+}
+#finish-li .buttons{
+    visibility: hidden;
+    width: 60%;
+}
+
+
+
+#main-footer-picture {
+    width: 25%;
+    height: 100%;
+    background-color: white
+}
+
+#main-footer-disc {
+    width: 50%;
+    height: 100%;
+    padding: 3%;
+}
+
+#main-footer-disc p {
+     color: #ddd;
+     text-align: justify;
+     
+}
+
+#progress {
+    width: 80%;
+    background-color:#ddd;
+    border-radius: 5px;
+    margin: 0 10%;
+}
+
+.progress {
+    width: 103%;
+    background-color:#ddd;
+    border-radius: 5px;
+    margin: 10% 0;
+}
+#progress-bar {
+    width: 100%;
+    height: 3px;
+    background-color: rgba(247, 223, 8, 0.63);
+}
+
+.progress-bar {
+    width: 103%;
+    height: 3px;
+}
+
+
+.progressText {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#profile-p {
+    height: 150px;
+}
+
+
+.progress-box {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+
+
+@keyframes transitionMainPage {
+    from {
+        opacity: 0;
+        transform: rotateX(-20deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}
+
+
