@@ -1,68 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles/style.css">
-    <link rel="stylesheet" href="Styles/einar-style.css">
-    <link rel="stylesheet" href="Styles/erick-style.css">
-    <link rel="stylesheet" href="Styles/marc-style.css">
-    <link rel="stylesheet" href="Styles/jon-style.css">
-    <link rel="stylesheet" href="Styles/kim-style.css">
-    <link rel="stylesheet" href="Styles/footer.css">
-    <link rel="stylesheet" href="Styles/header.css">
-    <link rel="stylesheet" href="Styles/body.css">
-    <link rel="stylesheet" href="Styles/aside.css">
-    <link rel="stylesheet" href="Styles/typography.css">
-    <title>Shopping Wizard</title>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Styles/style.css">
+  <link rel="stylesheet" href="Styles/einar-style.css">
+  <link rel="stylesheet" href="Styles/erick-style.css">
+  <link rel="stylesheet" href="Styles/marc-style.css">
+  <link rel="stylesheet" href="Styles/jon-style.css">
+  <link rel="stylesheet" href="Styles/kim-style.css">
+  <link rel="stylesheet" href="Styles/footer.css">
+  <link rel="stylesheet" href="Styles/header.css">
+  <link rel="stylesheet" href="Styles/body.css">
+  <link rel="stylesheet" href="Styles/aside.css">
+  <link rel="stylesheet" href="Styles/typography.css">
+  <title>Shopping Wizard</title>
 </head>
 <!-- --------------------------------------------------------------- -->
+
 <body class="body" id="body">
 
   <!-- Separation with FLEX of the main body and the Aside section  -->
-<div>
-  <!----------------
+  <div>
+    <!----------------
   ----  ASIDE  ----
   ----------------->
-  <aside class="aside" id="aside">
-    <section>
-      <p> This is my aside</p>
-      <p> This has and absolute position on left. but maybe on responsive design this gonna be hidden</p>
-    </section>
-  </aside>
-</div>
+    <aside class="aside" id="aside">
+      <section>
+        <p> This is my aside</p>
+        <p> This has and absolute position on left. but maybe on responsive design this gonna be hidden</p>
+      </section>
+    </aside>
+  </div>
   <!-- Separation with FLEX of the main body and the Aside section  -->
-<div class="grid-body">
-      <!----------------
+  <div class="grid-body">
+    <!----------------
     ----  HEADER  ----
     ----------------->
-  <header class="header" id="header">
-    <section class="title-header">
+    <header class="header" id="header">
+      <section class="title-header">
         <p> This is my header</p>
+        <p id="timer-msg"></p>
         <p> this could be a transparent background</p>
-    </section>
-  </header>
+      </section>
+    </header>
 
-  <!----------------
+    <!----------------
   ----  MAIN  ----
   ----------------->
-  <main class="main" id="main">
-    <section>
-      <p> This is my body</p>
-    </section>
-  </main>
+    <main class="main" id="main">
+      <section>
+        <p> This is my body</p>
+      </section>
+    </main>
 
-  <!----------------
+    <!----------------
   ----  FOOTER  ----
   ----------------->
-  <footer class="footer" id="footer">
-    <section>
-      <p> This is my footer</p>
-      <p> this could be a transparent background</p>
-    </section>
-  </footer>
+    <footer class="footer" id="footer">
+      <section>
+        <div id="product-p">
+          <div id=main-footer-box>
+            <div id="progress-name">
+              Product
+            </div>
+
+            <div id="progress">
+              <div id="progress-bar"></div>
+            </div>
+            <div id="footer-buttons">
+              <input id="buyButton" type="submit" value="BUY">
+            </div>
+
+          </div>
+
+          <div id="main-footer-picture"><img src="./Resources/images/product-images/sedov_b2_bike_7.jpg" alt="moto"
+              style="width: 100%; height: 100%;"></div>
+          <div id="main-footer-disc">
+            <p>nec condimentum orci. Mauris euismod eros mauris, 
+              vitae tempus urna feugiat a. Maecenas commodo vitae dui
+              ut condimentum. Sed faucibus dapibus elit. Curabitur ut blandit elit. 
+              Phasellus cursus metus congue, pretium
+               </p>
+          </div>
+        </div>
+        <div id="profile-p" style="display: none;">
+
+<div class="progress-box">
+  <ul>
+    <li id="profile-li">
+      <p>Profile</p> 
+      <div class="progress" id="profile">
+        <div class="progress-bar"></div>
+      </div>
+      <input type="reset" name="reset" value="CLEAR" class="buttons">
+      <input type="submit" name="next" value="NEXT" class="buttons">
+    </li>
+    <li id="address-li">
+      
+      <p>Address</p>
+      <div class="progress" id="address">
+        <div class="progress-bar"></div>
+      </div>
+      <input type="reset" name="reset" value="CLEAR" class="buttons" >
+      <input type="submit" name="next" value="NEXT" class="buttons" >
+    </li>
+    <li id="shipping-li">
+      <p>Shipping</p>
+      <div class="progress" id="shipping">
+        <div class="progress-bar"></div>
+      </div>
+      <input type="reset" name="reset" value="CLEAR" class="buttons" >
+      <input type="submit" name="next" value="NEXT" class="buttons" >
+    </li>
+    <li id="finish-li">
+      <p>Finish</p>
+      <div class="progress" id="finish">
+        <div class="progress-bar"></div>
+      </div>
+     
+      <input type="submit" name="next" value="BUY NOW" class="buttons" >
+    </li>
+  </ul>
+  <div class="progress"></div>
 </div>
+        </div>
+      </section>
+    </footer>
+
+  </div>
+
 
   <!---------------------
   ----  SCRIPT zone  ----
@@ -70,7 +140,8 @@
   <script src="Scripts/einar-script.js"></script>
   <script src="Scripts/marc-script.js"></script>
   <script src="Scripts/kim-script.js"></script>
-  <script src="Scripts/ercik-script.js"></script>
+  <script src="Scripts/erick-script.js"></script>
   <script src="Scripts/jon-script.js"></script>
 </body>
+
 </html>
