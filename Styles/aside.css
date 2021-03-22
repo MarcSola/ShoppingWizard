@@ -1,12 +1,13 @@
-.aside{
-	background-color: rgb(143, 143, 143);
-	height: 100vh;
-	min-height: 700px;
-	max-width: 10vw;
-	z-index: 1000;
+.aside {
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    min-height: 700px;
+    max-width: 10vw;
+    z-index: 1000;
 }
 
 .aside section p {
+
 	margin: 0 auto;
 	text-align: center;
 }
@@ -23,5 +24,6 @@
 		max-width: none;
 		min-height: 100px;
 	 }
+
 
 }
