@@ -28,7 +28,7 @@ function change(event){
         
     var imag=event.target;
         //por otro lado la imagen que recive el click
-    var back=imag.getAttribute('src');
+    var back="url('"+imag.getAttribute('src')+"')";
     console.log(back)
     var container=imag.parentNode;
         //con este apunto al div que contiene el input
@@ -45,7 +45,7 @@ function change(event){
     total_cont.insertBefore(container, total_cont.firstChild);
     frst_picture.classList=container.classList;
     container.classList='uno';
-    document.getElementById('main').style.backgroundImage="url('Resources/images/product-images/aether_air_purifying_bike_1.jpg')";
+    document.getElementById('main').style.backgroundImage=back;
     
     
     
