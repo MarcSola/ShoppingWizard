@@ -1,4 +1,4 @@
-const main = document.getElementById("main");
+const mainBackground = document.querySelector(".main-background");
 const footer = document.getElementById("footer");
 
 const progressBar = document.getElementById("progress-bar");
@@ -58,7 +58,7 @@ function changeTheme() {
 function clickBuy() {
   // go to the profile page.
   // background changes
-  main.className = "profile-background";
+  mainBackground.className = "profile-background";
   footer.style.background = "none";
   productPage.style.display = "none";
   profilePage.style.display = "block"
@@ -69,28 +69,28 @@ function clickBuy() {
 
 
 function goToAddress() {
-  main.className = "address-background";
+  mainBackground.className = "address-background";
   profileButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   addressButtons.forEach((ele) => (ele.style.visibility = "visible"));
   displayAddress();
 }
 
 function goToShipping() {
-  main.className = "shipping-background";
+  mainBackground.className = "shipping-background";
   addressButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   shippingButtons.forEach((ele) => (ele.style.visibility = "visible"));
   displayShipping();
 }
 
 function goToFinish() {
-  main.className = "finish-background";
+  mainBackground.className = "finish-background";
   shippingButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   finishButton.style.visibility = "visible";
   displayFinish();
 }
 
 function goBackToProduct() {
-  main.className = "main"
+  mainBackground.className = "main-background"
   main.style.display = "block";
   productPage.style.display = "flex"
   profileInputs[0].style.display = "none"

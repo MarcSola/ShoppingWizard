@@ -4,11 +4,12 @@
     --mainDarkGray: rgb(39, 38, 38);
 }
 
-.main {
+.main-background {
     background-image: url("../Resources//images/product-images//aether_air_purifying_bike_1.jpg");
     animation: transitionMainPage 7s;
     background-repeat: no-repeat;
     background-position: right;
+    height: 100%;
 }
 .profile-background {
     background-image: url("../Resources/images/product-images/aether_air_purifying_bike_11.jpg");
@@ -18,6 +19,7 @@
     filter: contrast(0.5); 
     transition: all 2s;
     display: block;
+    height: 100%;
 
 }
 .address-background {
@@ -28,6 +30,7 @@
     filter: contrast(0.5); 
     transition: all 2s;
     display: block;
+    height: 100%;
 }
 
 .shipping-background {
@@ -38,6 +41,7 @@
     filter: contrast(0.5);
     transition: all 2s;
     display: block;
+    height: 100%;
 }
 
 .finish-background {
@@ -48,6 +52,7 @@
     filter: contrast(0.5);
     transition: all 2s;
     display: block;
+    height: 100%;
 }
 
 
@@ -245,7 +250,7 @@ ul li {
 
 .profile-p form {
     margin: 10%;
-    
+    filter: none;
 }
 
 
