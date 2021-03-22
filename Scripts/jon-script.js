@@ -14,7 +14,6 @@ function no_hov(event){
 function hov(event){
     option=event.target;
     option.style.transform='translateY(-20px) translateX(20px)';
-    
     option.style.transition='0.5s';
    
     
@@ -47,15 +46,6 @@ function change(event){
     container.classList='uno';
     document.getElementById('main').style.backgroundImage=back;
     
-    
-    
-    /*
-    X=document.querySelector('div.dos')
-    Y=document.querySelector('div.uno')
-    
-    X.classList='uno'
-    
-    Y.classList='dos'*/
-    
+       
 
 }
