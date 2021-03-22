@@ -15,6 +15,7 @@ const mainFooterDisc = document.getElementById("main-footer-disc");
 const productPage = document.getElementById("product-p");
 const profilePage = document.getElementById("profile-p");
 
+
 const progressInBox = document.querySelectorAll(".progress-box ul")[0].children;
 const profileBar = document.getElementById("profile").childNodes[1];
 const addressBar = document.getElementById("address").childNodes[1];
@@ -29,11 +30,29 @@ const shippingButtons = document.querySelectorAll("#shipping-li .buttons");
 const finishButton = document.querySelector("#finish-li .buttons");
 
 const timerMessage = document.querySelector("#timer-msg");
+const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
 
+
+const profileInputs = document.querySelectorAll(".profile-p")
+console.log(profileInputs[0])
 buyButton.addEventListener("click", clickBuy);
 nextButton[0].addEventListener("click", goToAddress);
 nextButton[1].addEventListener("click", goToShipping);
 nextButton[2].addEventListener("click", goToFinish);
+toggleSwitch.addEventListener("change", changeTheme);
+
+
+
+function changeTheme() {
+  if (toggleSwitch.checked) {
+    document.documentElement.setAttribute("mode-changes", "dark");
+  } else {
+    document.documentElement.setAttribute("mode-changes", "light");
+  }
+}
+
+
+
 
 function clickBuy() {
   // go to the profile page.
@@ -41,10 +60,12 @@ function clickBuy() {
   main.className = "profile-background";
   footer.style.background = "none";
   productPage.style.display = "none";
-  profilePage.style.display = "block";
+  profilePage.style.display = "block"
+  profileInputs[0].style.display = "block"
   displayProfile();
   registerTimer();
 }
+
 
 function goToAddress() {
   main.className = "address-background";
@@ -68,18 +89,28 @@ function goToFinish() {
 }
 
 function goBackToProduct() {
-  main.style.display = block;
+  main.className = "main"
+  main.style.display = "block";
+  productPage.style.display= "block";
+  mainFooterBox.style.display = "block";
+  mainFooterDisc.style.display = "block";
+  mainFooterPicture.style.display = "block";
 }
+
 function displayProfile() {
   profileBar.style.backgroundColor = "rgb(250, 184, 4)";
+  
 }
+
 function displayAddress() {
   addressBar.style.backgroundColor = "rgb(250, 184, 4)";
+  profileInputs[0].style.display = "none"
 }
 
 function displayShipping() {
   shippingBar.style.backgroundColor = "rgb(250, 184, 4)";
 }
+
 function displayFinish() {
   finishBar.style.backgroundColor = "rgb(250, 184, 4)";
 }
@@ -90,15 +121,14 @@ function registerTimer() {
 
   var x = setInterval(function () {
     time--;
-    var count = 5;
-    var y = setTimeout(function() {
-    count--
+    timerMessage.style.visibility = "visible"
+    timerMessage.style.backgroundColor = "rgb(39, 38, 38)"
+    timerMessage.style.border ="1px solid rgb(250, 184, 4)"
     timerMessage.innerHTML =`You started registering ${(min += 1)} minutes ago!`;
-    if(count === 0) {
-      clearTimeout(y);
-      timerMessage.innerHTML = "";
-    }
-    }, 1000)
+    
+    setTimeout(function () {
+        timerMessage.style.visibility = "hidden"
+    }, 5000);
 
     if (time === 0) {
       clearInterval(x);

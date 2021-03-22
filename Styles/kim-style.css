@@ -1,8 +1,14 @@
+:root {
+    --mainBlack: black;
+    --mainOrange: rgb(250, 184, 4);
+    --mainDarkGray: rgb(39, 38, 38);
+}
 
 .main {
     background-image: url("../Resources//images/product-images//aether_air_purifying_bike_1.jpg");
     animation: transitionMainPage 7s;
     background-repeat: no-repeat;
+    background-position: right;
 }
 .profile-background {
     background-image: url("../Resources/images/product-images/aether_air_purifying_bike_11.jpg");
@@ -11,7 +17,7 @@
     background-position: center;
     filter: contrast(0.5); 
     transition: all 2s;
-    /* transform: rotateY(20deg); */
+    display: block;
 
 }
 .address-background {
@@ -21,6 +27,7 @@
     background-position: center;
     filter: contrast(0.5); 
     transition: all 2s;
+    display: block;
 }
 
 .shipping-background {
@@ -30,6 +37,7 @@
     background-position: center;
     filter: contrast(0.5);
     transition: all 2s;
+    display: block;
 }
 
 .finish-background {
@@ -39,8 +47,70 @@
     background-position: center;
     filter: contrast(0.5);
     transition: all 2s;
+    display: block;
 }
 
+
+#timer-msg {
+    visibility: visible;
+    color: whitesmoke;
+}
+
+.switch-wrapper {
+    text-align: right;
+}
+
+.switch {
+    display: inline-block;
+    height: 36px;
+    position: relative;
+    right: 48px;
+    top: -5px;
+  }
+  
+  .switch input {
+    display: none;
+  }
+  
+  .slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 2px;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    transition: 0.4s;
+  }
+  
+  .slider:before {
+    background-color: #fff;
+    bottom: 1px;
+    content: "";
+    left: 1px;
+    position: absolute;
+    transition: 0.4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #a7e6e0;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(17px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+    width: 35px;
+    height: 18px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+  }
 
 ul {
     text-align: center;
@@ -164,9 +234,12 @@ ul li {
 
 #profile-p {
     height: 150px;
+    display: none;
 }
 
-
+.profile-p {
+    display: none;
+}
 .progress-box {
     background-color: transparent;
     height: 100%;
@@ -184,5 +257,4 @@ ul li {
         transform: rotateX(0);
     }
 }
-
 
