@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 var imagArry=document.querySelectorAll('main.main section div input');
+=======
+var imagArry=document.querySelectorAll('main.main section.jon_slide div input');
+>>>>>>> develop
 imagArry.forEach(function(elem){
     elem.addEventListener('mouseover',hov)
     elem.addEventListener('mouseleave',no_hov)

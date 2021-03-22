@@ -1,53 +1,108 @@
+<<<<<<< HEAD
 main.main section div{
 
     position:absolute;   
+=======
+
+main.main section{
+    position: relative;
+}
+main.main section div{
+
+   position: absolute;
+>>>>>>> develop
     transition: 0.5s;
     
     
 }
 main.main section div input{
+<<<<<<< HEAD
    
    max-width: 200px;
    max-height: 200px;
    
+=======
+   max-width: 200px;
+   max-height: 200px;
+>>>>>>> develop
     
 
 }
 
 .uno{
+<<<<<<< HEAD
     left: 300px;
     z-index: 4;
+=======
+    
+    z-index: 4;
+    /*transform: scale(1);*/
+    
+    left: 100px;
+>>>>>>> develop
     transform: scale(1);
     
     
 }
 .dos{
     
+<<<<<<< HEAD
     left: 400px;
     z-index: 3;
     transform: scale(0.5);
     
+=======
+    
+    z-index: 3;
+    /*transform: scale(0.5);*/
+    left: 150px;
+    transform: scale(0.8);
+>>>>>>> develop
 
 }
 .tres{
     
+<<<<<<< HEAD
     left: 450px;
     z-index: 2;
     transform: scale(0.4);
+=======
+    
+    z-index: 2;
+    /*transform: scale(0.4);*/
+    left: 200px;
+    transform: scale(0.7);
+>>>>>>> develop
      
     
 }
 .cuatr{
     
+<<<<<<< HEAD
     left: 500px;
     z-index: 1;
     transform: scale(0.3);
+=======
+    
+    z-index: 1;
+    /*transform: scale(0.3);*/
+    left: 210px;
+    transform: scale(0.6);
+>>>>>>> develop
     
 }
 .cinc{
     
+<<<<<<< HEAD
     left: 550px;
     z-index: 0;
     transform: scale(0.1);
+=======
+    
+    z-index: 0;
+    /*transform: scale(0.1);*/
+    left: 220px;
+    transform: scale(0.5);
+>>>>>>> develop
     
 }
