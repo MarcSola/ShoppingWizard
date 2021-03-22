@@ -1,4 +1,4 @@
-var imagArry=document.querySelectorAll('main.main section.jon_slide div input');
+var imagArry=document.querySelectorAll('div input');
 imagArry.forEach(function(elem){
     elem.addEventListener('mouseover',hov)
     elem.addEventListener('mouseleave',no_hov)
@@ -13,7 +13,7 @@ function no_hov(event){
 }
 function hov(event){
     option=event.target;
-    option.style.transform='translateY(-20px) translateX(20px)';
+    option.style.transform='translateY(-50px) translateX(50px)';
     
     option.style.transition='0.5s';
    
@@ -28,8 +28,6 @@ function change(event){
         
     var imag=event.target;
         //por otro lado la imagen que recive el click
-    var back="url('"+imag.getAttribute('src')+"')";
-    console.log(back)
     var container=imag.parentNode;
         //con este apunto al div que contiene el input
     var total_cont=container.parentNode;
@@ -44,8 +42,7 @@ function change(event){
    
     total_cont.insertBefore(container, total_cont.firstChild);
     frst_picture.classList=container.classList;
-    container.classList='uno';
-    document.getElementById('main').style.backgroundImage=back;
+    container.classList='uno'
     
     
     
