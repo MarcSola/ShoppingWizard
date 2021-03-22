@@ -2,6 +2,7 @@
 main.main section{
     position: relative;
     margin-top:5%;
+    margin-left: 2%;
 }
 main.main section div{
 
@@ -11,8 +12,8 @@ main.main section div{
     
 }
 main.main section div input{
-   max-width: 100px;
-   max-height: 100px;
+   max-width: 200px;
+   max-height: 200px;
    border: 0.5px solid grey; 
    border-radius: 5px; 
     
@@ -23,7 +24,7 @@ main.main section div input{
     
     z-index: 4;
     transform: scale(1);
-    
+    top:50px;
     
     
     
@@ -31,28 +32,28 @@ main.main section div input{
 .dos{
     z-index:3 ;
     /*transform: scale(0.5);*/
-    left: 22px;
+    left: 40px;
     transform: scale(0.7);
 
 }
 .tres{
     z-index: 2;
     /*transform: scale(0.4);*/
-    left: 35px;
+    left: 55px;
     transform: scale(0.6);
          
 }
 .cuatr{
     z-index: 1;
     /*transform: scale(0.3);*/
-    left: 50px;
+    left: 72px;
     transform: scale(0.5);
     
 }
 .cinc{
     z-index: 0;
     /*transform: scale(0.1);*/
-    left: 65px;
+    left:90px;
     transform: scale(0.4);
     
 }

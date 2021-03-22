@@ -6,19 +6,24 @@ imagArry.forEach(function(elem){
     console.log(elem.parentNode)
     
 });
+
+
 function no_hov(event){
     option=event.target;
     option.style.transform='';
     option.style.transition='0.5s';
 }
+
+
 function hov(event){
+    
+    
     option=event.target;
     option.style.transform='translateY(-20px) translateX(20px)';
     option.style.transition='0.5s';
-   
-    
-
 }
+
+
 function change(event){
 //selecciono los elemntos HTML mediante DOM
 
@@ -33,11 +38,6 @@ function change(event){
         //con este apunto al div que contiene el input
     var total_cont=container.parentNode;
 
-
-//Antes del intercambio hay una animacion.
-    
-    
-    
 
     //Las imagenes intercambian posiciones y classes.
    
