@@ -97,22 +97,17 @@ function clickBuy() {
 
 
 function checkUsername() {
-  var regType1 = /^[A-Za-z0-9*]$/;
-  var regType2 = /^[A-Za-z0-9*]{5,20}$/;
+  var regType =  /^[A-Za-z0-9*]{5,20}$/;
   if (userName.validity.valueMissing) {
     warningMessage.classList.add("warning-message");
     warningMessage.textContent = "Please Enter the Username";
     
   } else {
-    if (!regType1.test(userName.value)) {
+    if (!regType.test(userName.value)) {
       warningMessage.classList.add("warning-message");
-      warningMessage.textContent = "Please use letters and numbers only";
+      warningMessage.textContent = "Only letters (either case), numbers, between 5 and 20 characters."
       removeEventProfile();
-    } else if (!regType2.test(userName.value)) {
-        warningMessage.classList.add("warning-message");
-        warningMessage.textContent = "5 - 20 letters";
-        removeEventProfile();
-      } else {
+    }else {
       warningMessage.classList.remove("warning-message");
       goToAddress();
     }
@@ -120,7 +115,7 @@ function checkUsername() {
 }
 
 function removeEventProfile(){
-  nextButton[0].removeEventListener("click", checkUsername);
+  nextButton[0].removeEventListener("click", goToAddress);
 }
 
 
