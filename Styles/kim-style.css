@@ -2,6 +2,8 @@
   --mainBlack: black;
   --mainOrange: rgb(250, 184, 4);
   --mainDarkGray: rgb(39, 38, 38);
+  --mainDarkGray: rgba(110, 108, 108, 0.473);
+
 }
 
 .main-background {
@@ -250,7 +252,47 @@ ul li {
   display: flex;
   flex-direction: column;
   width: 200px;
+  color: rgba(245, 239, 239, 0.945);
+  letter-spacing: 1px
 }
+
+.profile-p form input {
+    background-color: black;
+    color: rgba(245, 239, 239, 0.945);
+    height: 40px;
+    width: 250px;
+    border: 1px solid rgba(209, 207, 207, 0.651);;
+    margin-top: 5px;
+    margin-bottom: 25px;
+    padding: 10px;
+    outline: none;
+    border-radius: 2px;
+}
+
+input:required:valid {
+    border-color: green;
+  }
+  input:invalid {
+    border-color: red;
+  }
+  input:required:focus:valid {
+    background-size: 25px;
+  }
+  input:focus:invalid {
+    background-size: 25px;
+  }
+  
+  .warning-message {
+    border-left: 6px solid red;
+    height: 25px;
+    width: 100%;
+    padding: 5px;
+    font-size: 80%;
+    color: rgba(124, 3, 3);
+    background-color: rgba(248, 9, 9, 0.3);
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+  }
 
 .progress-box {
   background-color: transparent;

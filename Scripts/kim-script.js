@@ -32,10 +32,14 @@ const shippingButtons = document.querySelectorAll("#shipping-li .buttons");
 const finishButton = document.querySelector("#finish-li .buttons");
 
 const timerMessage = document.querySelector("#timer-msg");
+const warningMessage = document.querySelector(".warning-message");
+
 const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
 
 const profileBody = document.querySelectorAll(".profile-p");
 const profileForm = document.getElementById("profile-form");
+
+const userName = document.getElementById("username");
 
 
 
@@ -55,7 +59,7 @@ const slideHidden = document.querySelector(".jon_slide");
 
 buyButton.addEventListener("click", clickBuy);
 
-nextButton[0].addEventListener("click", goToAddress);
+nextButton[0].addEventListener("click", checkUsername);
 nextButton[1].addEventListener("click", goToShipping);
 nextButton[2].addEventListener("click", goToFinish);
 
@@ -90,6 +94,35 @@ function clickBuy() {
   // jon slide hidden 
   slideHidden.style.display = "none"
 }
+
+
+function checkUsername() {
+  var regType1 = /^[A-Za-z0-9*]$/;
+  var regType2 = /^[A-Za-z0-9*]{5,20}$/;
+  if (userName.validity.valueMissing) {
+    warningMessage.classList.add("warning-message");
+    warningMessage.textContent = "Please Enter the Username";
+    
+  } else {
+    if (!regType1.test(userName.value)) {
+      warningMessage.classList.add("warning-message");
+      warningMessage.textContent = "Please use letters and numbers only";
+      removeEventProfile();
+    } else if (!regType2.test(userName.value)) {
+        warningMessage.classList.add("warning-message");
+        warningMessage.textContent = "5 - 20 letters";
+        removeEventProfile();
+      } else {
+      warningMessage.classList.remove("warning-message");
+      goToAddress();
+    }
+  }
+}
+
+function removeEventProfile(){
+  nextButton[0].removeEventListener("click", checkUsername);
+}
+
 
 function goToAddress() {
   mainBackground.className = "address-background";
@@ -160,4 +193,5 @@ function registerTimer() {
     }
   }, 60000);
 }
+
 
