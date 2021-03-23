@@ -1,8 +1,11 @@
-var imgArray = document.querySelectorAll('div input');
-[].forEach.call(imgArray, function(moveImages) {
+var imgArray = document.querySelectorAll('section.asideContainerEinar div.asideImgContainerClassEinar input');
+console.log(imgArray)
+imgArray.forEach(function(moveImages) {
     // do whatever
+    
     moveImages.addEventListener('mouseover', hov)
     moveImages.addEventListener('mouseleave', no_hov)
+});
 
     function no_hov(event) {
         option = event.target;
@@ -14,10 +17,9 @@ var imgArray = document.querySelectorAll('div input');
 
     function hov(event) {
         option = event.target;
-        option.style.transform = 'translateY(-125px) translateX(+125px) scale(2.2)';
+        option.style.transform = ' scale(1.1)';
         option.style.transition = '0.8s';
-        option.style.borderRadius = '10px';
-        option.style.border = '5px solid gray'
+        
+        option.style.border = '0.2px solid gray'
     }
 
-});

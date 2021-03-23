@@ -1,9 +1,10 @@
-const mainBackground = document.querySelector(".main-background");
+const mainBackground = document.querySelector("main.main");
 const footer = document.getElementById("footer");
 
 const progressBar = document.getElementById("progress-bar");
 const progress = document.getElementById("progress");
 const buyButton = document.getElementById("buyButton");
+
 const footerSection = document.querySelector(".footer section");
 const mainFooterBox = document.getElementById("main-footer-box");
 const progressName = document.getElementById("progress-name");
