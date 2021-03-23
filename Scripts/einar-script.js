@@ -1,8 +1,6 @@
 var imgArray = document.querySelectorAll('section.asideContainerEinar div.asideImgContainerClassEinar input');
 console.log(imgArray)
 imgArray.forEach(function(moveImages) {
-    // do whatever
-
     moveImages.addEventListener('mouseover', hov)
     moveImages.addEventListener('mouseleave', no_hov)
 
@@ -29,7 +27,7 @@ imgArray.forEach(function(moveImages) {
 /* /////////////////////////// */
 
 
-/* This function     */
+/* This function is for the menu selector related with bike prices   */
 
 
 /* /////////////////////////// */
