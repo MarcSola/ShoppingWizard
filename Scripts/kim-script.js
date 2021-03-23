@@ -1,9 +1,10 @@
-const mainBackground = document.querySelector(".main-background");
+const mainBackground = document.querySelector("main.main");
 const footer = document.getElementById("footer");
 
 const progressBar = document.getElementById("progress-bar");
 const progress = document.getElementById("progress");
 const buyButton = document.getElementById("buyButton");
+
 const footerSection = document.querySelector(".footer section");
 const mainFooterBox = document.getElementById("main-footer-box");
 const progressName = document.getElementById("progress-name");
@@ -43,8 +44,9 @@ const userName = document.getElementById("username");
 
 
 
-// jon slide hidden in profile 
+// jon slide and text hidden in profile 
 const slideHidden = document.querySelector(".jon_slide");
+const textHidden = document.querySelector(".jon_text");
 
 
 
@@ -86,15 +88,15 @@ function clickBuy() {
   mainBackground.className = "profile-background";
   footer.style.background = "none";
   productPage.style.display = "none";
-  profilePage.style.display = "block"
-  profileBody[0].style.display = "block"
+  profilePage.style.display = "block";
+  profileBody[0].style.display = "block";
   displayProfile();
   registerTimer();
 
   // jon slide hidden 
-  slideHidden.style.display = "none"
+  slideHidden.style.display = "none";
+  textHidden.style.display = "none";
 }
-
 
 function checkUsername() {
   var regType =  /^[A-Za-z0-9*]{5,20}$/;

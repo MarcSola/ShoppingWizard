@@ -6,12 +6,11 @@
 
 }
 
-.main-background {
-  background-image: url("../Resources//images/product-images//aether_air_purifying_bike_1.jpg");
-  animation: transitionMainPage 7s;
-  background-repeat: no-repeat;
-  background-position: right;
-  height: 100%;
+.main {
+    /*background-image: url("../Resources//images/product-images//aether_air_purifying_bike_1.jpg");*/
+    animation: transitionMainPage 7s;
+    background-repeat: no-repeat;
+    background-position: right;
 }
 .profile-background {
   background-image: url("../Resources/images/product-images/aether_air_purifying_bike_11.jpg");
