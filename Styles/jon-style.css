@@ -1,16 +1,33 @@
 
-main.main section{
-    position: relative;
-    margin-top:5%;
-    margin-left: 2%;
-}
 main.main section div{
-
-   position: absolute;
-    transition: 0.5s;
-      
+     position: absolute;
+     transition: 0.5s;     
+ }
+ 
+main section.blackgrnd{
+    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_1.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    
+    transition: 2s;
     
 }
+main.main section.jon_slide{
+    position: relative;
+    margin-top:30%;
+    margin-left: 5%;
+    z-index: 0;
+   
+}
+main.main section.jon_text{
+    margin-left: 3%;
+    top:400px;
+    position: absolute;
+    z-index: 100;
+}
+
 main.main section div input{
    max-width: 200px;
    max-height: 200px;
@@ -24,7 +41,8 @@ main.main section div input{
     
     z-index: 4;
     transform: scale(1);
-    top:50px;
+    top:70px;
+    left: 10px;
     
     
     

@@ -44,7 +44,10 @@ function change(event){
     total_cont.insertBefore(container, total_cont.firstChild);
     frst_picture.classList=container.classList;
     container.classList='uno';
-    document.getElementById('main').style.backgroundImage=back;
+    document.querySelector('main section.blackgrnd').style.backgroundImage=back;
+    document.querySelector('main section.blackgrnd').style.opacity='0';
+    
+    document.querySelector('main section.blackgrnd').style.opacity='1';
     
        
 
