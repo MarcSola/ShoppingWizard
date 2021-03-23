@@ -4,30 +4,28 @@
     min-height: 700px;
     max-width: 10vw;
     z-index: 1000;
-	width: 100%;
+    width: 100%;
     padding: 0 5%;
-	box-shadow: inset;
-   
+    box-shadow: inset;
+    /*kygvftktcf*/
 }
 
 .aside section p {
-
-	margin: 0 auto;
-	text-align: center;
+    margin: 0 auto;
+    text-align: center;
 }
+
 
 /** -------------------------------
 -------RESPONSIVE MOVIL -----------
 -------------------------------- **/
+
 @media only screen and (max-width:800px) {
-
- 	.aside{
-		background-color: rgb(114, 5, 5);
-		width: 100vw;
-		height: 150px;
-		max-width: none;
-		min-height: 100px;
-	 }
-
-
+    .aside {
+        background-color: rgb(114, 5, 5);
+        width: 100vw;
+        height: 150px;
+        max-width: none;
+        min-height: 100px;
+    }
 }
