@@ -1,12 +1,33 @@
-.aside{
-	background-color: rgb(143, 143, 143);
-	height: 100vh;
-	min-height: 700px;
-	max-width: 10vw;
-	z-index: 1000;
+.aside {
+    background-color: rgb(235, 231, 231);
+    height: 100vh;
+    min-height: 700px;
+    max-width: 10vw;
+    z-index: 1000;
+	width: 100%;
+    padding: 0 5%;
+	
+   
 }
 
 .aside section p {
+
 	margin: 0 auto;
 	text-align: center;
+}
+
+/** -------------------------------
+-------RESPONSIVE MOVIL -----------
+-------------------------------- **/
+@media only screen and (max-width:800px) {
+
+ 	.aside{
+		background-color: rgb(114, 5, 5);
+		width: 100vw;
+		height: 150px;
+		max-width: none;
+		min-height: 100px;
+	 }
+
+
 }

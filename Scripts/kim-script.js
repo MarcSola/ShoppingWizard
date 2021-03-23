@@ -1,9 +1,10 @@
-const main = document.getElementById("main");
+const mainBackground = document.querySelector("main.main");
 const footer = document.getElementById("footer");
 
 const progressBar = document.getElementById("progress-bar");
 const progress = document.getElementById("progress");
 const buyButton = document.getElementById("buyButton");
+
 const footerSection = document.querySelector(".footer section");
 const mainFooterBox = document.getElementById("main-footer-box");
 const progressName = document.getElementById("progress-name");
@@ -15,6 +16,7 @@ const mainFooterDisc = document.getElementById("main-footer-disc");
 const productPage = document.getElementById("product-p");
 const profilePage = document.getElementById("profile-p");
 
+
 const progressInBox = document.querySelectorAll(".progress-box ul")[0].children;
 const profileBar = document.getElementById("profile").childNodes[1];
 const addressBar = document.getElementById("address").childNodes[1];
@@ -23,63 +25,149 @@ const finishBar = document.getElementById("finish").childNodes[1];
 
 const nextButton = document.getElementsByName("next");
 
+const profileClearButton = document.getElementById("profile-reset");
+
 const profileButtons = document.querySelectorAll("#profile-li .buttons");
 const addressButtons = document.querySelectorAll("#address-li .buttons");
 const shippingButtons = document.querySelectorAll("#shipping-li .buttons");
 const finishButton = document.querySelector("#finish-li .buttons");
 
 const timerMessage = document.querySelector("#timer-msg");
+const warningMessage = document.querySelector(".warning-message");
+
+const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
+
+const profileBody = document.querySelectorAll(".profile-p");
+const profileForm = document.getElementById("profile-form");
+
+const userName = document.getElementById("username");
+
+
+
+// jon slide and text hidden in profile 
+const slideHidden = document.querySelector(".jon_slide");
+const textHidden = document.querySelector(".jon_text");
+
+
+
+
+
+
+
+
+
+
+
 
 buyButton.addEventListener("click", clickBuy);
-nextButton[0].addEventListener("click", goToAddress);
+
+nextButton[0].addEventListener("click", checkUsername);
 nextButton[1].addEventListener("click", goToShipping);
 nextButton[2].addEventListener("click", goToFinish);
+
+
+toggleSwitch.addEventListener("change", changeTheme);
+
+
+
+
+function changeTheme() {
+  if (toggleSwitch.checked) {
+    document.documentElement.setAttribute("mode-changes", "dark");
+  } else {
+    document.documentElement.setAttribute("mode-changes", "light");
+  }
+}
+
+
+
 
 function clickBuy() {
   // go to the profile page.
   // background changes
-  main.className = "profile-background";
+  mainBackground.className = "profile-background";
   footer.style.background = "none";
   productPage.style.display = "none";
   profilePage.style.display = "block";
+  profileBody[0].style.display = "block";
   displayProfile();
   registerTimer();
+
+  // jon slide hidden 
+  slideHidden.style.display = "none";
+  textHidden.style.display = "none";
 }
 
+function checkUsername() {
+  var regTypeUser =  /^[A-Za-z0-9*]{5,20}$/
+  var regTypeEmail = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])"
+  if (userName.validity.valueMissing) {
+    warningMessage.style.visibility = "visible"
+    //warningMessage.className ="warning-message";
+    warningMessage.textContent = "Please Enter the Username";
+    
+  } else {
+    if (!regTypeUser.test(userName.value)) {
+      warningMessage.className ="warning-message";
+      warningMessage.textContent = "Only letters (either case), numbers, between 5 and 20 characters."
+      removeEventProfile();
+    }else {
+      warningMessage.classList.remove("warning-message");
+      goToAddress();
+    }
+  }
+}
+
+function removeEventProfile(){
+  nextButton[0].removeEventListener("click", goToAddress);
+}
+
+
 function goToAddress() {
-  main.className = "address-background";
+  mainBackground.className = "address-background";
   profileButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   addressButtons.forEach((ele) => (ele.style.visibility = "visible"));
   displayAddress();
 }
 
 function goToShipping() {
-  main.className = "shipping-background";
+  mainBackground.className = "shipping-background";
   addressButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   shippingButtons.forEach((ele) => (ele.style.visibility = "visible"));
   displayShipping();
 }
 
 function goToFinish() {
-  main.className = "finish-background";
+  mainBackground.className = "finish-background";
   shippingButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   finishButton.style.visibility = "visible";
   displayFinish();
 }
 
 function goBackToProduct() {
-  main.style.display = block;
+  mainBackground.className = "main-background"
+  main.style.display = "block";
+  productPage.style.display = "flex"
+  profileBody[0].style.display = "none"
 }
+
+
+
+
 function displayProfile() {
   profileBar.style.backgroundColor = "rgb(250, 184, 4)";
+  
 }
+
 function displayAddress() {
   addressBar.style.backgroundColor = "rgb(250, 184, 4)";
+  profileBody[0].style.display = "none"
 }
 
 function displayShipping() {
   shippingBar.style.backgroundColor = "rgb(250, 184, 4)";
 }
+
 function displayFinish() {
   finishBar.style.backgroundColor = "rgb(250, 184, 4)";
 }
@@ -90,15 +178,13 @@ function registerTimer() {
 
   var x = setInterval(function () {
     time--;
-    var count = 5;
-    var y = setTimeout(function() {
-    count--
+    timerMessage.style.visibility = "visible"
+    timerMessage.style.backgroundColor = "rgb(39, 38, 38)"
     timerMessage.innerHTML =`You started registering ${(min += 1)} minutes ago!`;
-    if(count === 0) {
-      clearTimeout(y);
-      timerMessage.innerHTML = "";
-    }
-    }, 1000)
+    
+    setTimeout(function () {
+        timerMessage.style.visibility = "hidden"
+    }, 5000);
 
     if (time === 0) {
       clearInterval(x);
@@ -107,72 +193,4 @@ function registerTimer() {
   }, 60000);
 }
 
-// function clickNext() {
-//     const nextButton = document.getElementById("next");
-//     nextButton.addEventListener("click", clickNext)
 
-//      main.className = "address-background"
-//      progressBar.style.width = "50%";
-
-//     addressFooter();
-// }
-
-// profile
-// function profileFooter() {
-//   footerSection.removeChild(mainFooterPicture);
-//   footerSection.removeChild(mainFooterDisc);
-//   footerButtons.removeChild(buyButton)
-
-//   progressName.removeChild(progressName.firstChild);
-//   progressName.setAttribute("class", "progressText");
-
-//   profileFooterStyle();
-
-//   addProfile();
-//   addAddress();
-//   addShipping();
-//   addFinish();
-
-//   createButtons();
-
-// buyButton.removeEventListener("click", clickBuy);
-
-// }
-
-// address footer
-
-// create reset and next buttons
-
-// function createButtons() {
-//   let resetBtn = document.createElement("input");
-//   footerButtons.appendChild(resetBtn);
-//   resetBtn.setAttribute("type", "reset");
-//   resetBtn.setAttribute("id", "reset");
-//   resetBtn.setAttribute("value", "CLEAR");
-//   resetBtn.setAttribute("class", "buttons");
-//   resetBtn.style.backgroundColor = "#ddd";
-//   let nextBtn = document.createElement("input");
-//   footerButtons.appendChild(nextBtn);
-//   nextBtn.setAttribute("type", "submit");
-//   nextBtn.setAttribute("id", "next");
-//   nextBtn.setAttribute("value", "NEXT");
-//   nextBtn.setAttribute("class", "buttons");
-// }
-
-// style
-
-// function profileFooterStyle() {
-//   mainFooterBox.style.width = "100%";
-//   mainFooterBox.style.backgroundColor="transparent"
-//   progress.style.width = "86%";
-//   progress.style.margin = "0 7%";
-//   progressBar.style.width = "25%";
-//   footerButtons.style.margin = "0 10%"
-// }
-
-// function addressFooterStyle() {
-// // footerButtons.className = "address-buttons"
-
-// }
-
-// adding progress bar steps in text
