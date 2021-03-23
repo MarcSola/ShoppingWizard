@@ -1,4 +1,6 @@
 const mainBackground = document.querySelector("main.main");
+const mainTest = document.querySelectorAll("main section .blackgrnd")
+console.log(mainTest)
 const footer = document.getElementById("footer");
 
 const progressBar = document.getElementById("progress-bar");
@@ -34,7 +36,6 @@ const finishButton = document.querySelector("#finish-li .buttons");
 
 const timerMessage = document.querySelector("#timer-msg");
 const warningMessage = document.querySelector(".warning-message");
-console.log(warningMessage)
 
 const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
 
@@ -101,7 +102,8 @@ function clickBuy() {
 
 function checkUsername() {
   var regTypeUser =  /^[A-Za-z0-9*]{5,20}$/
-  var regTypeEmail = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])"
+  var regTypeEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/
+
   if (userName.validity.valueMissing) {
     warningMessage.style.visibility = "visible"
     //warningMessage.className ="warning-message";
@@ -146,12 +148,21 @@ function goToFinish() {
 }
 
 function goBackToProduct() {
-  mainBackground.className = "main-background"
-  main.style.display = "block";
+  mainBackground.className = "main"
+  slideHidden.style.display = "block";
+  textHidden.style.display = "block";
+ 
+  //change();     when you call this function here from jon's javascript, it works but error appears on console. 
+
+  mainBackground.style.display = "block";
+  profilePage.style.display = "none"
+
   productPage.style.display = "flex"
+  productPage.style.flexDirection="row"
   profileBody[0].style.display = "none"
 }
 
+console.log(productPage, "product page")
 
 
 
