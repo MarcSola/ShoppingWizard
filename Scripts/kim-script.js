@@ -97,14 +97,16 @@ function clickBuy() {
 
 
 function checkUsername() {
-  var regType =  /^[A-Za-z0-9*]{5,20}$/;
+  var regTypeUser =  /^[A-Za-z0-9*]{5,20}$/
+  var regTypeEmail = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])"
   if (userName.validity.valueMissing) {
-    warningMessage.classList.add("warning-message");
+    warningMessage.style.visibility = "visible"
+    //warningMessage.className ="warning-message";
     warningMessage.textContent = "Please Enter the Username";
     
   } else {
-    if (!regType.test(userName.value)) {
-      warningMessage.classList.add("warning-message");
+    if (!regTypeUser.test(userName.value)) {
+      warningMessage.className ="warning-message";
       warningMessage.textContent = "Only letters (either case), numbers, between 5 and 20 characters."
       removeEventProfile();
     }else {

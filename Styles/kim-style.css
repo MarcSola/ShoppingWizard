@@ -262,8 +262,7 @@ ul li {
     height: 40px;
     width: 250px;
     border: 1px solid rgba(209, 207, 207, 0.651);;
-    margin-top: 5px;
-    margin-bottom: 25px;
+    margin: 5px 0 3px 0;
     padding: 10px;
     outline: none;
     border-radius: 2px;
@@ -281,17 +280,19 @@ input:required:valid {
   input:focus:invalid {
     background-size: 25px;
   }
-  
+  .profile-wrappers {
+    margin-bottom: 30px;
+  }
+
   .warning-message {
-    border-left: 6px solid red;
-    height: 25px;
+    height: fit-content;
     width: 100%;
     padding: 5px;
     font-size: 80%;
-    color: rgba(124, 3, 3);
     background-color: rgba(248, 9, 9, 0.3);
     border-radius: 0 0 5px 5px;
     box-sizing: border-box;
+    visibility: hidden;
   }
 
 .progress-box {
