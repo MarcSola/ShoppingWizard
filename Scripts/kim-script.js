@@ -43,8 +43,9 @@ const userName = document.getElementById("username");
 
 
 
-// jon slide hidden in profile 
+// jon slide and text hidden in profile 
 const slideHidden = document.querySelector(".jon_slide");
+const textHidden = document.querySelector(".jon_text");
 
 
 
@@ -86,15 +87,15 @@ function clickBuy() {
   mainBackground.className = "profile-background";
   footer.style.background = "none";
   productPage.style.display = "none";
-  profilePage.style.display = "block"
-  profileBody[0].style.display = "block"
+  profilePage.style.display = "block";
+  profileBody[0].style.display = "block";
   displayProfile();
   registerTimer();
 
   // jon slide hidden 
-  slideHidden.style.display = "none"
+  slideHidden.style.display = "none";
+  textHidden.style.display = "none";
 }
-
 
 function checkUsername() {
   var regType1 = /^[A-Za-z0-9*]$/;
