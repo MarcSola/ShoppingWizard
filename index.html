@@ -80,28 +80,28 @@
     </div>
   <!-- Separation with FLEX of the main body and the Aside section  -->
   <div class="grid-body">
-    <!--<div class="main-background"></div>-->
+    
     <div class="profile-p">
       
       <form id="profile-form">
-        
         <div class="profile-wrappers">
-           Username <input type="text" name="username" id="username" minlength="5" maxlength="20" required><span
-           class="warning"></span>
+          Username <input type="text" name="username" id="username" required>
+          <span class="warning-message"></span>
         </div>
-         <div class="profile-wrappers">
-           Email <input type="email" name="email" id="email" maxlength="50" required
-           pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"><br>
-           <span class="warning"></span>
-         </div>
-         <div class="profile-wrappers">
-           Password <input type="password" name="password" id="password" minlength="8" maxlength="20" required>
-           <span class="warning"></span>
-         </div>
-         <div class="profile-wrappers">
-           Confirm Password <input type="password" name="password2" id="password2" minlength="8" maxlength="20" required>
-           <span class="warning"></span>
-         </div>
+        <div class="profile-wrappers">
+          Email <input type="email" name="email" id="email" maxlength="50" required
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+          <span class="warning-message"></span>
+        </div>
+        <div class="profile-wrappers">
+          Password <input type="password" name="password" id="password" minlength="8" maxlength="20" required>
+          <span class="warning-message"></span>
+        </div>
+        <div class="profile-wrappers">
+          Confirm Password <input type="password" name="password2" id="password2" minlength="8" maxlength="20" required>
+          <span class="warning-message"></span>
+        </div>
+
 
       </form>
       <p id=demo></p>
@@ -113,13 +113,13 @@
       <section class="title-header">
         <p id="timer-msg"></p>
         <div class="switch-wrapper">
-            <label class="switch" for="checkbox">
-              <input type="checkbox" id="checkbox" />
-              <div class="slider round"></div>
-            </label>
-          </div>
+          <label class="switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+        </div>
         <nav class="erick-nav" id="erick-nav">
-         
+
           <ul class="erick-nav-list" id="erick-nav-list">
             <li>Home</li>
             <li>products</li>
