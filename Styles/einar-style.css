@@ -46,6 +46,7 @@ aside div img {
     background-color: rgb(255, 255, 255);
     margin: 15px 15px 15px 15px;
     padding: 15px 15px 15px 15px;
+    
 }
 
 section h3 {
@@ -76,6 +77,7 @@ aside section div input {
     height: 100%;
     text-align: center;
     object-fit: cover;
+    
 }
 
 aside div p {
