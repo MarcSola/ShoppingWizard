@@ -34,6 +34,7 @@ const finishButton = document.querySelector("#finish-li .buttons");
 
 const timerMessage = document.querySelector("#timer-msg");
 const warningMessage = document.querySelector(".warning-message");
+console.log(warningMessage)
 
 const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
 
@@ -108,7 +109,7 @@ function checkUsername() {
     
   } else {
     if (!regTypeUser.test(userName.value)) {
-      warningMessage.className ="warning-message";
+      warningMessage.style.visibility = "visible"
       warningMessage.textContent = "Only letters (either case), numbers, between 5 and 20 characters."
       removeEventProfile();
     }else {
