@@ -25,8 +25,8 @@ z-index: 9000;
 	width: max-content;
 }
 .erick-nav ul li:hover{
+	cursor:pointer;
 	border-bottom:solid 2px;
-	border-color: white;
 }
 .active{
 	color:#FF00E6;
