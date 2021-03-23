@@ -23,7 +23,8 @@ const shippingBar = document.getElementById("shipping").childNodes[1];
 const finishBar = document.getElementById("finish").childNodes[1];
 
 const nextButton = document.getElementsByName("next");
-const resetButton = document.getElementsByName("reset");
+
+const profileClearButton = document.getElementById("profile-reset");
 
 const profileButtons = document.querySelectorAll("#profile-li .buttons");
 const addressButtons = document.querySelectorAll("#address-li .buttons");
@@ -33,16 +34,36 @@ const finishButton = document.querySelector("#finish-li .buttons");
 const timerMessage = document.querySelector("#timer-msg");
 const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
 
+const profileBody = document.querySelectorAll(".profile-p");
+const profileForm = document.getElementById("profile-form");
 
-const profileInputs = document.querySelectorAll(".profile-p");
-console.log(profileInputs)
+
+
+// jon slide hidden in profile 
+const slideHidden = document.querySelector(".jon_slide");
+
+
+
+
+
+
+
+
+
+
+
+
 buyButton.addEventListener("click", clickBuy);
+
 nextButton[0].addEventListener("click", goToAddress);
 nextButton[1].addEventListener("click", goToShipping);
 nextButton[2].addEventListener("click", goToFinish);
+
+
 toggleSwitch.addEventListener("change", changeTheme);
 
-console.log(resetButton)
+
+
 
 function changeTheme() {
   if (toggleSwitch.checked) {
@@ -62,11 +83,13 @@ function clickBuy() {
   footer.style.background = "none";
   productPage.style.display = "none";
   profilePage.style.display = "block"
-  profileInputs[0].style.display = "block"
+  profileBody[0].style.display = "block"
   displayProfile();
   registerTimer();
-}
 
+  // jon slide hidden 
+  slideHidden.style.display = "none"
+}
 
 function goToAddress() {
   mainBackground.className = "address-background";
@@ -93,7 +116,7 @@ function goBackToProduct() {
   mainBackground.className = "main-background"
   main.style.display = "block";
   productPage.style.display = "flex"
-  profileInputs[0].style.display = "none"
+  profileBody[0].style.display = "none"
 }
 
 
@@ -106,7 +129,7 @@ function displayProfile() {
 
 function displayAddress() {
   addressBar.style.backgroundColor = "rgb(250, 184, 4)";
-  profileInputs[0].style.display = "none"
+  profileBody[0].style.display = "none"
 }
 
 function displayShipping() {
@@ -138,72 +161,3 @@ function registerTimer() {
   }, 60000);
 }
 
-// function clickNext() {
-//     const nextButton = document.getElementById("next");
-//     nextButton.addEventListener("click", clickNext)
-
-//      main.className = "address-background"
-//      progressBar.style.width = "50%";
-
-//     addressFooter();
-// }
-
-// profile
-// function profileFooter() {
-//   footerSection.removeChild(mainFooterPicture);
-//   footerSection.removeChild(mainFooterDisc);
-//   footerButtons.removeChild(buyButton)
-
-//   progressName.removeChild(progressName.firstChild);
-//   progressName.setAttribute("class", "progressText");
-
-//   profileFooterStyle();
-
-//   addProfile();
-//   addAddress();
-//   addShipping();
-//   addFinish();
-
-//   createButtons();
-
-// buyButton.removeEventListener("click", clickBuy);
-
-// }
-
-// address footer
-
-// create reset and next buttons
-
-// function createButtons() {
-//   let resetBtn = document.createElement("input");
-//   footerButtons.appendChild(resetBtn);
-//   resetBtn.setAttribute("type", "reset");
-//   resetBtn.setAttribute("id", "reset");
-//   resetBtn.setAttribute("value", "CLEAR");
-//   resetBtn.setAttribute("class", "buttons");
-//   resetBtn.style.backgroundColor = "#ddd";
-//   let nextBtn = document.createElement("input");
-//   footerButtons.appendChild(nextBtn);
-//   nextBtn.setAttribute("type", "submit");
-//   nextBtn.setAttribute("id", "next");
-//   nextBtn.setAttribute("value", "NEXT");
-//   nextBtn.setAttribute("class", "buttons");
-// }
-
-// style
-
-// function profileFooterStyle() {
-//   mainFooterBox.style.width = "100%";
-//   mainFooterBox.style.backgroundColor="transparent"
-//   progress.style.width = "86%";
-//   progress.style.margin = "0 7%";
-//   progressBar.style.width = "25%";
-//   footerButtons.style.margin = "0 10%"
-// }
-
-// function addressFooterStyle() {
-// // footerButtons.className = "address-buttons"
-
-// }
-
-// adding progress bar steps in text
