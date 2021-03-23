@@ -2,10 +2,9 @@ var imgArray = document.querySelectorAll('section.asideContainerEinar div.asideI
 console.log(imgArray)
 imgArray.forEach(function(moveImages) {
     // do whatever
-    
+
     moveImages.addEventListener('mouseover', hov)
     moveImages.addEventListener('mouseleave', no_hov)
-});
 
     function no_hov(event) {
         option = event.target;
@@ -13,13 +12,24 @@ imgArray.forEach(function(moveImages) {
         option.style.transition = '0.5s';
         option.style.borderRadius = '';
         option.style.border = '';
+        option.style.animation = '';
+
     }
 
     function hov(event) {
         option = event.target;
-        option.style.transform = ' scale(1.1)';
-        option.style.transition = '0.8s';
-        
-        option.style.border = '0.2px solid gray'
+        option.style.transform = 'translateY(-2px) translateX(+2px) scale(1.1)';
+        option.style.transition = '0.5s';
+        option.style.borderRadius = '10px';
+        option.style.border = '5px solid rgb(255, 204, 0)'
+        option.style.animation = 'glitch1 2.5s infinite'
     }
+});
 
+/* /////////////////////////// */
+
+
+/* This function     */
+
+
+/* /////////////////////////// */

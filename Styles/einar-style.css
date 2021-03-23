@@ -8,19 +8,20 @@
 
 
 /* /////////////////////////// */
-.aside{
+
+.aside {
     width: 100%;
     padding: 0 5%;
     background-color: grey;
 }
+
 .asideLogoEinar {
-    
-    height: 1vh;
+    flex: auto;
+    height: 100px;
     min-height: 100px;
     max-width: 10vw;
     text-align: center;
     margin: 15px 15px 15px 15px;
-    /* object-fit: cover; */
 }
 
 
@@ -47,10 +48,8 @@ aside div img {
 /* /////////////////////////// */
 
 .asideContainerClassEinar {
-   
     margin: 15px 15px 15px 15px;
     padding: 15px 15px 15px 15px;
-    
 }
 
 section h3 {
@@ -59,7 +58,6 @@ section h3 {
     font-family: 'Orbitron', sans-serif;
     color: rgb(112, 78, 78);
     font-weight: bold;
-    
     font-size: 15px;
 }
 
@@ -73,6 +71,7 @@ section h3 {
 /* /////////////////////////// */
 
 .asideImgContainerClassEinar {
+    object-fit: cover;
 }
 
 aside section div input {
@@ -80,7 +79,7 @@ aside section div input {
     height: 100%;
     text-align: center;
     object-fit: cover;
-    
+    margin: 50px 5px 5px 5px;
 }
 
 aside div p {
@@ -88,7 +87,6 @@ aside div p {
     text-align: center;
     font-family: 'Orbitron', sans-serif;
     color: rgb(78, 78, 78);
-    
     font-size: 10px;
 }
 
@@ -104,17 +102,20 @@ aside div p {
 .asideSocialMediaContainerClassEinar {
     display: flex;
     flex-direction: column;
-   
     margin: 100px 5px 5px 5px;
-    height: 1vh;
+    height: 5vh;
+    width: 18vh;
     min-height: 100px;
     max-width: 10vw;
     text-align: center;
-    /* position: fixed; */
+    position: fixed;
     bottom: 0;
+    background-color: black;
 }
 
 div span i {
-    width: 30px;
-    height: 30px;
+    width: 30%;
+    height: 30%;
+    text-align: center;
+    color: white;
 }
