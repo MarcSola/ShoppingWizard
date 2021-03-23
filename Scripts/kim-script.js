@@ -1,4 +1,4 @@
-const main = document.getElementById("main");
+const mainBackground = document.querySelector(".main-background");
 const footer = document.getElementById("footer");
 
 const progressBar = document.getElementById("progress-bar");
@@ -13,7 +13,6 @@ const mainFooterPicture = document.getElementById("main-footer-picture");
 const mainFooterDisc = document.getElementById("main-footer-disc");
 
 const productPage = document.getElementById("product-p");
-console.log(productPage)
 const profilePage = document.getElementById("profile-p");
 
 
@@ -25,22 +24,48 @@ const finishBar = document.getElementById("finish").childNodes[1];
 
 const nextButton = document.getElementsByName("next");
 
+const profileClearButton = document.getElementById("profile-reset");
+
 const profileButtons = document.querySelectorAll("#profile-li .buttons");
 const addressButtons = document.querySelectorAll("#address-li .buttons");
 const shippingButtons = document.querySelectorAll("#shipping-li .buttons");
 const finishButton = document.querySelector("#finish-li .buttons");
 
 const timerMessage = document.querySelector("#timer-msg");
+const warningMessage = document.querySelector(".warning-message");
+
 const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
 
+const profileBody = document.querySelectorAll(".profile-p");
+const profileForm = document.getElementById("profile-form");
 
-const profileInputs = document.querySelectorAll(".profile-p")
-console.log(profileInputs[0])
+const userName = document.getElementById("username");
+
+
+
+// jon slide hidden in profile 
+const slideHidden = document.querySelector(".jon_slide");
+
+
+
+
+
+
+
+
+
+
+
+
 buyButton.addEventListener("click", clickBuy);
-nextButton[0].addEventListener("click", goToAddress);
+
+nextButton[0].addEventListener("click", checkUsername);
 nextButton[1].addEventListener("click", goToShipping);
 nextButton[2].addEventListener("click", goToFinish);
+
+
 toggleSwitch.addEventListener("change", changeTheme);
+
 
 
 
@@ -58,45 +83,74 @@ function changeTheme() {
 function clickBuy() {
   // go to the profile page.
   // background changes
-  main.className = "profile-background";
+  mainBackground.className = "profile-background";
   footer.style.background = "none";
   productPage.style.display = "none";
   profilePage.style.display = "block"
-  profileInputs[0].style.display = "block"
+  profileBody[0].style.display = "block"
   displayProfile();
   registerTimer();
+
+  // jon slide hidden 
+  slideHidden.style.display = "none"
+}
+
+
+function checkUsername() {
+  var regType1 = /^[A-Za-z0-9*]$/;
+  var regType2 = /^[A-Za-z0-9*]{5,20}$/;
+  if (userName.validity.valueMissing) {
+    warningMessage.classList.add("warning-message");
+    warningMessage.textContent = "Please Enter the Username";
+    
+  } else {
+    if (!regType1.test(userName.value)) {
+      warningMessage.classList.add("warning-message");
+      warningMessage.textContent = "Please use letters and numbers only";
+      removeEventProfile();
+    } else if (!regType2.test(userName.value)) {
+        warningMessage.classList.add("warning-message");
+        warningMessage.textContent = "5 - 20 letters";
+        removeEventProfile();
+      } else {
+      warningMessage.classList.remove("warning-message");
+      goToAddress();
+    }
+  }
+}
+
+function removeEventProfile(){
+  nextButton[0].removeEventListener("click", checkUsername);
 }
 
 
 function goToAddress() {
-  main.className = "address-background";
+  mainBackground.className = "address-background";
   profileButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   addressButtons.forEach((ele) => (ele.style.visibility = "visible"));
   displayAddress();
 }
 
 function goToShipping() {
-  main.className = "shipping-background";
+  mainBackground.className = "shipping-background";
   addressButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   shippingButtons.forEach((ele) => (ele.style.visibility = "visible"));
   displayShipping();
 }
 
 function goToFinish() {
-  main.className = "finish-background";
+  mainBackground.className = "finish-background";
   shippingButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   finishButton.style.visibility = "visible";
   displayFinish();
 }
 
-// function goBackToProduct() {
-//   main.className = "main"
-//   main.style.display = "block";
-//   productPage.style.display= "block";
-//   mainFooterBox.style.display = "block" 
-//   mainFooterDisc.style.display = "block"
-//   mainFooterPicture.style.display = "block";
-// }
+function goBackToProduct() {
+  mainBackground.className = "main-background"
+  main.style.display = "block";
+  productPage.style.display = "flex"
+  profileBody[0].style.display = "none"
+}
 
 
 
@@ -108,7 +162,7 @@ function displayProfile() {
 
 function displayAddress() {
   addressBar.style.backgroundColor = "rgb(250, 184, 4)";
-  profileInputs[0].style.display = "none"
+  profileBody[0].style.display = "none"
 }
 
 function displayShipping() {
@@ -127,7 +181,6 @@ function registerTimer() {
     time--;
     timerMessage.style.visibility = "visible"
     timerMessage.style.backgroundColor = "rgb(39, 38, 38)"
-    timerMessage.style.border ="1px solid rgb(250, 184, 4)"
     timerMessage.innerHTML =`You started registering ${(min += 1)} minutes ago!`;
     
     setTimeout(function () {
@@ -141,72 +194,4 @@ function registerTimer() {
   }, 60000);
 }
 
-// function clickNext() {
-//     const nextButton = document.getElementById("next");
-//     nextButton.addEventListener("click", clickNext)
 
-//      main.className = "address-background"
-//      progressBar.style.width = "50%";
-
-//     addressFooter();
-// }
-
-// profile
-// function profileFooter() {
-//   footerSection.removeChild(mainFooterPicture);
-//   footerSection.removeChild(mainFooterDisc);
-//   footerButtons.removeChild(buyButton)
-
-//   progressName.removeChild(progressName.firstChild);
-//   progressName.setAttribute("class", "progressText");
-
-//   profileFooterStyle();
-
-//   addProfile();
-//   addAddress();
-//   addShipping();
-//   addFinish();
-
-//   createButtons();
-
-// buyButton.removeEventListener("click", clickBuy);
-
-// }
-
-// address footer
-
-// create reset and next buttons
-
-// function createButtons() {
-//   let resetBtn = document.createElement("input");
-//   footerButtons.appendChild(resetBtn);
-//   resetBtn.setAttribute("type", "reset");
-//   resetBtn.setAttribute("id", "reset");
-//   resetBtn.setAttribute("value", "CLEAR");
-//   resetBtn.setAttribute("class", "buttons");
-//   resetBtn.style.backgroundColor = "#ddd";
-//   let nextBtn = document.createElement("input");
-//   footerButtons.appendChild(nextBtn);
-//   nextBtn.setAttribute("type", "submit");
-//   nextBtn.setAttribute("id", "next");
-//   nextBtn.setAttribute("value", "NEXT");
-//   nextBtn.setAttribute("class", "buttons");
-// }
-
-// style
-
-// function profileFooterStyle() {
-//   mainFooterBox.style.width = "100%";
-//   mainFooterBox.style.backgroundColor="transparent"
-//   progress.style.width = "86%";
-//   progress.style.margin = "0 7%";
-//   progressBar.style.width = "25%";
-//   footerButtons.style.margin = "0 10%"
-// }
-
-// function addressFooterStyle() {
-// // footerButtons.className = "address-buttons"
-
-// }
-
-// adding progress bar steps in text
