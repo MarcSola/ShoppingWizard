@@ -65,6 +65,8 @@ function clickBuy() {
   profileInputs[0].style.display = "block"
   displayProfile();
   registerTimer();
+ 
+
 }
 
 
