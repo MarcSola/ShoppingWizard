@@ -83,21 +83,25 @@
     
     <div class="profile-p">
       
-      <form id="profile-form">
+      <form id="profile-form" name="profile-form">
         <div class="profile-wrappers">
-          Username <input type="text" name="username" id="username" required>
+          Username <br> <input type="text" name="username" id="username" required>
+          <span style="font-size:8px">Only letters (either case), numbers, between 5 and 20 characters.</span><br>
           <span class="warning-message"></span>
         </div>
         <div class="profile-wrappers">
-          Email <input type="email" name="email" id="email" maxlength="50" required>
+          Email <br> <input type="email" name="email" id="user-email" required>
+          <span style="font-size:8px">Less than 50 characters. The general format of an email address is required.</span><br>
           <span class="warning-message"></span>
         </div>
         <div class="profile-wrappers">
-          Password <input type="password" name="password" id="password" minlength="8" maxlength="20" required>
+          Password <br> <input type="password" name="password1" id="password1" required>
+          <span style="font-size:8px">Password should contain at least one number, one uppercase, one lowercase, one special character.</span><br>
           <span class="warning-message"></span>
         </div>
         <div class="profile-wrappers">
-          Confirm Password <input type="password" name="password2" id="password2" minlength="8" maxlength="20" required>
+          Confirm Password <br><input type="password" name="password2" id="password2" required>
+          <span style="font-size:8px">Confirm your password.</span><br>
           <span class="warning-message"></span>
         </div>
 

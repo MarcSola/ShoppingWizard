@@ -250,7 +250,7 @@ ul li {
   margin: 10%;
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 100%;
   color: rgba(245, 239, 239, 0.945);
   letter-spacing: 1px
 }
@@ -267,7 +267,7 @@ ul li {
     border-radius: 2px;
 }
 
-input:required:valid {
+/* input:required:valid {
     border-color: green;
   }
   input:invalid {
@@ -281,7 +281,7 @@ input:required:valid {
   }
   .profile-wrappers {
     margin-bottom: 30px;
-  }
+  } */
 
   .warning-message {
     height: fit-content;
@@ -292,6 +292,7 @@ input:required:valid {
     border-radius: 0 0 5px 5px;
     box-sizing: border-box;
     visibility: hidden;
+    line-height: 27px;
   }
 
 .progress-box {
