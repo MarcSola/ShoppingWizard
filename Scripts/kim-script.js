@@ -22,6 +22,9 @@ const profileBar = document.getElementById("profile").childNodes[1];
 const addressBar = document.getElementById("address").childNodes[1];
 const shippingBar = document.getElementById("shipping").childNodes[1];
 const finishBar = document.getElementById("finish").childNodes[1];
+const adressForm = document.querySelector(' div.adress');
+const all_Imputs_Adress=document.querySelectorAll(' div.adress input');
+const all_message_Adress=document.querySelectorAll(' div.adress form div span');
 
 const nextButton = document.getElementsByName("next");
 
@@ -63,7 +66,7 @@ const textHidden = document.querySelector(".jon_text");
 buyButton.addEventListener("click", clickBuy);
 
 nextButton[0].addEventListener("click", checkUsername);
-nextButton[1].addEventListener("click", goToShipping);
+nextButton[1].addEventListener("click", checkAdress);
 nextButton[2].addEventListener("click", goToFinish);
 
 
@@ -98,6 +101,9 @@ function clickBuy() {
   slideHidden.style.display = "none";
   textHidden.style.display = "none";
 }
+/*_____________VALIDACIONES______________*/
+
+/*_________________________________UserName*/
 
 function checkUsername() {
   var regTypeUser =  /^[A-Za-z0-9*]{5,20}$/
@@ -112,12 +118,52 @@ function checkUsername() {
       warningMessage.style.visibility = "visible"
       warningMessage.textContent = "Only letters (either case), numbers, between 5 and 20 characters."
       removeEventProfile();
+      console.log()
     }else {
       warningMessage.classList.remove("warning-message");
       goToAddress();
     }
   }
 }
+/*______________________________Adress*/
+
+function checkAdress() {
+  
+x=0;
+for(i=0;i<all_Imputs_Adress.length;i++){
+
+  if (all_Imputs_Adress[i].checkValidity()===false) {
+        if (i===2){
+        all_message_Adress[i].style.visibility='visible';
+        all_message_Adress[i].innerText = "Please writeby this format: dd/mm/aaaa";
+        }else{
+        
+        all_message_Adress[i].style.visibility='visible';
+        all_message_Adress[i].innerText = "Please Enter the "+all_Imputs_Adress[i].name;
+        console.log(all_message_Adress[i].innerText);
+        }
+      
+    
+  
+  }else if(all_Imputs_Adress[i].checkValidity()===true){
+      x=x+1;
+      all_message_Adress[i].style.visibility='hidden';
+      if(x===all_Imputs_Adress.length){
+        goToShipping();
+      }
+  }
+    
+    
+}
+  
+  
+  
+ 
+
+}
+
+  
+
 
 function removeEventProfile(){
   nextButton[0].removeEventListener("click", goToAddress);
@@ -126,16 +172,21 @@ function removeEventProfile(){
 
 function goToAddress() {
   mainBackground.className = "address-background";
+  adressForm.style.display='block'
+
   profileButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   addressButtons.forEach((ele) => (ele.style.visibility = "visible"));
   displayAddress();
 }
 
 function goToShipping() {
-  mainBackground.className = "shipping-background";
-  addressButtons.forEach((ele) => (ele.style.visibility = "hidden"));
-  shippingButtons.forEach((ele) => (ele.style.visibility = "visible"));
-  displayShipping();
+
+    mainBackground.className = "shipping-background";
+    addressButtons.forEach((ele) => (ele.style.visibility = "hidden"));
+    shippingButtons.forEach((ele) => (ele.style.visibility = "visible"));
+    adressForm.style.display='none'
+    displayShipping();
+  
 }
 
 function goToFinish() {
@@ -161,6 +212,7 @@ function displayProfile() {
 }
 
 function displayAddress() {
+  adressForm.style.display='block'
   addressBar.style.backgroundColor = "rgb(250, 184, 4)";
   profileBody[0].style.display = "none"
 }

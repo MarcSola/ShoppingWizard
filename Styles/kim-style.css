@@ -230,6 +230,7 @@ ul li {
   display: flex;
   justify-content: space-evenly;
 }
+/*______________________________profile*/
 
 #profile-p {
   height: 150px;
@@ -266,13 +267,49 @@ ul li {
     outline: none;
     border-radius: 2px;
 }
+/*________________________________________-adress*/
+
+
+.adress {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+}
+
+.adress form {
+  margin: 10%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-column-gap:100px;
+  width: 200px;
+  color: rgba(245, 239, 239, 0.945);
+  letter-spacing: 1px
+}
+
+.adress form input {
+  border:none;
+    background-color:rgb(0, 0, 0);
+    color: rgba(245, 239, 239, 0.945);
+    height: 40px;
+    width: 250px;
+    border-left: 1px solid rgba(209, 207, 207, 0.651);
+    border-bottom: 1px solid rgba(209, 207, 207, 0.651);
+    margin: 5px 0 3px 0;
+    padding: 10px;
+    outline: none;
+    border-radius: 2px;
+}
+/*________________________________________INPUTS*/
 
 input:required:valid {
     border-color: green;
   }
-  input:invalid {
-    border-color: red;
-  }
+  
   input:required:focus:valid {
     background-size: 25px;
   }
