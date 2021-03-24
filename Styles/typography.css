@@ -1,4 +1,14 @@
 
+
+h3{
+	color: #6d6d6d;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+p{
+	color: #505050;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 .glitch{
 	position: relative;
 
