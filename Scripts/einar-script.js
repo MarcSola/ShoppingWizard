@@ -1,8 +1,9 @@
 var imgArray = document.querySelectorAll('section.asideContainerEinar div.asideImgContainerClassEinar input');
-console.log(imgArray)
+//console.log(imgArray)
 imgArray.forEach(function(moveImages) {
     moveImages.addEventListener('mouseover', hov)
     moveImages.addEventListener('mouseleave', no_hov)
+        // moveImages.addEventListener('click',updateValue);
 
     function no_hov(event) {
         option = event.target;
@@ -31,3 +32,13 @@ imgArray.forEach(function(moveImages) {
 
 
 /* /////////////////////////// */
+
+var AllOptionprices = document.getElementsByTagName("option");
+//console.log(AllOptionprices)
+AllOptionprices.forEach(function(showSelectedPrice) {
+    showSelectedPrice.addEventListener('click', clickf)
+
+    function clickf(event) {
+        document.getElementById("finalPriceEinar").innerHTML = "change this price";
+    }
+});
