@@ -45,6 +45,8 @@ aside div img {
 .asideContainerClassEinar {
     background-color: rgb(255, 255, 255);
     margin: 15px 15px 15px 15px;
+    padding: 15px 15px 15px 15px;
+    
 }
 
 section h3 {
@@ -52,7 +54,7 @@ section h3 {
     text-align: center;
     font-family: 'Orbitron', sans-serif;
     color: rgb(112, 78, 78);
-    ont-weight: bold;
+    font-weight: bold;
     background-color: rgb(255, 255, 255);
     font-size: 15px;
 }
@@ -70,11 +72,12 @@ section h3 {
     background-color: rgb(255, 255, 255);
 }
 
-aside section div img {
+aside section div input {
     width: 100%;
     height: 100%;
     text-align: center;
     object-fit: cover;
+    
 }
 
 aside div p {

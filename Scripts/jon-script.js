@@ -16,6 +16,11 @@ function run(){
     var forth=document.querySelector('.cuatr');
     var five=document.querySelector('.cinc');
     //por un lado la que esta primera
+<<<<<<< HEAD
+=======
+    total_cont=document.querySelector()
+    total_cont.insertBefore(container, total_cont.firstChild);
+>>>>>>> Kim
     
     
     //por otro lado la imagen que recive el click

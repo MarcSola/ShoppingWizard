@@ -1,7 +1,9 @@
 :root {
-    --mainBlack: black;
-    --mainOrange: rgb(250, 184, 4);
-    --mainDarkGray: rgb(39, 38, 38);
+  --mainBlack: black;
+  --mainOrange: rgb(250, 184, 4);
+  --mainDarkGray: rgb(39, 38, 38);
+  --mainDarkGray: rgba(110, 108, 108, 0.473);
+
 }
 
 .main {
@@ -11,259 +13,300 @@
     background-position: right;
 }
 .profile-background {
-    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_11.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: contrast(0.5); 
-    transition: all 2s;
-    display: block;
-
+  background-image: url("../Resources/images/product-images/aether_air_purifying_bike_11.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: contrast(0.5);
+  transition: all 2s;
+  display: block;
+  height: 100%;
 }
 .address-background {
-    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_6.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: contrast(0.5); 
-    transition: all 2s;
-    display: block;
+  background-image: url("../Resources/images/product-images/aether_air_purifying_bike_6.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: contrast(0.5);
+  transition: all 2s;
+  display: block;
+  height: 100%;
 }
 
 .shipping-background {
-    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_9.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: contrast(0.5);
-    transition: all 2s;
-    display: block;
+  background-image: url("../Resources/images/product-images/aether_air_purifying_bike_9.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: contrast(0.5);
+  transition: all 2s;
+  display: block;
+  height: 100%;
 }
 
 .finish-background {
-    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_8.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: contrast(0.5);
-    transition: all 2s;
-    display: block;
+  background-image: url("../Resources/images/product-images/aether_air_purifying_bike_8.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: contrast(0.5);
+  transition: all 2s;
+  display: block;
+  height: 100%;
 }
 
-
 #timer-msg {
-    visibility: visible;
-    color: whitesmoke;
+  visibility: visible;
+  color: whitesmoke;
 }
 
 .switch-wrapper {
-    text-align: right;
+  text-align: right;
 }
 
 .switch {
-    display: inline-block;
-    height: 36px;
-    position: relative;
-    right: 48px;
-    top: -5px;
-  }
-  
-  .switch input {
-    display: none;
-  }
-  
-  .slider {
-    background-color: #ccc;
-    bottom: 0;
-    cursor: pointer;
-    left: 2px;
-    position: absolute;
-    right: 0;
-    top: 15px;
-    transition: 0.4s;
-  }
-  
-  .slider:before {
-    background-color: #fff;
-    bottom: 1px;
-    content: "";
-    left: 1px;
-    position: absolute;
-    transition: 0.4s;
-  }
-  
-  input:checked + .slider {
-    background-color: #a7e6e0;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(17px);
-  }
-  
-  .slider.round {
-    border-radius: 34px;
-    width: 35px;
-    height: 18px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-    height: 16px;
-    width: 16px;
-  }
+  display: inline-block;
+  height: 36px;
+  position: relative;
+  right: 48px;
+  top: -5px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 2px;
+  position: absolute;
+  right: 0;
+  top: 15px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  background-color: #fff;
+  bottom: 1px;
+  content: "";
+  left: 1px;
+  position: absolute;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #a7e6e0;
+}
+
+input:checked + .slider:before {
+  transform: translateX(17px);
+}
+
+.slider.round {
+  border-radius: 34px;
+  width: 35px;
+  height: 18px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+  height: 16px;
+  width: 16px;
+}
 
 ul {
-    text-align: center;
+  text-align: center;
 }
 
 ul li {
-    display: inline-block;
-    width: 300px;
+  display: inline-block;
+  width: 300px;
 }
 
-
 #product-p {
-    height: 150px;
-    display: flex;
-    flex-direction: row;
+  height: 150px;
+  display: flex;
+  flex-direction: row;
 }
 
 #main-footer-box {
-    width: 25%;
-    background-color: rgb(39, 38, 38);
-    color: #ddd;
-    font-size: 15px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    text-align: center;
+  width: 25%;
+  background-color: rgb(39, 38, 38);
+  color: #ddd;
+  font-size: 15px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
 }
-
 
 #buyButton {
-    width: 50%;
-    margin: 0 25%;
-    border-radius: 5px;
-    border-style: none;
-    height: 25px;
-    letter-spacing: 5px;
-    background-color: rgb(250, 184, 4);
+  width: 50%;
+  margin: 0 25%;
+  border-radius: 5px;
+  border-style: none;
+  height: 25px;
+  letter-spacing: 5px;
+  background-color: rgb(250, 184, 4);
 }
 
-.buttons{
-    width: 30%;
-    margin: 0 1%;
-    border-radius: 5px;
-    border-style: none;
-    height: 25px;
-    letter-spacing: 2px;
-    background-color: rgb(250, 184, 4);
+.buttons {
+  width: 30%;
+  margin: 0 1%;
+  border-radius: 5px;
+  border-style: none;
+  height: 25px;
+  letter-spacing: 2px;
+  background-color: rgb(250, 184, 4);
 }
-
 
 /* #footer-buttons {
     text-align: left;
 }  */
 
-#profile-li .buttons{
-    visibility: visible;
+#profile-li .buttons {
+  visibility: visible;
 }
 
-#address-li .buttons{
-    visibility: hidden;
+#address-li .buttons {
+  visibility: hidden;
 }
 
-#shipping-li .buttons{
-    visibility: hidden;
+#shipping-li .buttons {
+  visibility: hidden;
 }
-#finish-li .buttons{
-    visibility: hidden;
-    width: 60%;
+#finish-li .buttons {
+  visibility: hidden;
+  width: 60%;
 }
-
-
 
 #main-footer-picture {
-    width: 25%;
-    height: 100%;
-    background-color: white;
-    display: block;
+  width: 25%;
+  height: 100%;
+  background-color: white;
+  display: block;
 }
 
 #main-footer-disc {
-    width: 50%;
-    height: 100%;
-    padding: 3%;
-    display: block;
+  width: 50%;
+  height: 100%;
+  padding: 3%;
+  display: block;
 }
 
 #main-footer-disc p {
-     color: #ddd;
-     text-align: justify;
-     
+  color: #ddd;
+  text-align: justify;
 }
 
 #progress {
-    width: 80%;
-    background-color:#ddd;
-    border-radius: 5px;
-    margin: 0 10%;
+  width: 80%;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin: 0 10%;
 }
 
 .progress {
-    width: 103%;
-    background-color:#ddd;
-    border-radius: 5px;
-    margin: 10% 0;
+  width: 103%;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin: 10% 0;
 }
 #progress-bar {
-    width: 100%;
-    height: 3px;
-    background-color: rgba(247, 223, 8, 0.63);
+  width: 100%;
+  height: 3px;
+  background-color: rgba(247, 223, 8, 0.63);
 }
 
 .progress-bar {
-    width: 103%;
-    height: 3px;
+  width: 103%;
+  height: 3px;
 }
 
-
 .progressText {
-    display: flex;
-    justify-content: space-evenly;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 #profile-p {
-    height: 150px;
-    display: none;
+  height: 150px;
+  display: none;
 }
 
 .profile-p {
-    display: none;
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
 }
 
 .profile-p form {
-    margin: 10%;
-    
+  margin: 10%;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  color: rgba(245, 239, 239, 0.945);
+  letter-spacing: 1px
 }
 
+.profile-p form input {
+    background-color: black;
+    color: rgba(245, 239, 239, 0.945);
+    height: 40px;
+    width: 250px;
+    border: 1px solid rgba(209, 207, 207, 0.651);;
+    margin: 5px 0 3px 0;
+    padding: 10px;
+    outline: none;
+    border-radius: 2px;
+}
+
+input:required:valid {
+    border-color: green;
+  }
+  input:invalid {
+    border-color: red;
+  }
+  input:required:focus:valid {
+    background-size: 25px;
+  }
+  input:focus:invalid {
+    background-size: 25px;
+  }
+  .profile-wrappers {
+    margin-bottom: 30px;
+  }
+
+  .warning-message {
+    height: fit-content;
+    width: 100%;
+    padding: 5px;
+    font-size: 80%;
+    background-color: rgba(248, 9, 9, 0.3);
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+    visibility: hidden;
+  }
 
 .progress-box {
-    background-color: transparent;
-    height: 100%;
-    width: 100%;
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
 }
-
 
 @keyframes transitionMainPage {
-    from {
-        opacity: 0;
-        transform: rotateX(-20deg);
-    }
-    to {
-        opacity: 1;
-        transform: rotateX(0);
-    }
+  from {
+    opacity: 0;
+    transform: rotateX(-20deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
 }
-

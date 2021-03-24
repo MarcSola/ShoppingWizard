@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Styles/style.css">
+    
     <link rel="stylesheet" href="Styles/einar-style.css">
     <link rel="stylesheet" href="Styles/erick-style.css">
     <link rel="stylesheet" href="Styles/marc-style.css">
@@ -25,8 +26,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 
-
-
     <title>Shopping Wizard</title>
 
 </head>
@@ -39,26 +38,27 @@
     <!----------------
   ----  ASIDE  ----
   ----------------->
-        <aside class="aside" id="aside">
+
+      <aside class="aside" id="aside">
             <div class="asideLogoEinar">
                 <img src="Resources/images/logo/logo-negro.png" alt="Logo">
             </div>
-            <section class="asideContainerClassEinar">
+            <section class="asideContainerEinar">
                 <h3>Related products</h3>
                 <div class="asideImgContainerClassEinar">
-                    <img src="Resources/images/product-images/sedov_b2_bike_2.jpg" alt="Mandragora">
+                    <input type='image' src="Resources/images/product-images/sedov_b2_bike_2.jpg" alt="Mandragora">
                     <p>Mandragora</p>
                 </div>
                 <div class="asideImgContainerClassEinar">
-                    <img src="Resources/images/product-images/sedov_b2_bike_1.jpg" alt="Stylus fire1">
+                    <input type='image' src="Resources/images/product-images/sedov_b2_bike_1.jpg" alt="Stylus fire1">
                     <p>Stylus fire</p>
                 </div>
                 <div class="asideImgContainerClassEinar">
-                    <img src="Resources/images/product-images/sedov_b2_bike_7.jpg" alt="Zebryta">
+                    <input type='image' src="Resources/images/product-images/sedov_b2_bike_7.jpg" alt="Zebryta">
                     <p>Zebryta</p>
                 </div>
                 <div class="asideImgContainerClassEinar">
-                    <img src="Resources/images/product-images/aether_air_purifying_bike_5.jpg" alt="Mamba black">
+                    <input type='image' src="Resources/images/product-images/aether_air_purifying_bike_5.jpg" alt="Mamba black">
                     <p>Mamba black</p>
                 </div>
                 <div class="asideSocialMediaContainerClassEinar">
@@ -78,33 +78,77 @@
             </section>
         </aside>
     </div>
-    <!-- Separation with FLEX of the main body and the Aside section  -->
-    <div class="grid-body">
-        <!----------------
+  <!-- Separation with FLEX of the main body and the Aside section  -->
+  <div class="grid-body">
+    
+    <div class="profile-p">
+      
+      <form id="profile-form">
+        <div class="profile-wrappers">
+          Username <input type="text" name="username" id="username" required>
+          <span class="warning-message"></span>
+        </div>
+        <div class="profile-wrappers">
+          Email <input type="email" name="email" id="email" maxlength="50" required
+            pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?">
+          <span class="warning-message"></span>
+        </div>
+        <div class="profile-wrappers">
+          Password <input type="password" name="password" id="password" minlength="8" maxlength="20" required>
+          <span class="warning-message"></span>
+        </div>
+        <div class="profile-wrappers">
+          Confirm Password <input type="password" name="password2" id="password2" minlength="8" maxlength="20" required>
+          <span class="warning-message"></span>
+        </div>
+
+
+      </form>
+      <p id=demo></p>
+   </div>
+    <!----------------
     ----  HEADER  ----
     ----------------->
-        <header class="header" id="header">
-            <section class="title-header">
-                <p> This is my header</p>
-                <p> this could be a transparent background</p>
-            </section>
-        </header>
+    <header class="header" id="header">
+      <section class="title-header">
+        <p id="timer-msg"></p>
+        <div class="switch-wrapper">
+          <label class="switch" for="checkbox">
+            <input type="checkbox" id="checkbox" />
+            <div class="slider round"></div>
+          </label>
+        </div>
+        <nav class="erick-nav" id="erick-nav">
 
-        <!----------------
+          <ul class="erick-nav-list" id="erick-nav-list">
+            <li>Home</li>
+            <li>products</li>
+            <li>About</li>
+            <li>Location</li>
+            <li>Cart</li>
+            <i class="material-icons">policy</i>
+          </ul>
+        </nav>
+      </section>
+    </header>
+
+    <!----------------
   ----  MAIN  ----
   ----------------->
-  
- <main class="main" id="main">
-   <section class='jon_slide'>
+    <main class="main" id="main">
+
+      <section class='jon_slide'>
+
         <div class='uno'>
-              <input class='uno'type='image' src="Resources/images/product-images/aether_air_purifying_bike_1.jpg" alt=""> 
+          <input class='uno' type='image' src="Resources/images/product-images/aether_air_purifying_bike_1.jpg" alt="">
 
         </div>
         <div class='dos'>
 
-              <input type='image' src="Resources/images/product-images/aether_air_purifying_bike_5.jpg" alt="">
+          <input type='image' src="Resources/images/product-images/aether_air_purifying_bike_5.jpg" alt="">
         </div>
         <div class='tres'>
+
 
              <input type='image' src="Resources/images/product-images/aether_air_purifying_bike_6.jpg" alt="">
         </div>
@@ -120,23 +164,10 @@
     <section class='blackgrnd'>
           
     </section>
-
     
-
-   
-    
-    <div class="profile-p">
-      <form action="">
-        <input type="text" name="" id="">
-        <input type="email" name="" id="">
-        <input type="password" name="" id="">
-        <input type="password" name="" id="">
-      </form>
-    </div>
-  </section>
   <section class='jon_text'>
     <h1>Nymbus 3000</h1>
-    <div style="height: 500px;"></div>
+    
     <p>This ambitious electric motorcycle concept<br>has filteredintakes that can purify the air as you drive</p>
     <ul>
       <li> Einar, Aprovecha esta lista para hacer el navegador </li>
@@ -156,7 +187,6 @@
       </div>
     </section>-->
 </main>
-
 
     <!----------------
   ----  FOOTER  ----
@@ -241,6 +271,7 @@
   <script src="Scripts/kim-script.js"></script>
   <script src="Scripts/erick-script.js"></script>
   <script src="Scripts/jon-script.js"></script>
+
 </body>
 
 </html>
