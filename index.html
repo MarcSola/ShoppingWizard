@@ -192,25 +192,30 @@
     ----  HEADER  ----
     ----------------->
     <header class="header" id="header">
-      <section class="title-header">
-        <nav class="erick-nav" id="erick-nav">
-          <ul class="erick-nav-list" id="erick-nav-list">
-            <li>Home</li>
-            <li>products</li>
-            <li>About</li>
-            <li>Location</li>
-            <li>Cart</li>
-            <i class="material-icons">policy</i>
-            <p id="timer-msg"></p>
-            <div class="switch-wrapper">
-              <label class="switch" for="checkbox">
-                <input type="checkbox" id="checkbox" />
-                <div class="slider round"></div>
-              </label>
-            </div>
-          </ul>
-        </nav>
-      </section>
+      <nav class="erick-nav" id="erick-nav">
+        <div class="erick-logo-header">
+          <img src="Resources/images/logo/Negro Blanco Toro Moderno Restaurante Logotipo.gif" alt="Logo">
+        </div>
+        <ul class="erick-nav-list" id="erick-nav-list">
+          <li>Home</li>
+          <li>products</li>
+          <li>About</li>
+          <li>Location</li>
+          <li>Cart</li>
+          <i class="material-icons">policy</i>
+          <p id="timer-msg"></p>
+          <div class="switch-wrapper">
+            <label class="switch" for="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <div class="slider round"></div>
+            </label>
+          </div>
+        </ul>
+        <div class="burger">
+          <a href="javascript:void(0);" class="icon" onclick="mobileHiddenNav()">
+          <i class="fa fa-bars"></i></a>
+        </div>
+      </nav>
     </header>
 
     <!----------------
@@ -252,10 +257,24 @@
     <p>This ambitious electric motorcycle concept<br>has filteredintakes that can purify the air as you drive</p>
     <ul>
       <li> Einar, Aprovecha esta lista para hacer el navegador </li>
-
-    </ul>
-    <p>Price:&nbsp; &nbsp; &nbsp;<span>4 . 5 0 0</span></p>
-  </section>
+      
+      </ul>
+      <p>Price:&nbsp; &nbsp; &nbsp;<span id="finalPriceEinar" class="finalPriceEinarClass">PRICE</span></p>
+      <p id="demo"></p>
+      <div class="customSelectEinarDiv" style="width:400px;">
+      <select id="priceSelectorEinar" class="priceSelectorEinarClass">
+      <option class="priceOptionEinar" value="0 " >select a bike:</option>
+      <option class="priceOptionEinar" value="4.500 " >MANDRAGORA</option>
+      <option class="priceOptionEinar" value="5.300 ">STYLUS FIRE</option>
+      <option class="priceOptionEinar" value="6.000 ">ZEBRYTA</option>
+      <option class="priceOptionEinar" value="6.500 ">MAMBA BLACK</option>
+      <option class="priceOptionEinar" value="7.000 ">bike 5</option>
+      <option class="priceOptionEinar" value="7.999 ">bike 6</option>
+      <!-- <div class="priceOptionEinarDiv" value=""></div> -->
+      
+      </select>
+      </div>
+      </section>
 
     <!--<section>
       <div class="profile-p">
