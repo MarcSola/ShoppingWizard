@@ -126,6 +126,7 @@ ul li {
 }
 
 #product-p {
+  min-height: 100px;
   height: 150px;
   display: flex;
   flex-direction: row;
@@ -134,6 +135,7 @@ ul li {
 #main-footer-box {
   width: 25%;
   background-color: rgb(39, 38, 38);
+  font-family: 'Russo One', sans-serif;
   color: #ddd;
   font-size: 15px;
   height: 100%;
@@ -191,15 +193,20 @@ ul li {
 }
 
 #main-footer-disc {
-  width: 50%;
+  width: 55%;
   height: 100%;
-  padding: 3%;
+  padding-left: 2%;
+  padding-bottom: 2%;
+  padding-right: 2%;
+  padding-top: 1%;
   display: block;
 }
 
 #main-footer-disc p {
   color: #ddd;
   text-align: justify;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 90%;
 }
 
 #progress {
