@@ -1,0 +1,54 @@
+#shipping-form {
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+#shipping-time{
+	flex-direction: column;
+	height: auto;
+
+}
+
+#shipping-gift{
+	visibility: hidden;
+	flex-direction: column;
+	height: auto;
+}
+
+.shipping{
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 55%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	width: 80%;
+}
+
+.shipping form {
+	position:relative;
+	width: 100%;
+	height: auto;
+	color: rgba(245, 239, 239, 0.945);
+	letter-spacing: 1px;
+}
+
+.shipping form input {
+	background-color: black;
+	color: rgba(245, 239, 239, 0.945);
+	border: 1px solid rgba(209, 207, 207, 0.651);;
+	margin: 5px 0 3px 0;
+	padding: 10px;
+	outline: none;
+	border-radius: 2px;
+}
+.shipping-label{
+	display: block;
+	margin-bottom: 10px;
+}
+
+.shipping-wrappers {
+	margin-bottom: 30px;
+}
