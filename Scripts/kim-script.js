@@ -52,6 +52,84 @@ const userName = document.getElementById("username");
 const slideHidden = document.querySelector(".jon_slide");
 const textHidden = document.querySelector(".jon_text");
 
+// Shipping form variables
+const shipping_time = document.querySelectorAll(".shipping-radio");
+const min_date = document.getElementById("min-date");
+const max_date = document.getElementById("max-date");
+var current_date = new Date();
+var current_minutes = current_date.getMinutes();
+var current_hour = current_date.getHours();
+var current_day = current_date.getDate();
+var current_month = current_date.getMonth() + 1;
+var current_year = current_date.getFullYear();
+const gift = document.getElementById("gift");
+const shipping_gift = document.getElementById("shipping-gift");
+const gift_textarea = document.getElementById("gift-textarea");
+const gift_wrapper_file = document.getElementById("gift-wrapper-file");
+var allowedExtensions = /(\.jpeg|\.png)$/i;
+
+// Shipping form event listeners
+
+// radio listeners
+shipping_time.forEach(function (element){
+  element.addEventListener("click", shippingInterval);
+});
+
+//shipping_gift.style.display = "none";
+console.log("gift: ", gift.checked);
+console.log("gift_wrapper_file: ", gift_wrapper_file.accept = "image/png");
+
+function shippingInterval(){
+  let shipping_time_range = 0;
+  
+  for(let i=0; i<shipping_time.length; i++){
+    
+    if(shipping_time[i].checked){
+
+      shipping_time_range =  shipping_time[i].value / 24;
+
+    }
+  }
+
+  let minutes = current_minutes;
+
+  if(minutes < 10){
+
+    minutes = "0"+`${minutes}`;
+    
+  }
+
+  let min_date_day = current_day;
+
+  if(current_hour >=18){
+
+    min_date_day = min_date_day + 1;
+
+  }
+
+  let max_date_day = min_date_day + shipping_time_range;
+  let final_shipping_hour = current_hour;
+  let final_shipping_minutes = minutes;
+
+  if(final_shipping_hour < 9 && final_shipping_hour>=0){
+
+    final_shipping_hour = 9;
+    final_shipping_minutes = "00";
+    current_hour = 9;
+    minutes = "00";
+
+  }else{
+
+    final_shipping_minutes = minutes;
+
+  }
+
+  min_date.innerHTML = `${current_month}` + "/" + `${min_date_day}` + "/" + `${current_year}` + " at " + `${current_hour}` + ":" + `${minutes}`;
+  max_date.innerHTML = `${current_month}` + "/" + `${max_date_day}` + "/" + `${current_year}` + " at " + `${final_shipping_hour}` + ":" + `${final_shipping_minutes}`;
+
+}
+
+
 
 
 

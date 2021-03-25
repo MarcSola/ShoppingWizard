@@ -194,29 +194,29 @@
       <div id="shipping-time">
 
         <div class="shipping-wrappers">
-          <input type="radio"  id="three-days" name="shipping-time" value="72h">
+          <input type="radio" class="shipping-radio" id="three-days" name="shipping-time" value="72" required>
           <label for="three-days">Free shipment (72H) (no extra cost)</label>
         </div>
         
         <div class="shipping-wrappers">
-          <input type="radio" id="one-day" name="shipping-time" value="24h">
-          <label for="one-day">Premium (24h) (+10€)</label>
+            <input type="radio" class="shipping-radio" id="two-days" name="shipping-time" value="48"required>
+            <label for="two-days">Extra shipping (48h) (+5 €)</label>
         </div>
 
         <div class="shipping-wrappers">
-          <input type="radio" id="two-days" name="shipping-time" value="48h">
-          <label for="two-days">Extra shipping (48h) (+5 €)</label>
+          <input type="radio" class="shipping-radio"id="one-day" name="shipping-time" value="24"required>
+          <label for="one-day">Premium (24h) (+10€)</label>
         </div>
 
         <div class="shipping-wrappers">
           <div id="shipping-date"> 
             <p>ESTIMATED DELIVERY DATE:</p> <br>
-            <span id="between">Between:&nbsp;</span><span id="min-date">min-date</span><span id="dash">&nbsp;-&nbsp;</span><span id="max-date">max-date</span>
+            <span id="between">Between:&nbsp;</span><span id="min-date">min-date</span><span id="dash">&nbsp;and&nbsp;</span><span id="max-date">max-date</span>
           </div>
         </div>
 
         <div class="shipping-wrappers">
-          <input type="checkbox" id="gift" name="gift" value="gift">
+          <input type="checkbox" id="gift" name="gift" value="gift" optional>
           <label for="gift"> Is it a gift?</label>
         </div>
  
@@ -226,8 +226,8 @@
 
         <div class="shipping-wrappers">
           <label class="shipping-label" for="gift-textarea">Gift message:</label>
-          <textarea id="gift-textarea" name="gift-textarea" rows="4" cols="50">
-            At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+          <textarea id="gift-textarea" name="gift-textarea" rows="9" cols="50">
+            
           </textarea>
         </div>
 
@@ -338,14 +338,14 @@
                 <p id="demo"></p>
                 <div class="customSelectEinarDiv" style="width:400px;">
                     <select id="priceSelectorEinar" class="priceSelectorEinarClass">
-      <option class="priceOptionEinar" value="0 " >select a bike:</option>
-      <option class="priceOptionEinar" value="4.500 " >MANDRAGORA</option>
-      <option class="priceOptionEinar" value="5.300 ">STYLUS FIRE</option>
-      <option class="priceOptionEinar" value="6.000 ">ZEBRYTA</option>
-      <option class="priceOptionEinar" value="6.500 ">MAMBA BLACK</option>
-      <!-- <div class="priceOptionEinarDiv" value=""></div> -->
-      
-      </select>
+                        <option class="priceOptionEinar" value="0 " >select a bike:</option>
+                        <option class="priceOptionEinar" value="4.500 " >MANDRAGORA</option>
+                        <option class="priceOptionEinar" value="5.300 ">STYLUS FIRE</option>
+                        <option class="priceOptionEinar" value="6.000 ">ZEBRYTA</option>
+                        <option class="priceOptionEinar" value="6.500 ">MAMBA BLACK</option>
+                        <!-- <div class="priceOptionEinarDiv" value=""></div> -->
+                        
+                    </select>
                 </div>
             </section>
 
