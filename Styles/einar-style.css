@@ -55,7 +55,6 @@
     margin: 15px 15px 15px 15px;
     padding: 15px 15px 15px 15px;
 }
-
 .section h3 {
     text-transform: uppercase;
     text-align: center;
@@ -81,14 +80,12 @@
 .asideImgContainerClassEinar {
     background-color: rgb(255, 255, 255);
 }
-
 .aside section div input {
     width: 100%;
     height: 100%;
     text-align: center;
     object-fit: cover;
 }
-
 aside div p {
     text-transform: uppercase;
     text-align: center;
@@ -122,21 +119,15 @@ aside div p {
     position: fixed;
     bottom: 0;
 }
-
 div span i {
     width: 30px;
     height: 30px;
 }
-
 */
 
 
 /* ///////////////////////////
-
-
 Selector price menu
-
-
 /////////////////////////// */
 
 .allBikeDataInContainerClass {
@@ -167,4 +158,8 @@ Selector price menu
     width: 400px;
     height: 50px;
     color: whitesmoke;
+}
+
+.asideImgContainerClassEinar {
+    background-color: rgb(255, 255, 255);
 }
