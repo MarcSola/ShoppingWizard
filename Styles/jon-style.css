@@ -1,9 +1,4 @@
-main.main section div {
-    position: absolute;
-    transition: 0.5s;
-}
 
-main section.blackgrnd {
     background-image: url("../Resources/images/product-images/aether_air_purifying_bike_1.jpg");
     background-size: 100%;
     background-repeat: no-repeat;

@@ -141,51 +141,131 @@
         <div class="adress">
 
             <form id="adress-form">
+              <div class="adress-wrappers">
+                First name <input type="text" name="firstname" id="firstname" required>
+                <span class="warning-message"></span>
+            </div>
 
-                <div class="adress-wrappers">
-                    First name <input type="text" name="firstname" id="firstname" required>
-                    <span class="warning-message"></span>
-                </div>
+            <div class="adress-wrappers">
+                Last name<input type="text" name="lastname" id="lastname" maxlength="50" required>
+                <span class="warning-message"></span>
 
-                <div class="adress-wrappers">
-                    Last name<input type="text" name="lastname" id="lastname" maxlength="50" required>
-                    <span class="warning-message"></span>
+            </div>
+            <div class="adress-wrappers">
+                Birthday<input type="text" name="birthday" id="birthday" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}" required>
+                <span class="warning-message"></span>
+            </div>
 
-                </div>
-                <div class="adress-wrappers">
-                    Birthday<input type="text" name="birthday" id="birthday" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}" required>
-                    <span class="warning-message"></span>
-                </div>
+            <div class="adress-wrappers">
+                Address 1<input type="text" name="Address 1" id="Address 1" required>
+                <span class="warning-message"></span>
+            </div>
 
-                <div class="adress-wrappers">
-                    Address 1<input type="text" name="Address 1" id="Address 1" required>
-                    <span class="warning-message"></span>
-                </div>
+            <div class="adress-wrappers">
+                Address 2<input type="text" name="Address 2" id="Address 2" required>
+                <span class="warning-message"></span>
+            </div>
 
-                <div class="adress-wrappers">
-                    Address 2<input type="text" name="Address 2" id="Address 2" required>
-                    <span class="warning-message"></span>
-                </div>
+            <div class="adress-wrappers">
+                Postal code<input type="number" name="postal" id="postal" required>
+                <span class="warning-message"></span>
+            </div>
 
-                <div class="adress-wrappers">
-                    Postal code<input type="number" name="postal" id="postal" required>
-                    <span class="warning-message"></span>
-                </div>
+            <div class="adress-wrappers">
+                Country<input type="text" name="Country" id="Country" required>
+                <span class="warning-message"></span>
+            </div>
 
-                <div class="adress-wrappers">
-                    Country<input type="text" name="Country" id="Country" required>
-                    <span class="warning-message"></span>
-                </div>
-
-                <div class="adress-wrappers">
-                    Phone<input type="number" name="phone" id="phone" minlength="8" maxlength="20" required>
-                    <span class="warning-message"></span>
-                </div>
+            <div class="adress-wrappers">
+                Phone<input type="number" name="phone" id="phone" minlength="8" maxlength="20" required>
+                <span class="warning-message"></span>
+            </div>
 
 
-            </form>
-            <p id=demo></p>
+        </form>
+        <p id=demo></p>
+    </div>
+
+   <!--Shipping specification form-->
+  <div class="shipping">
+      
+    <form id="shipping-form" action ="">
+      
+      <div id="shipping-time">
+
+        <div class="shipping-wrappers">
+          <input type="radio"  id="three-days" name="shipping-time" value="72h">
+          <label for="three-days">Free shipment (72H) (no extra cost)</label>
         </div>
+        
+        <div class="shipping-wrappers">
+          <input type="radio" id="one-day" name="shipping-time" value="24h">
+          <label for="one-day">Premium (24h) (+10€)</label>
+        </div>
+
+        <div class="shipping-wrappers">
+          <input type="radio" id="two-days" name="shipping-time" value="48h">
+          <label for="two-days">Extra shipping (48h) (+5 €)</label>
+        </div>
+
+        <div class="shipping-wrappers">
+          <div id="shipping-date"> 
+            <p>ESTIMATED DELIVERY DATE:</p> <br>
+            <span id="between">Between:&nbsp;</span><span id="min-date">min-date</span><span id="dash">&nbsp;-&nbsp;</span><span id="max-date">max-date</span>
+          </div>
+        </div>
+
+        <div class="shipping-wrappers">
+          <input type="checkbox" id="gift" name="gift" value="gift">
+          <label for="gift"> Is it a gift?</label>
+        </div>
+ 
+      </div>
+
+      <div id="shipping-gift">
+
+        <div class="shipping-wrappers">
+          <label class="shipping-label" for="gift-textarea">Gift message:</label>
+          <textarea id="gift-textarea" name="gift-textarea" rows="4" cols="50">
+            At w3schools.com you will learn how to make a website. They offer free tutorials in all web development technologies.
+          </textarea>
+        </div>
+
+        <div class="shipping-wrappers">
+          <label class="shipping-label" for="myfile">Gift wrapper image</label>
+        <input type="file" id="gift-wrapper-file" name="gift-wrapper-file">
+        </div>
+
+      </div> 
+
+    </form>
+  </div>
+
+    <!----------------
+    ----  HEADER  ----
+    ----------------->
+    <header class="header" id="header">
+      <section class="title-header">
+        <nav class="erick-nav" id="erick-nav">
+          <ul class="erick-nav-list" id="erick-nav-list">
+            <li>Home</li>
+            <li>products</li>
+            <li>About</li>
+            <li>Location</li>
+            <li>Cart</li>
+            <i class="material-icons">policy</i>
+            <p id="timer-msg"></p>
+            <div class="switch-wrapper">
+              <label class="switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+              </label>
+            </div>
+          </ul>
+        </nav>
+      </section>
+    </header>
+                
         <!----------------
     ----  HEADER  ----
     ----------------->
@@ -195,24 +275,46 @@
                     <img src="Resources/images/logo/Negro Blanco Toro Moderno Restaurante Logotipo.gif" alt="Logo">
                 </div>
                 <ul class="erick-nav-list" id="erick-nav-list">
-                    <li>Home</li>
-                    <li>products</li>
-                    <li>About</li>
-                    <li>Location</li>
-                    <li>Cart</li>
-                    <i class="material-icons">policy</i>
-                    <p id="timer-msg"></p>
-                    <div class="switch-wrapper">
-                        <label class="switch" for="checkbox">
-              <input type="checkbox" id="checkbox" />
-              <div class="slider round"></div>
-            </label>
-                    </div>
+                  <li>Home</li>
+                  <li>products</li>
+                  <li>About</li>
+                  <li>Location</li>
+                  <li>Cart</li>
                 </ul>
+                <i class="material-icons">policy</i>
+                <div>
+                  <p id="timer-msg"></p>
+                  <div class="switch-wrapper">
+                  <label class="switch" for="checkbox">
+                  <input type="checkbox" id="checkbox" />
+                  <div class="slider round"></div>
+                  </label>
+                  </div>
+                </div>
                 <div class="burger">
                     <a href="javascript:void(0);" class="icon" onclick="mobileHiddenNav()">
                         <i class="fa fa-bars"></i></a>
                 </div>
+            </nav>
+            <nav class="erick-nav-mobile" id="erick-nav-mobile">
+              <ul class="erick-nav-list-mobile" id="erick-nav-list-mobile">
+                <li>Home</li>
+                <li>products</li>
+                <li>About</li>
+                <li>Location</li>
+                <li>Cart</li>
+              </ul>
+              <i class="material-icons">policy</i>
+              <div>
+                <p id="timer-msg"></p>
+                <div class="switch-wrapper">
+                <label class="switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+                </label>
+                </div>
+              </div>
+              <div class="background-mobile"></div>
             </nav>
         </header>
 
