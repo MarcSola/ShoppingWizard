@@ -10,7 +10,6 @@ const mainFooterBox = document.getElementById("main-footer-box");
 const progressName = document.getElementById("progress-name");
 const footerButtons = document.getElementById("footer-buttons");
 
-
 const mainFooterPicture = document.getElementById("main-footer-picture");
 const mainFooterDisc = document.getElementById("main-footer-disc");
 
@@ -23,13 +22,8 @@ const addressBar = document.getElementById("address").childNodes[1];
 const shippingBar = document.getElementById("shipping").childNodes[1];
 const finishBar = document.getElementById("finish").childNodes[1];
 
-
-
 const nextButton = document.getElementsByName("next");
-
 const clearButton = document.getElementsByName("reset");
-
-
 
 const profileButtons = document.querySelectorAll("#profile-li .buttons");
 const addressButtons = document.querySelectorAll("#address-li .buttons");
@@ -50,12 +44,13 @@ const userEmail = document.getElementById("user-email");
 const userPassword1 = document.getElementById("password1");
 const userPassword2 = document.getElementById("password2");
 
-
-const adressForm = document.querySelector(' div.adress');
-const address_Form = document.getElementById("adress-form")
-const all_Imputs_Adress=document.querySelectorAll(' div.adress input');
-const all_message_Adress=document.querySelectorAll(' div.adress form div span');
-const Final=document.querySelector('section.finish')
+const adressForm = document.querySelector(" div.adress");
+const address_Form = document.getElementById("adress-form");
+const all_Imputs_Adress = document.querySelectorAll(" div.adress input");
+const all_message_Adress = document.querySelectorAll(
+  " div.adress form div span"
+);
+const Final = document.querySelector("section.finish");
 
 // jon slide and text hidden in profile
 const slideHidden = document.querySelector(".jon_slide");
@@ -67,11 +62,7 @@ nextButton[0].addEventListener("click", checkUserProfile);
 nextButton[1].addEventListener("click", checkAdress);
 nextButton[2].addEventListener("click", goToFinish);
 
-
-
 toggleSwitch.addEventListener("change", changeTheme);
-
-
 
 function changeTheme() {
   if (toggleSwitch.checked) {
@@ -81,116 +72,69 @@ function changeTheme() {
   }
 }
 
-
-
-clearButton.forEach(ele=> {
+clearButton.forEach((ele) => {
   ele.addEventListener("click", () => {
-  profileForm.reset();
-  address_Form.reset();
+    profileForm.reset();
+    address_Form.reset();
+  });
 });
-})
-
 
 function checkUserProfile() {
-  var regTypeUser = /^[A-Za-z0-9*]{5,20}$/;
-  var regTypeEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
-  var regTypePassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/;
-
-  if (userName.validity.valueMissing) {
-    warningMessage[0].style.visibility = "visible";
-    warningMessage[0].textContent = "Please Enter your username";
-    //removeEventProfile();
-  } else if (!regTypeUser.test(userName.value)) {
-    warningMessage[0].style.visibility = "visible";
-    warningMessage[0].textContent =
-      "Only letters (either case), numbers, between 5 and 20 characters.";
-  //  removeEventProfile();
-  } else {
-    warningMessage[0].style.visibility = "hidden";
+  let success = 0;
+  for (var i = 0; i < profileInputs.length; i++) {
+    if (!profileInputs[i].checkValidity()) {
+      if (profileInputs[i].validity.valueMissing) {
+        warningMessage[i].style.visibility = "visible";
+        warningMessage[i].textContent = `Please enter your ${profileInputs[i].name}`;
+     } else if (profileInputs[i].validity.patternMismatch) {
+        warningMessage[i].style.visibility = "visible";
+        profileInputs[0].validity.patternMismatch
+          ? warningMessage[0].textContent = "Only letters (either case), numbers, between 5 and 20 characters."
+          : warningMessage[0].style.visibility = "hidden";
+        profileInputs[1].validity.patternMismatch
+          ? warningMessage[1].textContent = "Only letters, numbers and (_), (.), less than 50 characters. example_@example.com, example.2@example.com.es"
+          : warningMessage[1].style.visibility = "hidden";
+        profileInputs[2].validity.patternMismatch
+          ? warningMessage[2].textContent = "Password should contain at least one number, one uppercase, one lowercase, one special character. Between 8 and 20 characters."
+          : warningMessage[2].style.visibility = "hidden";
+          profileInputs[3].validity.patternMismatch
+          ? warningMessage[3].textContent = "Password should contain at least one number, one uppercase, one lowercase, one special character. Between 8 and 20 characters."
+          : warningMessage[3].style.visibility = "hidden";  
+      };
+    } else if (profileInputs[i].checkValidity()) {
+        if (profileInputs[2].value !== profileInputs[3].value) {
+          warningMessage[3].visibility = "visible";  
+          warningMessage[3].textContent = "Passwords do not match.";
+        } else {
+         success += 1;
+          warningMessage[i].style.visibility = "hidden"; 
+          if(success === profileInputs.length && profileInputs[2].value === profileInputs[3].value) {
+            goToAddress() 
+          }
+        };
+    };
   }
-
-  if (userEmail.validity.valueMissing) {
-    warningMessage[1].style.visibility = "visible";
-    warningMessage[1].textContent = "Please enter your email address.";
-   // removeEventProfile();
-  } else if (!regTypeEmail.test(userEmail.value) || userEmail.value.length >= 50) {
-    warningMessage[1].style.visibility = "visible";
-    warningMessage[1].textContent =
-      "Only letters, numbers and (_), (.), less than 50 characters. example_@example.com, example.2@example.com.es";
-   // removeEventProfile();
-  } else {
-    warningMessage[1].style.visibility = "hidden";
-  }
-
-  if (userPassword1.validity.valueMissing) {
-    warningMessage[2].style.visibility = "visible";
-    warningMessage[2].textContent = "Please enter your password.";
-   // removeEventProfile();
-  } else if (!regTypePassword.test(userPassword1.value)) {
-    warningMessage[2].style.visibility = "visible";
-    warningMessage[2].textContent =
-      "Password should contain at least one number, one uppercase, one lowercase, one special character. Between 8 and 20 characters.";
-  //  removeEventProfile();
-  } else {
-    warningMessage[2].style.visibility = "hidden";
-  }
-
-  if (userPassword2.validity.valueMissing) {
-    warningMessage[3].style.visibility = "visible";
-    warningMessage[3].textContent = "Please enter your confirm password.";
-   // removeEventProfile();
-  } else if (userPassword1.value !== userPassword2.value) {
-    warningMessage[3].style.visibility = "visible";
-    warningMessage[3].textContent = "Passwords do not match.";
-  //  removeEventProfile();
-  } else {
-    warningMessage[3].style.visibility = "hidden";
-  }
- removeEventProfile();
- nextButton[0].addEventListener("click", goToAddress);
 }
 
 
 
-    
-
-// function checkAdress() {​​​​​​​​
-//   for(i=0;i<all_Imputs_Adress.length;i++){​​​​​​​​
-//     if (all_Imputs_Adress[i].checkValidity()===false) {​​​​​​​​
-//       if (i===2){​​​​​​​​
-//         all_message_Adress[i].style.visibility='visible';
-//         all_message_Adress[i].innerText = "Please writeby this format: dd/mm/aaaa";
-//       }​​​​​​​​ else {​​​​​​​​
-//         all_message_Adress[i].style.visibility='visible';
-//         all_message_Adress[i].innerText = "Please Enter the "+all_Imputs_Adress[i].name;
-//         console.log(all_message_Adress[i].innerText);
-//       }​​​​​​​​
-//     }​​​​​​​​ else if(all_Imputs_Adress[i].checkValidity()===true){​​​​​​​​
-//       x=x+1;
-//       all_message_Adress[i].style.visibility='hidden';
-//       if(x===all_Imputs_Adress.length){​​​​​​​​
-//         goToShipping();
-//       };​​​​​​​​
-//     };​​​​​​​​
-//   };​​​​​​​​
-// };​​​​​​​​
-
-
 function checkAdress() {
-  var x = 0
-  for(var i = 0; i < all_Imputs_Adress.length; i++){
-    if(all_Imputs_Adress[i].checkValidity() === false) {
-      if( i === 2) {
+  var x = 0;
+  for (var i = 0; i < all_Imputs_Adress.length; i++) {
+    if (all_Imputs_Adress[i].checkValidity() === false) {
+      if (i === 2) {
         all_message_Adress[i].style.visibility = "visible";
-        all_message_Adress[i].innerText = "Please write by this format : dd/mm/aaaa";
+        all_message_Adress[i].innerText =
+          "Please write by this format : dd/mm/aaaa";
       } else {
         all_message_Adress[i].style.visibility = "visible";
-        all_message_Adress[i].innerText = "Please Enter the" + all_Imputs_Adress[i].name;
+        all_message_Adress[i].innerText =
+          "Please Enter the" + all_Imputs_Adress[i].name;
       }
-    } else if(all_Imputs_Adress[i].checkValidity()=== true) {
+    } else if (all_Imputs_Adress[i].checkValidity() === true) {
       x = x + 1;
       all_message_Adress[i].style.visibility = "hidden";
-      if( x === all_Imputs_Adress.length) {
+      if (x === all_Imputs_Adress.length) {
         goToShipping();
       }
     }
@@ -211,8 +155,6 @@ function clickBuy() {
   textHidden.style.display = "none";
 }
 
-
-
 function removeEventProfile() {
   nextButton[0].removeEventListener("click", checkUserProfile);
 }
@@ -222,8 +164,6 @@ function goToAddress() {
   profileButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   addressButtons.forEach((ele) => (ele.style.visibility = "visible"));
   displayAddress();
-
- 
 }
 
 function goToShipping() {
@@ -248,13 +188,12 @@ function goBackToProduct() {
   slideHidden.style.display = "grid";
   textHidden.style.display = "block";
   profileBody[0].style.display = "none";
-  change();     //when you call this function here from jon's javascript, it works but error appears on console.
-
+  //change(); //when you call this function here from jon's javascript, it works but error appears on console.
+  run()   // error appears but working... so..?
   mainBackground.style.display = "block";
   profilePage.style.display = "none";
-  progressInBox.style.display="none"
-  
- 
+  progressInBox.style.display = "none";
+  adressForm.style.display = "none"
 }
 
 
@@ -264,7 +203,7 @@ function displayProfile() {
 
 function displayAddress() {
   addressBar.style.backgroundColor = "var(--progress-bar)";
-  adressForm.style.display ="block"
+  adressForm.style.display = "block";
   profileBody[0].style.display = "none";
 }
 
@@ -273,7 +212,7 @@ function displayShipping() {
 }
 
 function displayFinish() {
-  Final.style.display = "flex"
+  Final.style.display = "flex";
   finishBar.style.backgroundColor = "var(--progress-bar)";
 }
 
@@ -295,5 +234,5 @@ function registerTimer() {
       clearInterval(x);
       goBackToProduct();
     }
-  }, 60000);
+  }, 1000);
 }

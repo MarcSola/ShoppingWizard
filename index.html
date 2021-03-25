@@ -119,27 +119,25 @@
       
       <form id="profile-form" name="profile-form">
         <div class="profile-wrappers">
-          Username <br> <input type="text" name="username" id="username" required>
+          Username <br> <input type="text" name="username" id="username" pattern="^[A-Za-z0-9*]{5,20}$" required>
           <span style="font-size:8px">Only letters (either case), numbers, between 5 and 20 characters.</span><br>
           <span class="warning-message"></span>
         </div>
         <div class="profile-wrappers">
-          Email <br> <input type="email" name="email" id="user-email" required>
+          Email <br> <input type="email" name="email" id="user-email" pattern="^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$" required>
           <span style="font-size:8px">Less than 50 characters. The general format of an email address is required.</span><br>
           <span class="warning-message"></span>
         </div>
         <div class="profile-wrappers">
-          Password <br> <input type="password" name="password1" id="password1" required>
+          Password <br> <input type="password" name="password" id="password1" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$" required>
           <span style="font-size:8px">Password should contain at least one number, one uppercase, one lowercase, one special character.</span><br>
           <span class="warning-message"></span>
         </div>
         <div class="profile-wrappers">
-          Confirm Password <br><input type="password" name="password2" id="password2" required> 
+          Confirm Password <br><input type="password" name="confirm password" id="password2" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$" required> 
           <span style="font-size:8px">Confirm your password.</span><br>
           <span class="warning-message"></span>
         </div>
-
-
       </form>
       
       <p id=demo></p>
