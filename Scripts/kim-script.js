@@ -16,7 +16,6 @@ const mainFooterDisc = document.getElementById("main-footer-disc");
 const productPage = document.getElementById("product-p");
 const profilePage = document.getElementById("profile-p");
 
-
 const progressInBox = document.querySelectorAll(".progress-box ul")[0].children;
 const profileBar = document.getElementById("profile").childNodes[1];
 const addressBar = document.getElementById("address").childNodes[1];
@@ -29,7 +28,9 @@ const Final=document.querySelector('section.finish')
 
 const nextButton = document.getElementsByName("next");
 
-const profileClearButton = document.getElementById("profile-reset");
+const clearButton = document.getElementsByName("reset");
+
+
 
 const profileButtons = document.querySelectorAll("#profile-li .buttons");
 const addressButtons = document.querySelectorAll("#address-li .buttons");
@@ -37,29 +38,42 @@ const shippingButtons = document.querySelectorAll("#shipping-li .buttons");
 const finishButton = document.querySelector("#finish-li .buttons");
 
 const timerMessage = document.querySelector("#timer-msg");
-const warningMessage = document.querySelector(".warning-message");
-console.log(warningMessage)
+const warningMessage = document.querySelectorAll(".warning-message");
 
 const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
 
 const profileBody = document.querySelectorAll(".profile-p");
 const profileForm = document.getElementById("profile-form");
+const profileInputs = document.querySelectorAll("#profile-form input");
 
 const userName = document.getElementById("username");
+const userEmail = document.getElementById("user-email");
+const userPassword1 = document.getElementById("password1");
+const userPassword2 = document.getElementById("password2");
 
-
-
-// jon slide and text hidden in profile 
+// jon slide and text hidden in profile
 const slideHidden = document.querySelector(".jon_slide");
 const textHidden = document.querySelector(".jon_text");
 
+buyButton.addEventListener("click", clickBuy);
+
+nextButton[0].addEventListener("click", checkUserProfile);
+nextButton[1].addEventListener("click", goToShipping);
+nextButton[2].addEventListener("click", goToFinish);
 
 
 
+toggleSwitch.addEventListener("change", changeTheme);
 
 
 
-
+function changeTheme() {
+  if (toggleSwitch.checked) {
+    document.documentElement.setAttribute("mode-changes", "light");
+  } else {
+    document.documentElement.setAttribute("mode-changes", "dark");
+  }
+}
 
 
 
@@ -69,27 +83,77 @@ buyButton.addEventListener("click", clickBuy);
 nextButton[0].addEventListener("click", checkUsername);
 nextButton[1].addEventListener("click", checkAdress);
 nextButton[2].addEventListener("click", goToFinish);
+clearButton.forEach(ele=> {
+  ele.addEventListener("click", () => {
+  profileForm.reset();
+});
+})
 
 
-toggleSwitch.addEventListener("change", changeTheme);
+function checkUserProfile() {
+  var regTypeUser = /^[A-Za-z0-9*]{5,20}$/;
+  var regTypeEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
+  var regTypePassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/;
 
-
-
-
-function changeTheme() {
-  if (toggleSwitch.checked) {
-    document.documentElement.setAttribute("mode-changes", "dark");
+  if (userName.validity.valueMissing) {
+    warningMessage[0].style.visibility = "visible";
+    warningMessage[0].textContent = "Please Enter your username";
+    //removeEventProfile();
+  } else if (!regTypeUser.test(userName.value)) {
+    warningMessage[0].style.visibility = "visible";
+    warningMessage[0].textContent =
+      "Only letters (either case), numbers, between 5 and 20 characters.";
+  //  removeEventProfile();
   } else {
-    document.documentElement.setAttribute("mode-changes", "light");
+    warningMessage[0].style.visibility = "hidden";
   }
+
+  if (userEmail.validity.valueMissing) {
+    warningMessage[1].style.visibility = "visible";
+    warningMessage[1].textContent = "Please enter your email address.";
+   // removeEventProfile();
+  } else if (!regTypeEmail.test(userEmail.value) || userEmail.value.length >= 50) {
+    warningMessage[1].style.visibility = "visible";
+    warningMessage[1].textContent =
+      "Only letters, numbers and (_), (.), less than 50 characters. example_@example.com, example.2@example.com.es";
+   // removeEventProfile();
+  } else {
+    warningMessage[1].style.visibility = "hidden";
+  }
+
+  if (userPassword1.validity.valueMissing) {
+    warningMessage[2].style.visibility = "visible";
+    warningMessage[2].textContent = "Please enter your password.";
+   // removeEventProfile();
+  } else if (!regTypePassword.test(userPassword1.value)) {
+    warningMessage[2].style.visibility = "visible";
+    warningMessage[2].textContent =
+      "Password should contain at least one number, one uppercase, one lowercase, one special character. Between 8 and 20 characters.";
+  //  removeEventProfile();
+  } else {
+    warningMessage[2].style.visibility = "hidden";
+  }
+
+  if (userPassword2.validity.valueMissing) {
+    warningMessage[3].style.visibility = "visible";
+    warningMessage[3].textContent = "Please enter your confirm password.";
+   // removeEventProfile();
+  } else if (userPassword1.value !== userPassword2.value) {
+    warningMessage[3].style.visibility = "visible";
+    warningMessage[3].textContent = "Passwords do not match.";
+  //  removeEventProfile();
+  } else {
+    warningMessage[3].style.visibility = "hidden";
+  }
+ removeEventProfile();
+ nextButton[0].addEventListener("click", goToAddress);
 }
 
 
 
 
+
 function clickBuy() {
-  // go to the profile page.
-  // background changes
   mainBackground.className = "profile-background";
   footer.style.background = "none";
   productPage.style.display = "none";
@@ -98,7 +162,7 @@ function clickBuy() {
   displayProfile();
   registerTimer();
 
-  // jon slide hidden 
+  // jon slide hidden
   slideHidden.style.display = "none";
   textHidden.style.display = "none";
 }
@@ -166,10 +230,10 @@ for(i=0;i<all_Imputs_Adress.length;i++){
   
 
 
-function removeEventProfile(){
-  nextButton[0].removeEventListener("click", goToAddress);
-}
 
+function removeEventProfile() {
+  nextButton[0].removeEventListener("click", checkUserProfile);
+}
 
 function goToAddress() {
   mainBackground.className = "address-background";
@@ -178,6 +242,8 @@ function goToAddress() {
   profileButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   addressButtons.forEach((ele) => (ele.style.visibility = "visible"));
   displayAddress();
+
+ 
 }
 
 function goToShipping() {
@@ -198,33 +264,42 @@ function goToFinish() {
 }
 
 function goBackToProduct() {
-  mainBackground.className = "main-background"
-  main.style.display = "block";
-  productPage.style.display = "flex"
-  profileBody[0].style.display = "none"
+  productPage.style.display = "flex";
+  productPage.style.flexDirection = "row";
+  mainBackground.className = "main";
+  slideHidden.style.display = "grid";
+  textHidden.style.display = "block";
+  profileBody[0].style.display = "none";
+  change();     //when you call this function here from jon's javascript, it works but error appears on console.
+
+  mainBackground.style.display = "block";
+  profilePage.style.display = "none";
+  progressInBox.style.display="none"
+  
+ 
 }
 
 
-
-
 function displayProfile() {
-  profileBar.style.backgroundColor = "rgb(250, 184, 4)";
-  
+  profileBar.style.backgroundColor = "var(--progress-bar)";
 }
 
 function displayAddress() {
   adressForm.style.display='block'
   addressBar.style.backgroundColor = "rgb(250, 184, 4)";
   profileBody[0].style.display = "none"
+  addressBar.style.backgroundColor = "var(--progress-bar)";
+  profileBody[0].style.display = "none";
 }
 
 function displayShipping() {
-  shippingBar.style.backgroundColor = "rgb(250, 184, 4)";
+  shippingBar.style.backgroundColor = "var(--progress-bar)";
 }
 
 function displayFinish() {
   Final.style.display='flex';
   finishBar.style.backgroundColor = "rgb(250, 184, 4)";
+  finishBar.style.backgroundColor = "var(--progress-bar)";
 }
 
 function registerTimer() {
@@ -233,19 +308,17 @@ function registerTimer() {
 
   var x = setInterval(function () {
     time--;
-    timerMessage.style.visibility = "visible"
-    timerMessage.style.backgroundColor = "rgb(39, 38, 38)"
-    timerMessage.innerHTML =`You started registering ${(min += 1)} minutes ago!`;
-    
+    timerMessage.style.visibility = "visible";
+    timerMessage.style.backgroundColor = "rgb(39, 38, 38)";
+    timerMessage.innerHTML = `You started registering ${(min += 1)} minutes ago!`;
+
     setTimeout(function () {
-        timerMessage.style.visibility = "hidden"
+      timerMessage.style.visibility = "hidden";
     }, 5000);
 
     if (time === 0) {
       clearInterval(x);
       goBackToProduct();
     }
-  }, 60000);
+  }, 1000);
 }
-
-

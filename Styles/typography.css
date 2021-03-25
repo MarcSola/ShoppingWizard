@@ -4,7 +4,8 @@ h3{
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 p{
-	color: #505050;
+	color:var(--text-color);
+	letter-spacing: 1px;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
