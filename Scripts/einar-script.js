@@ -3,6 +3,8 @@
 /* This function is related with aside imgs */
 
 /* /////////////////////////// */
+//GLOBALS
+var globalprice = ""
 
 var imgArray = document.querySelectorAll('div.asideImgContainerClassEinar input');
 //console.log(imgArray)
@@ -25,7 +27,7 @@ function hovimg(event) {
     option.style.transform = 'translateY(-2px) translateX(+2px) scale(1.1)';
     option.style.transition = '0.5s';
     option.style.borderRadius = '15px';
-    option.style.border = '5px solid black';
+    option.style.border = '5px solid #FF00E6';
 }
 
 function changeimg(event) {
@@ -49,14 +51,16 @@ function priceSelectedForCostumer(event) {
 
     var AllOptionprices = document.querySelector(".priceSelectorEinarClass");
     replaceMainPrice(AllOptionprices.value)
-
 }
 
 function replaceMainPrice(price) {
     document.getElementById("finalPriceEinar").innerHTML = price;
-}
+    document.querySelector("section.finish div.precios span.base_price").innerText = price;
 
-/* /////////////////////////// */
+
+}
+console.log(globalprice)
+    /* /////////////////////////// */
 
 /* This function brings data to COLOR */
 
