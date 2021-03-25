@@ -1,0 +1,28 @@
+/* INITIAL position of the footer */
+.footer{
+	background-color: rgba(95, 95, 95, 0.63);
+	position: fixed;
+	height: min-content;
+	width: 90%;
+	right: 0;
+	bottom: 0;
+}
+
+.footer section p{
+	margin: 0 auto;
+  text-align: center;
+}
+
+/** -------------------------------
+-------RESPONSIVE MOVIL -----------
+-------------------------------- **/
+@media only screen and (max-width:800px) {
+
+	.footer{
+		background-color: rgb(255, 255, 255);
+		position: relative;
+		width: 100vw;
+		min-height: 150px;
+	}
+
+}
