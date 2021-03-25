@@ -25,6 +25,7 @@ const finishBar = document.getElementById("finish").childNodes[1];
 const adressForm = document.querySelector(' div.adress');
 const all_Imputs_Adress=document.querySelectorAll(' div.adress input');
 const all_message_Adress=document.querySelectorAll(' div.adress form div span');
+const Final=document.querySelector('section.finish')
 
 const nextButton = document.getElementsByName("next");
 
@@ -222,6 +223,7 @@ function displayShipping() {
 }
 
 function displayFinish() {
+  Final.style.display='flex';
   finishBar.style.backgroundColor = "rgb(250, 184, 4)";
 }
 
