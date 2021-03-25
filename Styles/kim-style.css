@@ -48,6 +48,7 @@
   transition: all 2s;
   display: block;
   height: 100%;
+  z-index: 0;
 }
 
 #timer-msg {

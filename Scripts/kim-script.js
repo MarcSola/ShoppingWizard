@@ -91,7 +91,7 @@ shipping_time.forEach(function (element){
 
 // gift checkbox listener
 gift.addEventListener("click", toggleGiftArea);
-
+precio_add=0;
 // preparing shipping interval to display
 function shippingInterval(){
   let shipping_time_range = 0;
@@ -103,7 +103,19 @@ function shippingInterval(){
     }
 
   }
-
+  if (shipping_time[0].checked===true){
+    document.querySelector("section.finish div.precios span.add_price").innerText="0 €";
+    
+  }
+  else if (shipping_time[1].checked===true){
+    document.querySelector("section.finish div.precios span.add_price").innerText="5 €";
+    precio_add=5;
+  }
+  else if (shipping_time[2].checked===true){
+    document.querySelector("section.finish div.precios span.add_price").innerText="10 €";
+    precio_add=10;
+  }
+  
   let minutes = current_minutes;
 
   // adjusting minutes value when it's less than 10
@@ -162,7 +174,7 @@ function shippingInterval(){
   max_date.innerHTML = `${month}` + "/" + `${max_date_day}` + "/" + `${current_year}` + " at " + `${final_shipping_hour}` + ":" + `${final_shipping_minutes}`;
 
   shipping_date_interval_string = "Between: " + min_date.innerHTML + " and " + max_date.innerHTML;
-
+  document.querySelector('div.der p.date').innerText=shipping_date_interval_string ;
 }
 
 
@@ -181,29 +193,6 @@ function toggleGiftArea(){
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -386,6 +375,7 @@ function goToFinish() {
   shippingButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   finishButton.style.visibility = "visible";
   shippingForm.style.display = "none";
+  document.querySelector("section.finish div.der p.total span.total_price").innerText = precio_add+moto_price+" "+"€";
   displayFinish();
 }
 

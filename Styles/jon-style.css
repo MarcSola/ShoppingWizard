@@ -192,3 +192,10 @@ section.finish{
    padding-left: 280px;
    padding-right: 20px;
   }   
+  section.finish div.der p.date {
+    color:white;
+    padding-top: 20px;
+    font-size: 10px;
+    
+   }   
+ 
