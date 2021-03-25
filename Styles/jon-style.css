@@ -97,3 +97,95 @@ main.main section div input{
     transform: scale(0.4);
     
 }
+
+/*________________________________finish styles*/
+ 
+section.finish{
+    margin: 15% 5%;
+    position: absolute;
+    display: none;
+    z-index: 2;
+    flex-direction: row;
+   }
+   /*________________________-your order price styles*/
+   section.finish div.der {
+    margin-left: 50px;
+    background-color:rgba(128, 128, 128, 0.5);
+    padding: 20px 20px 20px 20px;
+    max-height: 400px;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+   }
+   section.finish div.der div.your_order {
+    border-bottom: 1px solid rgb(12, 11, 11);
+   }
+   section.finish div.der div.precios{
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(12, 11, 11);
+   }
+   section.finish div.der div.precios p {
+    padding-top: 20px;
+    color:white;
+   }
+    
+   section.finish div.der p.total {
+    padding-top: 20px;
+    color:white;
+   }
+   /*________________________-your purchase styles*/
+   section.finish div.izq{
+    
+    max-height: 400px;
+    padding: 50px 50px;
+    background-color:rgba(128, 128, 128, 0.3);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    
+    
+   }
+   section.finish div.izq img{
+    padding-bottom: 30px;
+    max-width: 300px;
+    
+    
+   }
+   section.finish div.izq h1{
+    color:white;
+    padding-bottom: 15px;
+    
+    
+    
+   }
+   section.finish div.izq p{
+    padding-bottom: 15px;
+    color:white;
+    
+   }
+   section.finish div.izq form label{
+    color:rgb(233, 229, 229);
+    
+   }
+   section.finish div.izq p.conditions-terms{
+    font-size: 10px;
+    color:rgb(224, 211, 19);
+    
+   }
+   /*_______________________________________-precios*/
+    
+   section.finish div.der div.precios span.base_price {
+    
+    color:white;
+    padding-left: 250px;
+    padding-right: 20px;
+   }
+   section.finish div.der div.precios span.add_price {
+    color:white;
+    padding-left: 180px;
+    padding-right: 20px;
+    
+   }
+   section.finish div.der p.total span.total_price {
+    color:white;
+    padding-left: 280px;
+    padding-right: 20px;
+   }   

@@ -10,6 +10,7 @@ const mainFooterBox = document.getElementById("main-footer-box");
 const progressName = document.getElementById("progress-name");
 const footerButtons = document.getElementById("footer-buttons");
 
+
 const mainFooterPicture = document.getElementById("main-footer-picture");
 const mainFooterDisc = document.getElementById("main-footer-disc");
 
@@ -21,6 +22,8 @@ const profileBar = document.getElementById("profile").childNodes[1];
 const addressBar = document.getElementById("address").childNodes[1];
 const shippingBar = document.getElementById("shipping").childNodes[1];
 const finishBar = document.getElementById("finish").childNodes[1];
+
+
 
 const nextButton = document.getElementsByName("next");
 
@@ -47,6 +50,13 @@ const userEmail = document.getElementById("user-email");
 const userPassword1 = document.getElementById("password1");
 const userPassword2 = document.getElementById("password2");
 
+
+const adressForm = document.querySelector(' div.adress');
+const address_Form = document.getElementById("adress-form")
+const all_Imputs_Adress=document.querySelectorAll(' div.adress input');
+const all_message_Adress=document.querySelectorAll(' div.adress form div span');
+const Final=document.querySelector('section.finish')
+
 // jon slide and text hidden in profile
 const slideHidden = document.querySelector(".jon_slide");
 const textHidden = document.querySelector(".jon_text");
@@ -54,7 +64,7 @@ const textHidden = document.querySelector(".jon_text");
 buyButton.addEventListener("click", clickBuy);
 
 nextButton[0].addEventListener("click", checkUserProfile);
-nextButton[1].addEventListener("click", goToShipping);
+nextButton[1].addEventListener("click", checkAdress);
 nextButton[2].addEventListener("click", goToFinish);
 
 
@@ -76,6 +86,7 @@ function changeTheme() {
 clearButton.forEach(ele=> {
   ele.addEventListener("click", () => {
   profileForm.reset();
+  address_Form.reset();
 });
 })
 
@@ -141,7 +152,50 @@ function checkUserProfile() {
 
 
 
+    
 
+// function checkAdress() {​​​​​​​​
+//   for(i=0;i<all_Imputs_Adress.length;i++){​​​​​​​​
+//     if (all_Imputs_Adress[i].checkValidity()===false) {​​​​​​​​
+//       if (i===2){​​​​​​​​
+//         all_message_Adress[i].style.visibility='visible';
+//         all_message_Adress[i].innerText = "Please writeby this format: dd/mm/aaaa";
+//       }​​​​​​​​ else {​​​​​​​​
+//         all_message_Adress[i].style.visibility='visible';
+//         all_message_Adress[i].innerText = "Please Enter the "+all_Imputs_Adress[i].name;
+//         console.log(all_message_Adress[i].innerText);
+//       }​​​​​​​​
+//     }​​​​​​​​ else if(all_Imputs_Adress[i].checkValidity()===true){​​​​​​​​
+//       x=x+1;
+//       all_message_Adress[i].style.visibility='hidden';
+//       if(x===all_Imputs_Adress.length){​​​​​​​​
+//         goToShipping();
+//       };​​​​​​​​
+//     };​​​​​​​​
+//   };​​​​​​​​
+// };​​​​​​​​
+
+
+function checkAdress() {
+  var x = 0
+  for(var i = 0; i < all_Imputs_Adress.length; i++){
+    if(all_Imputs_Adress[i].checkValidity() === false) {
+      if( i === 2) {
+        all_message_Adress[i].style.visibility = "visible";
+        all_message_Adress[i].innerText = "Please write by this format : dd/mm/aaaa";
+      } else {
+        all_message_Adress[i].style.visibility = "visible";
+        all_message_Adress[i].innerText = "Please Enter the" + all_Imputs_Adress[i].name;
+      }
+    } else if(all_Imputs_Adress[i].checkValidity()=== true) {
+      x = x + 1;
+      all_message_Adress[i].style.visibility = "hidden";
+      if( x === all_Imputs_Adress.length) {
+        goToShipping();
+      }
+    }
+  }
+}
 
 function clickBuy() {
   mainBackground.className = "profile-background";
@@ -176,6 +230,7 @@ function goToShipping() {
   mainBackground.className = "shipping-background";
   addressButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   shippingButtons.forEach((ele) => (ele.style.visibility = "visible"));
+  adressForm.style.display = "none";
   displayShipping();
 }
 
@@ -209,6 +264,7 @@ function displayProfile() {
 
 function displayAddress() {
   addressBar.style.backgroundColor = "var(--progress-bar)";
+  adressForm.style.display ="block"
   profileBody[0].style.display = "none";
 }
 
@@ -217,6 +273,7 @@ function displayShipping() {
 }
 
 function displayFinish() {
+  Final.style.display = "flex"
   finishBar.style.backgroundColor = "var(--progress-bar)";
 }
 

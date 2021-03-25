@@ -144,6 +144,80 @@
       
       <p id=demo></p>
    </div>
+    <!--_____________________________-adress-___________________________-->
+    <div class="adress">
+
+      <form id="adress-form">
+
+          <div class="adress-wrappers">
+              First name <input type="text" name="firstname" id="firstname" required>
+              <span class="warning-message"></span>
+          </div>
+
+          <div class="adress-wrappers">
+              Last name<input type="text" name="lastname" id="lastname" maxlength="50" required>
+              <span class="warning-message"></span>
+
+          </div>
+          <div class="adress-wrappers">
+              Birthday<input type="text" name="birthday" id="birthday" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}" required>
+              <span class="warning-message"></span>
+          </div>
+
+          <div class="adress-wrappers">
+              Address 1<input type="text" name="Address 1" id="Address 1" required>
+              <span class="warning-message"></span>
+          </div>
+
+          <div class="adress-wrappers">
+              Address 2<input type="text" name="Address 2" id="Address 2" required>
+              <span class="warning-message"></span>
+          </div>
+
+          <div class="adress-wrappers">
+              Postal code<input type="number" name="postal" id="postal" required>
+              <span class="warning-message"></span>
+          </div>
+
+          <div class="adress-wrappers">
+              Country<input type="text" name="Country" id="Country" required>
+              <span class="warning-message"></span>
+          </div>
+
+          <div class="adress-wrappers">
+              Phone<input type="number" name="phone" id="phone" minlength="8" maxlength="20" required>
+              <span class="warning-message"></span>
+          </div>
+
+
+      </form>
+      <p id=demo></p>
+  </div> 
+  <!--_____________________________-Shipping-___________________________-->
+  <!--_____________________________-Finish-___________________________-->
+  <section class='finish'>
+      <div class='izq'>
+          <img class='image' src="Resources/images/product-images/sedov_b2_bike_2.jpg">
+          <h1 class='chossen_one'>Your purchase</h1>
+          <p class='p_name'>Product: <span>Nymbus</span></p>
+          <p class=p_model>Model:  <span>S 300w</span></p>
+          <form class="accept policy">
+              <input type="checkbox" id='policy'>
+              <label for="policy"> I had read and accept the terms and condition</label>
+          </form>
+          <p class=conditions-terms>Please accept terms and conditions</p>
+      </div>
+      <div class='der'>
+          <div class='your_order'>
+              <h1>Your order</h1>
+          </div>
+          <div class='precios'>
+              <p>NYmbus:  <span class="base_price">4500</span></p>
+              <p>Premium Shipping:  <span class="add_price">95555</span></p>
+          </div>
+          <p class='total'>Total:<span class="total_price">388383838</span></p>
+      </div>
+  </section>
     <!----------------
     ----  HEADER  ----
     ----------------->
