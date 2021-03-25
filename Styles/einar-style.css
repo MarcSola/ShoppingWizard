@@ -149,3 +149,15 @@ Selector price menu
     height: 50px;
     color: whitesmoke;
 }
+
+.customSelectColorEinarDiv {
+    background-color: rgb(50, 53, 205);
+    margin-top: 20px;
+}
+
+.colorSelectorEinarClass {
+    background-color: gray;
+    width: 400px;
+    height: 50px;
+    color: whitesmoke;
+}
