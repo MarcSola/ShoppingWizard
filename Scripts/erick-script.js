@@ -17,9 +17,11 @@ document.addEventListener('DOMContentLoaded', function(){
 		childs.forEach(function(elemento){
 
 			if(elemento == selected){
-				elemento.classList.add("active");
+				elemento.classList.add("active")
+				elemento.classList.add("glitch");
 			}else{
 				elemento.classList.remove("active");
+				elemento.classList.remove("glitch");
 			}
 		})
 

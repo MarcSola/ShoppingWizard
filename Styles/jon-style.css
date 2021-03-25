@@ -29,10 +29,12 @@ main.main section.jon_text{
 }
 main.main section.jon_text h1{
    font-family: 'Russo One', sans-serif;
-   color:#FF00E6;
+   color:var(--nymbus);
+   font-weight: lighter;
+   text-shadow: none;
    margin-bottom: 10px;
    margin-top: 10px;
-   font-size: 70px;
+   font-size: 4em;
 }
 
 main.main section.jon_text ul{

@@ -1,16 +1,3 @@
-:root {
-  --main-background: black;
-  --button: rgb(250, 184, 4);
-  --progress: #ddd;
-  --progress-bar: rgba(247, 223, 8, 0.63);
-  --text-color: #505050;
-  --main-blur: blur(7px) contrast(0.9);
-  --instagram-color: rgb(247, 243, 243);
-}
-
-#instagram {
-  color: var(--instagram-color);
-}
 
 .main {
     /*background-image: url("../Resources//images/product-images//aether_air_purifying_bike_1.jpg");*/
@@ -182,7 +169,6 @@ ul li {
 }
 
 
-
 #profile-li .buttons {
   visibility: visible;
 }
@@ -197,6 +183,25 @@ ul li {
 #finish-li .buttons {
   visibility: hidden;
   width: 60%;
+}
+
+#profile-li p {
+  color: var(--footer);
+  font-weight: bold;
+}
+
+#address-li p{
+  color: var(--footer);
+  font-weight: bold;
+}
+
+#shipping-li p{
+  color: var(--footer);
+  font-weight: bold;
+}
+#finish-li p {
+  color: var(--footer);
+  font-weight: bold;
 }
 
 #main-footer-picture {
@@ -325,9 +330,9 @@ ul li {
  }
 
  input:required:valid {
-  border-color: green;
+  border-color: rgb(255, 251, 0);
   }
-  
+
   input:required:focus:valid {
   background-size: 25px;
   }
@@ -337,7 +342,7 @@ ul li {
   .profile-wrappers {
   margin-bottom: 30px;
   }
-  
+
   .warning-message {
     height: fit-content;
     width: 100%;
@@ -370,10 +375,34 @@ ul li {
 
 html[mode-changes = "light"] {
 --main-background: rgb(255, 255, 255);
---button: #ddd;
---progress: rgba(248, 242, 242, 0.137);
---progress-bar: rgb(250, 248, 248);
---text-color: rgb(250, 248, 248);
+--button: rgb(255, 255, 255);
+--progress: rgba(207, 207, 207, 0.137);
+--progress-bar: rgb(255, 255, 255);
+--text-color: rgb(0, 0, 0);
 --main-blur: blur(5px) contrast(0.3);
 --instagram-color: black;
+--header:white;
+--invert:filter invert(100);
+--header-picker:#FF00E6;
+--nymbus:#FF00E6;
+--footer:#000000;
+}
+
+:root {
+  --main-background: black;
+  --button: #FFB300;
+  --progress: #3d3d3d;
+  --progress-bar: #FFB300;
+  --text-color: #c7c7c7;
+  --main-blur: blur(7px) contrast(0.9);
+  --instagram-color: rgb(247, 243, 243);
+  --header:rgb(177, 177, 177);
+  --invert:invert(100);
+  --header-picker:#ffffff;
+  --nymbus:#ffffff;
+  --footer:#c7c7c7;
+}
+
+#instagram {
+  color: var(--instagram-color);
 }

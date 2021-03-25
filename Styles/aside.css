@@ -5,6 +5,7 @@
 	max-width: 10vw;
 	width: 100%;
 	z-index: 1000;
+	border-right: solid 1px rgb(80, 80, 80);
 }
 
 .erick-aside-grid{
@@ -22,6 +23,7 @@
 }
 
 .asideLogoEinar img{
+	filter: var(--invert);
 	margin: 0 auto;
 	width: 100%;
 	object-fit: cover;
@@ -49,11 +51,13 @@
 .erick-aside-grid div h3{
 	font-size: 90%;
 	margin-bottom: 5%;
+	color: var(--text-color);
 }
 .erick-aside-grid div div p{
 	font-size: 90%;
 	margin-top: 5%;
 	margin-bottom: 10%;
+	color: var(--text-color);
 }
 
 /** -------------------------------
@@ -62,7 +66,7 @@
 @media only screen and (max-width:800px) {
 
  	.aside{
-		background-color: rgb(255, 255, 255);
+		background-color: var(--main-background);
 		width: 100%;
 		height:100%;
 		max-width: 100vw;

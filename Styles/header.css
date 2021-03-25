@@ -17,7 +17,7 @@ z-index: 9000;
 	padding-right: 2%;
 	margin-right: 2%;
 	margin-top: 2%;
-	color: white;
+	color: var(--header);
 	column-gap: 1%;
 	align-items: center;
 	vertical-align: middle;
@@ -30,7 +30,7 @@ z-index: 9000;
 	height: fit-content;
 	display: flex;
 	padding-left: 55%;
-	color: white;
+	color: var(--header);
 	column-gap: 30%;
 	position: right;
 	left: 100%;
@@ -52,7 +52,7 @@ z-index: 9000;
 	border-bottom:solid 2px;
 }
 .active{
-	color:#FF00E6;
+	color:var(--header-picker);
 	border-bottom: solid 2px;
 }
 
