@@ -52,11 +52,17 @@ function priceSelectedForCostumer(event) {
     var AllOptionprices = document.querySelector(".priceSelectorEinarClass");
     replaceMainPrice(AllOptionprices.value)
 }
-
+var moto_price=0
 function replaceMainPrice(price) {
     document.getElementById("finalPriceEinar").innerHTML = price;
-    document.querySelector("section.finish div.precios span.base_price").innerText = price;
-
+   document.querySelector("section.finish div.precios span.base_price").innerText=price;
+   if(price==="4.500 €"){moto_price=4500}
+   else if(price==="4.500 €"){moto_price=4500}
+   else if(price==="5.300 €"){moto_price=5300}
+   else if(price==="6.000 €"){moto_price=6000}
+   else if(price==="6.500 €"){moto_price=6500}
+   else{price='Choose one!!'};
+   
 
 }
 console.log(globalprice)
