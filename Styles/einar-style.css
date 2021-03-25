@@ -139,11 +139,30 @@ Selector price menu
 
 /////////////////////////// */
 
+.allBikeDataInContainerClass {
+    margin-top: 20%;
+    height: 400px;
+    width: 400px;
+    padding-top: 10px;
+}
+
 .customSelectEinarDiv {
     background-color: yellowgreen;
 }
 
 .priceSelectorEinarClass {
+    background-color: gray;
+    width: 400px;
+    height: 50px;
+    color: whitesmoke;
+}
+
+.customSelectColorEinarDiv {
+    background-color: rgb(50, 53, 205);
+    margin-top: 20px;
+}
+
+.colorSelectorEinarClass {
     background-color: gray;
     width: 400px;
     height: 50px;
