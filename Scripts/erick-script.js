@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
 function mobileHiddenNav() {
-	const nav = document.getElementById("erick-nav-list");
+	const nav = document.getElementById("erick-nav-mobile");
 	if (nav.style.display === "none") {
 		nav.style.display = "block";
 	} else {
