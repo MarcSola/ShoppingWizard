@@ -31,8 +31,10 @@ main.main section.jon_text h1{
    font-family: 'Russo One', sans-serif;
    color:#FF00E6;
    margin-bottom: 10px;
-
+   margin-top: 10px;
+   font-size: 70px;
 }
+
 main.main section.jon_text ul{
    text-align: left;
    margin-bottom: 10px;
