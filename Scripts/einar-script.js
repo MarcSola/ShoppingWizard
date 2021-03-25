@@ -25,16 +25,9 @@ function hovimg(event) {
     option.style.transform = 'translateY(-2px) translateX(+2px) scale(1.1)';
     option.style.transition = '0.5s';
     option.style.borderRadius = '10px';
-    option.style.border = '5px solid rgb(255, 204, 0)';
+    option.style.border = '5px solid #FF00E6';
 }
 
-function hovimg(event) {
-    option = event.target;
-    option.style.transform = 'translateY(-2px) translateX(+2px) scale(1.1)';
-    option.style.transition = '0.5s';
-    option.style.borderRadius = '10px';
-    option.style.border = '5px solid rgb(255, 204, 0)';
-}
 //closing of moveImages*/
 
 /* /////////////////////////// */
