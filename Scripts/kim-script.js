@@ -238,5 +238,5 @@ function registerTimer() {
       clearInterval(x);
       goBackToProduct();
     }
-  }, 60000);
+  }, 1000);
 }

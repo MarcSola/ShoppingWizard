@@ -5,9 +5,12 @@
   --progress-bar: rgba(247, 223, 8, 0.63);
   --text-color: #505050;
   --main-blur: blur(7px) contrast(0.9);
+  --instagram-color: rgb(247, 243, 243);
 }
 
-
+#instagram {
+  color: var(--instagram-color);
+}
 
 .main {
     /*background-image: url("../Resources//images/product-images//aether_air_purifying_bike_1.jpg");*/
@@ -61,15 +64,16 @@
 }
 
 #timer-msg {
-  margin: 70px auto;
-  padding: 20px;
-  background-color: #505050; 
-  border-radius: 5px;
-  width: 20%;
-  position: relative;
-  transition: all 5s ease-in-out;
-  visibility: visible;
-  color: whitesmoke; 
+  position:absolute;
+  top:120px;
+  right: 0px;
+  width:100%;
+  height:0;  
+  box-sizing:border-box;
+  color:white;  
+  text-align:center;
+  font-size: 12px;
+  filter: contrast(0.5);
 }
 
 .switch-wrapper {
@@ -89,7 +93,7 @@
 }
 
 .slider {
-  background-color: #ccc;
+  background-color: rgba(134, 130, 130, 0.61);
   bottom: 0;
   cursor: pointer;
   left: 2px;
@@ -109,7 +113,7 @@
 }
 
 input:checked + .slider {
-  background-color: #a7e6e0;
+  background-color: #5050508f;
 }
 
 input:checked + .slider:before {
@@ -322,4 +326,5 @@ html[mode-changes = "light"] {
 --progress-bar: rgb(250, 248, 248);
 --text-color: rgb(250, 248, 248);
 --main-blur: blur(5px) contrast(0.3);
+--instagram-color: black;
 }
