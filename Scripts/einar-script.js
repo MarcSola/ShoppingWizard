@@ -9,7 +9,7 @@ var imgArray = document.querySelectorAll('div.asideImgContainerClassEinar input'
 imgArray.forEach(function(moveImages) {
     moveImages.addEventListener('mouseover', hovimg)
     moveImages.addEventListener('mouseleave', no_hovimg)
-    moveImages.addEventListener('click', no_hovimg)
+    moveImages.addEventListener('click', changeimg)
 });
 
 function no_hovimg(event) {
@@ -24,8 +24,13 @@ function hovimg(event) {
     option = event.target;
     option.style.transform = 'translateY(-2px) translateX(+2px) scale(1.1)';
     option.style.transition = '0.5s';
-    option.style.borderRadius = '10px';
-    option.style.border = '5px solid #FF00E6';
+    option.style.borderRadius = '15px';
+    option.style.border = '5px solid black';
+}
+
+function changeimg(event) {
+    option = event.target;
+    option.style.border = '8px solid #FFB300';
 }
 
 //closing of moveImages*/
