@@ -24,7 +24,9 @@ const finishBar = document.getElementById("finish").childNodes[1];
 
 const nextButton = document.getElementsByName("next");
 
-const profileClearButton = document.getElementById("profile-reset");
+const clearButton = document.getElementsByName("reset");
+
+
 
 const profileButtons = document.querySelectorAll("#profile-li .buttons");
 const addressButtons = document.querySelectorAll("#address-li .buttons");
@@ -38,6 +40,7 @@ const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
 
 const profileBody = document.querySelectorAll(".profile-p");
 const profileForm = document.getElementById("profile-form");
+const profileInputs = document.querySelectorAll("#profile-form input");
 
 const userName = document.getElementById("username");
 const userEmail = document.getElementById("user-email");
@@ -54,13 +57,28 @@ nextButton[0].addEventListener("click", checkUserProfile);
 nextButton[1].addEventListener("click", goToShipping);
 nextButton[2].addEventListener("click", goToFinish);
 
+
+
 toggleSwitch.addEventListener("change", changeTheme);
 
 
-//userName.addEventListener("change", )
 
-//userPassword1.addEventListener("change", checkPassword);
-//userPassword2.addEventListener("change", checkPassword)
+function changeTheme() {
+  if (toggleSwitch.checked) {
+    document.documentElement.setAttribute("mode-changes", "light");
+  } else {
+    document.documentElement.setAttribute("mode-changes", "dark");
+  }
+}
+
+
+
+clearButton.forEach(ele=> {
+  ele.addEventListener("click", () => {
+  profileForm.reset();
+});
+})
+
 
 function checkUserProfile() {
   var regTypeUser = /^[A-Za-z0-9*]{5,20}$/;
@@ -70,12 +88,12 @@ function checkUserProfile() {
   if (userName.validity.valueMissing) {
     warningMessage[0].style.visibility = "visible";
     warningMessage[0].textContent = "Please Enter your username";
-    removeEventProfile();
+    //removeEventProfile();
   } else if (!regTypeUser.test(userName.value)) {
     warningMessage[0].style.visibility = "visible";
     warningMessage[0].textContent =
       "Only letters (either case), numbers, between 5 and 20 characters.";
-    removeEventProfile();
+  //  removeEventProfile();
   } else {
     warningMessage[0].style.visibility = "hidden";
   }
@@ -83,12 +101,12 @@ function checkUserProfile() {
   if (userEmail.validity.valueMissing) {
     warningMessage[1].style.visibility = "visible";
     warningMessage[1].textContent = "Please enter your email address.";
-    removeEventProfile();
+   // removeEventProfile();
   } else if (!regTypeEmail.test(userEmail.value) || userEmail.value.length >= 50) {
     warningMessage[1].style.visibility = "visible";
     warningMessage[1].textContent =
       "Only letters, numbers and (_), (.), less than 50 characters. example_@example.com, example.2@example.com.es";
-    removeEventProfile();
+   // removeEventProfile();
   } else {
     warningMessage[1].style.visibility = "hidden";
   }
@@ -96,12 +114,12 @@ function checkUserProfile() {
   if (userPassword1.validity.valueMissing) {
     warningMessage[2].style.visibility = "visible";
     warningMessage[2].textContent = "Please enter your password.";
-    removeEventProfile();
+   // removeEventProfile();
   } else if (!regTypePassword.test(userPassword1.value)) {
     warningMessage[2].style.visibility = "visible";
     warningMessage[2].textContent =
       "Password should contain at least one number, one uppercase, one lowercase, one special character. Between 8 and 20 characters.";
-    removeEventProfile();
+  //  removeEventProfile();
   } else {
     warningMessage[2].style.visibility = "hidden";
   }
@@ -109,30 +127,23 @@ function checkUserProfile() {
   if (userPassword2.validity.valueMissing) {
     warningMessage[3].style.visibility = "visible";
     warningMessage[3].textContent = "Please enter your confirm password.";
-    removeEventProfile();
+   // removeEventProfile();
   } else if (userPassword1.value !== userPassword2.value) {
     warningMessage[3].style.visibility = "visible";
     warningMessage[3].textContent = "Passwords do not match.";
-    removeEventProfile();
+  //  removeEventProfile();
   } else {
     warningMessage[3].style.visibility = "hidden";
   }
-  console.log(document.querySelectorAll("#profile-form input").forEach(ele => console.log(ele.value) ))
-  nextButton[0].addEventListener("click", goToAddress);
-  
+ removeEventProfile();
+ nextButton[0].addEventListener("click", goToAddress);
 }
 
-function changeTheme() {
-  if (toggleSwitch.checked) {
-    document.documentElement.setAttribute("mode-changes", "dark");
-  } else {
-    document.documentElement.setAttribute("mode-changes", "light");
-  }
-}
+
+
+
 
 function clickBuy() {
-  // go to the profile page.
-  // background changes
   mainBackground.className = "profile-background";
   footer.style.background = "none";
   productPage.style.display = "none";
@@ -146,34 +157,10 @@ function clickBuy() {
   textHidden.style.display = "none";
 }
 
-// function checkUserInputs() {
-//   console.log(userName.value)
-//   var regTypeUser =  /^[A-Za-z0-9*]{5,20}$/
-//   var regTypeEmail =/^[\w!#$%&'*+/=?`{|Ç^-¿]+(?:\.[\w!#$%&'*+/=?`{|Ç^-¿]+)*@(?:[a-zA-Z.]+\.)+[a-z]+$/
 
-//   if (userName.validity.valueMissing) {
-//     warningMessage.style.visibility = "visible"
-//     //warningMessage.className ="warning-message";
-//     warningMessage.textContent = "Please Enter your Username.";
-
-//   } else if (!regTypeUser.test(userName.value)) {
-//       warningMessage.style.visibility = "visible"
-//       warningMessage.textContent = "Only letters (either case), numbers, between 5 and 20 characters."
-//       removeEventProfile();
-//   }
-//   if (userEmail.validity.valueMissing){
-//     warningMessage.style.visibility = "visible";
-//     warningMessage.textContent = "Please enter your email address.";
-//   } else if(!regTypeEmail.test(userEmail.value) || userEmail.value.length >= 50 ) {
-//       warningMessage.style.visibility = "visible"
-//       warningMessage.textContent = "Only letters, numbers and (_), (.), less than 50 characters. example_@example.com, example.2@example.com.es"
-//     }
-//   warningMessage.classList.remove("warning-message");
-//   goToAddress();
-// }
 
 function removeEventProfile() {
-  nextButton[0].removeEventListener("click", goToAddress);
+  nextButton[0].removeEventListener("click", checkUserProfile);
 }
 
 function goToAddress() {
@@ -181,6 +168,8 @@ function goToAddress() {
   profileButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   addressButtons.forEach((ele) => (ele.style.visibility = "visible"));
   displayAddress();
+
+ 
 }
 
 function goToShipping() {
@@ -213,23 +202,22 @@ function goBackToProduct() {
  
 }
 
-console.log(productPage, "product page");
 
 function displayProfile() {
-  profileBar.style.backgroundColor = "rgb(250, 184, 4)";
+  profileBar.style.backgroundColor = "var(--progress-bar)";
 }
 
 function displayAddress() {
-  addressBar.style.backgroundColor = "rgb(250, 184, 4)";
+  addressBar.style.backgroundColor = "var(--progress-bar)";
   profileBody[0].style.display = "none";
 }
 
 function displayShipping() {
-  shippingBar.style.backgroundColor = "rgb(250, 184, 4)";
+  shippingBar.style.backgroundColor = "var(--progress-bar)";
 }
 
 function displayFinish() {
-  finishBar.style.backgroundColor = "rgb(250, 184, 4)";
+  finishBar.style.backgroundColor = "var(--progress-bar)";
 }
 
 function registerTimer() {
@@ -250,5 +238,5 @@ function registerTimer() {
       clearInterval(x);
       goBackToProduct();
     }
-  }, 60000);
+  }, 1000);
 }
