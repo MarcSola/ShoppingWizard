@@ -23,9 +23,9 @@ const addressBar = document.getElementById("address").childNodes[1];
 const shippingBar = document.getElementById("shipping").childNodes[1];
 const finishBar = document.getElementById("finish").childNodes[1];
 const adressForm = document.querySelector(' div.adress');
-const all_Imputs_Adress=document.querySelectorAll(' div.adress input');
-const all_message_Adress=document.querySelectorAll(' div.adress form div span');
-const Final=document.querySelector('section.finish')
+const all_Imputs_Adress = document.querySelectorAll(' div.adress input');
+const all_message_Adress = document.querySelectorAll(' div.adress form div span');
+const Final = document.querySelector('section.finish')
 
 const nextButton = document.getElementsByName("next");
 
@@ -107,73 +107,67 @@ function clickBuy() {
 /*_________________________________UserName*/
 
 function checkUsername() {
-  var regTypeUser =  /^[A-Za-z0-9*]{5,20}$/
+  var regTypeUser = /^[A-Za-z0-9*]{5,20}$/
   var regTypeEmail = "[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])"
   if (userName.validity.valueMissing) {
     warningMessage.style.visibility = "visible"
     //warningMessage.className ="warning-message";
     warningMessage.textContent = "Please Enter the Username";
-    
+
   } else {
     if (!regTypeUser.test(userName.value)) {
       warningMessage.style.visibility = "visible"
       warningMessage.textContent = "Only letters (either case), numbers, between 5 and 20 characters."
       removeEventProfile();
       console.log()
-    }else {
+    } else {
       warningMessage.classList.remove("warning-message");
       goToAddress();
     }
   }
 }
 /*______________________________Adress*/
-
-function checkAdress() {
-  
 x=0;
-for(i=0;i<all_Imputs_Adress.length;i++){
+function checkAdress() {
 
-  if (all_Imputs_Adress[i].checkValidity()===false) {
-        if (i===2){
-        all_message_Adress[i].style.visibility='visible';
+
+  for (i = 0; i < all_Imputs_Adress.length; i++) {
+
+    if (all_Imputs_Adress[i].checkValidity() === false) {
+      if (i === 2) {
+        all_message_Adress[i].style.visibility = 'visible';
         all_message_Adress[i].innerText = "Please writeby this format: dd/mm/aaaa";
-        }else{
-        
-        all_message_Adress[i].style.visibility='visible';
-        all_message_Adress[i].innerText = "Please Enter the "+all_Imputs_Adress[i].name;
+      } else {
+
+        all_message_Adress[i].style.visibility = 'visible';
+        all_message_Adress[i].innerText = "Please Enter the " + all_Imputs_Adress[i].name;
         console.log(all_message_Adress[i].innerText);
-        }
-      
-    
-  
-  }else if(all_Imputs_Adress[i].checkValidity()===true){
-      x=x+1;
-      all_message_Adress[i].style.visibility='hidden';
-      if(x===all_Imputs_Adress.length){
+      }
+
+
+
+    } else if (all_Imputs_Adress[i].checkValidity() === true) {
+      x = x + 1;
+      all_message_Adress[i].style.visibility = 'hidden';
+      if (x === all_Imputs_Adress.length) {
         goToShipping();
       }
+    }
   }
-    
-    
-}
-  
-  
-  
- 
 
 }
 
-  
 
 
-function removeEventProfile(){
+
+function removeEventProfile() {
   nextButton[0].removeEventListener("click", goToAddress);
 }
 
 
 function goToAddress() {
   mainBackground.className = "address-background";
-  adressForm.style.display='block'
+  adressForm.style.display = 'block'
 
   profileButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   addressButtons.forEach((ele) => (ele.style.visibility = "visible"));
@@ -182,12 +176,12 @@ function goToAddress() {
 
 function goToShipping() {
 
-    mainBackground.className = "shipping-background";
-    addressButtons.forEach((ele) => (ele.style.visibility = "hidden"));
-    shippingButtons.forEach((ele) => (ele.style.visibility = "visible"));
-    adressForm.style.display='none'
-    displayShipping();
-  
+  mainBackground.className = "shipping-background";
+  addressButtons.forEach((ele) => (ele.style.visibility = "hidden"));
+  shippingButtons.forEach((ele) => (ele.style.visibility = "visible"));
+  adressForm.style.display = 'none'
+  displayShipping();
+
 }
 
 function goToFinish() {
@@ -209,11 +203,11 @@ function goBackToProduct() {
 
 function displayProfile() {
   profileBar.style.backgroundColor = "rgb(250, 184, 4)";
-  
+
 }
 
 function displayAddress() {
-  adressForm.style.display='block'
+  adressForm.style.display = 'block'
   addressBar.style.backgroundColor = "rgb(250, 184, 4)";
   profileBody[0].style.display = "none"
 }
@@ -223,7 +217,7 @@ function displayShipping() {
 }
 
 function displayFinish() {
-  Final.style.display='flex';
+  Final.style.display = 'block';
   finishBar.style.backgroundColor = "rgb(250, 184, 4)";
 }
 
@@ -235,10 +229,10 @@ function registerTimer() {
     time--;
     timerMessage.style.visibility = "visible"
     timerMessage.style.backgroundColor = "rgb(39, 38, 38)"
-    timerMessage.innerHTML =`You started registering ${(min += 1)} minutes ago!`;
-    
+    timerMessage.innerHTML = `You started registering ${(min += 1)} minutes ago!`;
+
     setTimeout(function () {
-        timerMessage.style.visibility = "hidden"
+      timerMessage.style.visibility = "hidden"
     }, 5000);
 
     if (time === 0) {
