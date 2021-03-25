@@ -46,7 +46,8 @@ const profileForm = document.getElementById("profile-form");
 
 const userName = document.getElementById("username");
 
-
+//shipping form div
+const shippingForm = document.querySelector('div.shipping');
 
 // jon slide and text hidden in profile 
 const slideHidden = document.querySelector(".jon_slide");
@@ -54,8 +55,11 @@ const textHidden = document.querySelector(".jon_text");
 
 // Shipping form variables
 const shipping_time = document.querySelectorAll(".shipping-radio");
+const shipping_interval_error_box = document.getElementById("shipping-interval-box");
+const shipping_interval_error_msg = document.getElementById("shipping-interval-alert-msg");
 const min_date = document.getElementById("min-date");
 const max_date = document.getElementById("max-date");
+var shipping_date_interval_string = '';
 var current_date = new Date();
 var current_minutes = current_date.getMinutes();
 var current_hour = current_date.getHours();
@@ -68,64 +72,106 @@ const gift_textarea = document.getElementById("gift-textarea");
 const gift_wrapper_file = document.getElementById("gift-wrapper-file");
 var allowedExtensions = /(\.jpeg|\.png)$/i;
 
-// Shipping form event listeners
 
+// Shipping form event listeners
 // radio listeners
 shipping_time.forEach(function (element){
   element.addEventListener("click", shippingInterval);
 });
 
-//shipping_gift.style.display = "none";
-console.log("gift: ", gift.checked);
+// gift checkbox listener
+gift.addEventListener("click", toggleGiftArea);
+
+//console.logs to check things
 console.log("gift_wrapper_file: ", gift_wrapper_file.accept = "image/png");
 
+// preparing shipping interval to display
 function shippingInterval(){
   let shipping_time_range = 0;
   
   for(let i=0; i<shipping_time.length; i++){
     
     if(shipping_time[i].checked){
-
       shipping_time_range =  shipping_time[i].value / 24;
-
     }
+
   }
 
   let minutes = current_minutes;
 
+  // adjusting minutes value when it's less than 10
   if(minutes < 10){
-
-    minutes = "0"+`${minutes}`;
-    
+    minutes = "0"+ minutes;
   }
 
   let min_date_day = current_day;
+  let shipping_hour = current_hour;
+  let max_date_day = min_date_day + shipping_time_range;
 
-  if(current_hour >=18){
+  
+  // adjusting shipping day and hour depending on working shift and day of the month
+  if(shipping_hour >=19){
 
     min_date_day = min_date_day + 1;
+    shipping_hour = 9;
+    max_date_day = max_date_day + 1;
 
   }
 
-  let max_date_day = min_date_day + shipping_time_range;
-  let final_shipping_hour = current_hour;
+  if(min_date_day < 10){
+
+    min_date_day = "0" + min_date_day;
+
+    if (max_date_day < 10){
+
+      max_date_day = "0" + max_date_day;
+
+    }
+
+  }
+
+  let final_shipping_hour = shipping_hour;
   let final_shipping_minutes = minutes;
 
+  // adjusting hour depending on working shift
   if(final_shipping_hour < 9 && final_shipping_hour>=0){
 
     final_shipping_hour = 9;
     final_shipping_minutes = "00";
-    current_hour = 9;
+    shipping_hour = 9;
     minutes = "00";
 
   }else{
-
     final_shipping_minutes = minutes;
-
   }
 
-  min_date.innerHTML = `${current_month}` + "/" + `${min_date_day}` + "/" + `${current_year}` + " at " + `${current_hour}` + ":" + `${minutes}`;
-  max_date.innerHTML = `${current_month}` + "/" + `${max_date_day}` + "/" + `${current_year}` + " at " + `${final_shipping_hour}` + ":" + `${final_shipping_minutes}`;
+  let month = current_month;
+  
+  if(current_month<10){
+    month = "0" + current_month;
+  }
+
+  min_date.innerHTML = `${month}` + "/" + `${min_date_day}` + "/" + `${current_year}` + " at " + `${shipping_hour}` + ":" + `${minutes}`;
+  max_date.innerHTML = `${month}` + "/" + `${max_date_day}` + "/" + `${current_year}` + " at " + `${final_shipping_hour}` + ":" + `${final_shipping_minutes}`;
+
+  shipping_date_interval_string = "Between: " + min_date.innerHTML + " and " + max_date.innerHTML;
+  
+}
+
+
+// triggering the function for the first time without
+// click event to create free shipping date interval string
+shippingInterval()
+
+
+// toggle to display gift area
+function toggleGiftArea(){
+
+  if(gift.checked === true){
+    shipping_gift.style.visibility = "visible";
+  }else{
+    shipping_gift.style.visibility = "hidden";
+  }
 
 }
 
@@ -271,6 +317,7 @@ function goToFinish() {
   mainBackground.className = "finish-background";
   shippingButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   finishButton.style.visibility = "visible";
+  shippingForm.style.display = "none";
   displayFinish();
 }
 
@@ -296,7 +343,9 @@ function displayAddress() {
 }
 
 function displayShipping() {
+  shippingForm.style.display = "flex";
   shippingBar.style.backgroundColor = "rgb(250, 184, 4)";
+
 }
 
 function displayFinish() {

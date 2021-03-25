@@ -193,27 +193,27 @@
       
       <div id="shipping-time">
 
-        <div class="shipping-wrappers">
-          <input type="radio" class="shipping-radio" id="three-days" name="shipping-time" value="72" required>
-          <label for="three-days">Free shipment (72H) (no extra cost)</label>
-        </div>
-        
-        <div class="shipping-wrappers">
-            <input type="radio" class="shipping-radio" id="two-days" name="shipping-time" value="48"required>
-            <label for="two-days">Extra shipping (48h) (+5 €)</label>
-        </div>
-
-        <div class="shipping-wrappers">
-          <input type="radio" class="shipping-radio"id="one-day" name="shipping-time" value="24"required>
-          <label for="one-day">Premium (24h) (+10€)</label>
-        </div>
-
-        <div class="shipping-wrappers">
-          <div id="shipping-date"> 
-            <p>ESTIMATED DELIVERY DATE:</p> <br>
-            <span id="between">Between:&nbsp;</span><span id="min-date">min-date</span><span id="dash">&nbsp;and&nbsp;</span><span id="max-date">max-date</span>
+          <div class="shipping-wrappers">
+            <input type="radio" class="shipping-radio" id="three-days" name="shipping-time" value="72" checked required>
+            <label for="three-days">Free shipment (72H) (no extra cost)</label>
           </div>
-        </div>
+          
+          <div class="shipping-wrappers">
+              <input type="radio" class="shipping-radio" id="two-days" name="shipping-time" value="48"required>
+              <label for="two-days">Extra shipping (48h) (+5 €)</label>
+          </div>
+
+          <div class="shipping-wrappers">
+            <input type="radio" class="shipping-radio"id="one-day" name="shipping-time" value="24"required>
+            <label for="one-day">Premium (24h) (+10€)</label>
+          </div>
+
+          <div class="shipping-wrappers">
+            <div class="shipping-date"> 
+              <p style="color:white">ESTIMATED DELIVERY DATE:</p> <br>
+                <span id="between">Between:&nbsp;</span><span id="min-date">min-date</span><span id="dash">&nbsp;and&nbsp;</span><span id="max-date">max-date</span>
+            </div>
+          </div>
 
         <div class="shipping-wrappers">
           <input type="checkbox" id="gift" name="gift" value="gift" optional>
@@ -226,14 +226,14 @@
 
         <div class="shipping-wrappers">
           <label class="shipping-label" for="gift-textarea">Gift message:</label>
-          <textarea id="gift-textarea" name="gift-textarea" rows="9" cols="50">
+          <textarea id="gift-textarea" name="gift-textarea" rows="9" cols="50" maxlength="200">
             
           </textarea>
         </div>
 
         <div class="shipping-wrappers">
           <label class="shipping-label" for="myfile">Gift wrapper image</label>
-        <input type="file" id="gift-wrapper-file" name="gift-wrapper-file">
+        <input type="file" id="gift-wrapper-file" name="gift-wrapper-file" accept="image/png, image/jpeg">
         </div>
 
       </div> 
