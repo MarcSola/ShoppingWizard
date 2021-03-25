@@ -1,99 +1,190 @@
-
 main.main section div{
-     position: absolute;
-     transition: 0.5s;     
- }
- 
-main section.blackgrnd{
-    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_1.jpg");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    
-    transition: 2s;
-    
+    position: absolute;
+    transition: 0.5s;     
 }
-main.main section.jon_slide{
-    position: relative;
-    margin-top:30%;
-    margin-left: 5%;
-    z-index: 0;
+
+main section.blackgrnd{
+   background-image: url("../Resources/images/product-images/aether_air_purifying_bike_1.jpg");
+   background-size: 100%;
+   background-repeat: no-repeat;
+   background-position: center;
+   width: 100%;
+   
+   transition: 2s;
    
 }
+main.main section.jon_slide{
+   position: relative;
+   margin-top:30%;
+   margin-left: 5%;
+   z-index: 0;
+  
+}
 main.main section.jon_text{
-    margin-left: 3%;
-    margin-top: 300px;
-    position: absolute;
-    z-index: 100;
-    color:white;
+   margin-left: 3%;
+   margin-top: 350px;
+   position: absolute;
+   z-index: 100;
+   color:white;
 }
 main.main section.jon_text h1{
-    font-family: 'Russo One', sans-serif;
-    color:#FF00E6;
-    margin-bottom: 10px;
+   font-family: 'Russo One', sans-serif;
+   color:#FF00E6;
+   margin-bottom: 10px;
 
 }
 main.main section.jon_text ul{
-    text-align: left;
-    margin-bottom: 10px;
+   text-align: left;
+   margin-bottom: 10px;
 }
 main.main section.jon_text p{
-    text-align: left;
-    font-family: 'Nunito Sans', sans-serif;
-    margin-bottom: 10px;
+   text-align: left;
+   font-family: 'Nunito Sans', sans-serif;
+   margin-bottom: 10px;
 }
 main.main section.jon_text p span{
-    font-family: 'Source Code Pro', monospace;
-    color: #FFB300;
-    font-size: 30px;
-    font-weight: 100;
+   font-family: 'Source Code Pro', monospace;
+   color: #FFB300;
+   font-size: 30px;
+   font-weight: 100;
 }
 
 main.main section div input{
-   max-width: 200px;
-   max-height: 200px;
-   border: 0.5px solid grey; 
-   border-radius: 5px; 
-    
+  max-width: 200px;
+  max-height: 200px;
+  border: 0.5px solid grey; 
+  border-radius: 5px; 
+   
 
 }
 
 .uno{
-    
-    z-index: 4;
-    transform: scale(1);
-    top:70px;
-    left: 10px;
-    
-    
-    
+   
+   z-index: 4;
+   transform: scale(1);
+   top:70px;
+   left: 10px;
+   
+   
+   
 }
 .dos{
-    z-index:3 ;
-    /*transform: scale(0.5);*/
-    left: 40px;
-    transform: scale(0.7);
+   z-index:3 ;
+   /*transform: scale(0.5);*/
+   left: 40px;
+   transform: scale(0.7);
 
 }
 .tres{
-    z-index: 2;
-    /*transform: scale(0.4);*/
-    left: 55px;
-    transform: scale(0.6);
-         
+   z-index: 2;
+   /*transform: scale(0.4);*/
+   left: 55px;
+   transform: scale(0.6);
+        
 }
 .cuatr{
-    z-index: 1;
-    /*transform: scale(0.3);*/
-    left: 72px;
-    transform: scale(0.5);
-    
+   z-index: 1;
+   /*transform: scale(0.3);*/
+   left: 72px;
+   transform: scale(0.5);
+   
 }
 .cinc{
-    z-index: 0;
-    /*transform: scale(0.1);*/
-    left:90px;
-    transform: scale(0.4);
-    
+   z-index: 0;
+   /*transform: scale(0.1);*/
+   left:90px;
+   transform: scale(0.4);
+   
 }
+
+/*________________________________finish styles*/
+
+section.finish{
+   margin: 15% 5%;
+   position: absolute;
+   display: none;
+   z-index: 2;
+   flex-direction: row;
+  }
+  /*________________________-your order price styles*/
+  section.finish div.der {
+   margin-left: 50px;
+   background-color:rgba(128, 128, 128, 0.5);
+   padding: 20px 20px 20px 20px;
+   max-height: 400px;
+   backdrop-filter: blur(5px);
+   border-radius: 20px;
+  }
+  section.finish div.der div.your_order {
+   border-bottom: 1px solid rgb(12, 11, 11);
+  }
+  section.finish div.der div.precios{
+   padding-bottom: 10px;
+   border-bottom: 1px solid rgb(12, 11, 11);
+  }
+  section.finish div.der div.precios p {
+   padding-top: 20px;
+   color:white;
+  }
+   
+  section.finish div.der p.total {
+   padding-top: 20px;
+   color:white;
+  }
+  /*________________________-your purchase styles*/
+  section.finish div.izq{
+   
+   max-height: 400px;
+   padding: 50px 50px;
+   background-color:rgba(128, 128, 128, 0.3);
+   backdrop-filter: blur(5px);
+   border-radius: 20px;
+   
+   
+  }
+  section.finish div.izq img{
+   padding-bottom: 30px;
+   max-width: 300px;
+   
+   
+  }
+  section.finish div.izq h1{
+   color:white;
+   padding-bottom: 15px;
+   
+   
+   
+  }
+  section.finish div.izq p{
+   padding-bottom: 15px;
+   color:white;
+   
+  }
+  section.finish div.izq form label{
+   color:rgb(233, 229, 229);
+   
+  }
+  section.finish div.izq p.conditions-terms{
+   font-size: 10px;
+   color:rgb(224, 211, 19);
+   
+  }
+  /*_______________________________________-precios*/
+   
+  section.finish div.der div.precios span.base_price {
+   
+   color:white;
+   padding-left: 250px;
+   padding-right: 20px;
+  }
+  section.finish div.der div.precios span.add_price {
+   color:white;
+   padding-left: 180px;
+   padding-right: 20px;
+   
+  }
+  section.finish div.der p.total span.total_price {
+   color:white;
+   padding-left: 280px;
+   padding-right: 20px;
+  }   

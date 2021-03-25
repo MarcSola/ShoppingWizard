@@ -1,9 +1,15 @@
 :root {
-  --mainBlack: black;
-  --mainOrange: rgb(250, 184, 4);
-  --mainDarkGray: rgb(39, 38, 38);
-  --mainDarkGray: rgba(110, 108, 108, 0.473);
+  --main-background: black;
+  --button: rgb(250, 184, 4);
+  --progress: #ddd;
+  --progress-bar: rgba(247, 223, 8, 0.63);
+  --text-color: #505050;
+  --main-blur: blur(7px) contrast(0.9);
+  --instagram-color: rgb(247, 243, 243);
+}
 
+#instagram {
+  color: var(--instagram-color);
 }
 
 .main {
@@ -12,22 +18,24 @@
     background-repeat: no-repeat;
     background-position: right;
 }
+
 .profile-background {
   background-image: url("../Resources/images/product-images/aether_air_purifying_bike_11.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: contrast(0.5);
+  filter: var(--main-blur);
   transition: all 2s;
   display: block;
   height: 100%;
 }
+
 .address-background {
   background-image: url("../Resources/images/product-images/aether_air_purifying_bike_6.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: contrast(0.5);
+  filter: var(--main-blur);
   transition: all 2s;
   display: block;
   height: 100%;
@@ -38,7 +46,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: contrast(0.5);
+  filter: var(--main-blur);
   transition: all 2s;
   display: block;
   height: 100%;
@@ -49,15 +57,23 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  filter: contrast(0.5);
+  filter: var(--main-blur);
   transition: all 2s;
   display: block;
   height: 100%;
 }
 
 #timer-msg {
-  visibility: visible;
-  color: whitesmoke;
+  position:absolute;
+  top:120px;
+  right: 0px;
+  width:100%;
+  height:0;  
+  box-sizing:border-box;
+  color:white;  
+  text-align:center;
+  font-size: 12px;
+  filter: contrast(0.5);
 }
 
 .switch-wrapper {
@@ -77,7 +93,7 @@
 }
 
 .slider {
-  background-color: #ccc;
+  background-color: rgba(134, 130, 130, 0.61);
   bottom: 0;
   cursor: pointer;
   left: 2px;
@@ -97,7 +113,7 @@
 }
 
 input:checked + .slider {
-  background-color: #a7e6e0;
+  background-color: #5050508f;
 }
 
 input:checked + .slider:before {
@@ -152,7 +168,7 @@ ul li {
   border-style: none;
   height: 25px;
   letter-spacing: 5px;
-  background-color: rgb(250, 184, 4);
+  background-color: var(--button);
 }
 
 .buttons {
@@ -162,12 +178,10 @@ ul li {
   border-style: none;
   height: 25px;
   letter-spacing: 2px;
-  background-color: rgb(250, 184, 4);
+  background-color: var(--button);
 }
 
-/* #footer-buttons {
-    text-align: left;
-}  */
+
 
 #profile-li .buttons {
   visibility: visible;
@@ -218,14 +232,14 @@ ul li {
 
 .progress {
   width: 103%;
-  background-color: #ddd;
+  background-color: var(--progress);
   border-radius: 5px;
   margin: 10% 0;
 }
 #progress-bar {
   width: 100%;
   height: 3px;
-  background-color: rgba(247, 223, 8, 0.63);
+  background-color: var(--progress-bar);
 }
 
 .progress-bar {
@@ -237,7 +251,6 @@ ul li {
   display: flex;
   justify-content: space-evenly;
 }
-/*______________________________profile*/
 
 #profile-p {
   height: 150px;
@@ -258,7 +271,7 @@ ul li {
   margin: 10%;
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 100%;
   color: rgba(245, 239, 239, 0.945);
   letter-spacing: 1px
 }
@@ -274,7 +287,6 @@ ul li {
     outline: none;
     border-radius: 2px;
 }
-/*________________________________________-adress*/
 
 
 .adress {
@@ -285,9 +297,9 @@ ul li {
   transform: translate(-50%, -50%);
   z-index: 2;
   width: 80%;
-}
-
-.adress form {
+ }
+  
+ .adress form {
   margin: 10%;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -296,37 +308,36 @@ ul li {
   width: 200px;
   color: rgba(245, 239, 239, 0.945);
   letter-spacing: 1px
-}
-
-.adress form input {
+ }
+  
+ .adress form input {
   border:none;
-    background-color:rgb(0, 0, 0);
-    color: rgba(245, 239, 239, 0.945);
-    height: 40px;
-    width: 250px;
-    border-left: 1px solid rgba(209, 207, 207, 0.651);
-    border-bottom: 1px solid rgba(209, 207, 207, 0.651);
-    margin: 5px 0 3px 0;
-    padding: 10px;
-    outline: none;
-    border-radius: 2px;
-}
-/*________________________________________INPUTS*/
+  background-color:rgb(0, 0, 0);
+  color: rgba(245, 239, 239, 0.945);
+  height: 40px;
+  width: 250px;
+  border-left: 1px solid rgba(209, 207, 207, 0.651);
+  border-bottom: 1px solid rgba(209, 207, 207, 0.651);
+  margin: 5px 0 3px 0;
+  padding: 10px;
+  outline: none;
+  border-radius: 2px;
+ }
 
-input:required:valid {
-    border-color: green;
+ input:required:valid {
+  border-color: green;
   }
   
   input:required:focus:valid {
-    background-size: 25px;
+  background-size: 25px;
   }
   input:focus:invalid {
-    background-size: 25px;
+  background-size: 25px;
   }
   .profile-wrappers {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
   }
-
+  
   .warning-message {
     height: fit-content;
     width: 100%;
@@ -336,6 +347,7 @@ input:required:valid {
     border-radius: 0 0 5px 5px;
     box-sizing: border-box;
     visibility: hidden;
+    line-height: 27px;
   }
 
 .progress-box {
@@ -353,4 +365,15 @@ input:required:valid {
     opacity: 1;
     transform: rotateX(0);
   }
+}
+
+
+html[mode-changes = "light"] {
+--main-background: rgb(255, 255, 255);
+--button: #ddd;
+--progress: rgba(248, 242, 242, 0.137);
+--progress-bar: rgb(250, 248, 248);
+--text-color: rgb(250, 248, 248);
+--main-blur: blur(5px) contrast(0.3);
+--instagram-color: black;
 }
