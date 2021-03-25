@@ -1,5 +1,5 @@
 .aside {
-	background-color: var(--main-background);
+	background-color: rgb(255, 255, 255);
 	height: 100%;
 	min-height: 100vh;
 	max-width: 10vw;
