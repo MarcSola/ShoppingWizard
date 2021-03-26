@@ -56,6 +56,8 @@ const address_Form = document.getElementById("adress-form")
 const all_Imputs_Adress=document.querySelectorAll(' div.adress input');
 const all_message_Adress=document.querySelectorAll(' div.adress form div span');
 const Final=document.querySelector('section.finish')
+//shipping form div
+const shippingForm = document.querySelector('div.shipping');
 
 // jon slide and text hidden in profile
 const slideHidden = document.querySelector(".jon_slide");
@@ -103,6 +105,7 @@ function shippingInterval(){
     }
 
   }
+  
   if (shipping_time[0].checked===true){
     document.querySelector("section.finish div.precios span.add_price").innerText="0 €";
     
@@ -387,6 +390,7 @@ function displayShipping() {
   shippingBar.style.backgroundColor = "var(--progress-bar)";
   shippingForm.style.display = "flex";
   shippingBar.style.backgroundColor = "rgb(250, 184, 4)";
+
 }
 
 function displayFinish() {
