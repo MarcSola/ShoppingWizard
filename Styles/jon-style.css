@@ -1,32 +1,38 @@
 main.main section div{
     position: absolute;
-    transition: 0.5s;     
+    transition: 0.5s;
 }
 
 main section.blackgrnd{
    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_1.jpg");
    background-size: 100%;
+   margin-top: 50px;
    background-repeat: no-repeat;
    background-position: center;
    width: 100%;
-   
    transition: 2s;
-   
+   transform: translateX(100px);
 }
 main.main section.jon_slide{
    position: relative;
-   margin-top:30%;
-   margin-left: 5%;
-   z-index: 0;
-  
+   top: 10vh;
+   transform: translateX(50px);
+   z-index: 1;
 }
-main.main section.jon_text{
+
+section.jon_text{
+   margin-bottom: 20%;
    margin-left: 3%;
-   margin-top: 350px;
+   margin-top: 50vh;
    position: absolute;
    z-index: 100;
    color:white;
+   transform: scale(.9);
+   vertical-align: center;
+   align-items: center;
+   justify-items: justify;
 }
+
 main.main section.jon_text h1{
    font-family: 'Russo One', sans-serif;
    color:var(--nymbus);
@@ -49,7 +55,7 @@ main.main section.jon_text p{
 main.main section.jon_text p span{
    font-family: 'Source Code Pro', monospace;
    color: #FFB300;
-   font-size: 30px;
+   font-size: 1em;
    font-weight: 100;
 }
 
