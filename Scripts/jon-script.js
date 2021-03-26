@@ -1,6 +1,9 @@
 var imagArry=document.querySelectorAll('main.main section.jon_slide div input');
 var imagenFinish=document.querySelector('section.finish div.izq img')
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 imagArry.forEach(function(elem){
     elem.addEventListener('mouseover',hov)
     elem.addEventListener('mouseleave',no_hov)
@@ -29,6 +32,7 @@ function run(){
     forth.classList='tres';
     five.classList='cuatr';
     document.querySelector('main section.blackgrnd').style.backgroundImage=back;
+    document.setAttribute('section.finish div.izq img').style.backgroundImage=back;
     document.querySelector('main section.blackgrnd').style.opacity='0';
     
     document.querySelector('main section.blackgrnd').style.opacity='1';
@@ -69,12 +73,22 @@ function change(event){
     total_cont.insertBefore(container, total_cont.firstChild);
     frst_picture.classList=container.classList;
     container.classList='uno';
+    //La imagen del slide que recive el click , se coloca como backgroundImg.
+
     document.querySelector('main section.blackgrnd').style.backgroundImage=back;
     document.querySelector('main section.blackgrnd').style.opacity='0';
+<<<<<<< HEAD
+    document.querySelector('main section.blackgrnd').style.opacity='1';
+    
+    //esa misma imagen la mando a la ultima pagina.  
+   
+    imagenFinish.setAttribute("src",imag.getAttribute('src')) 
+=======
 
     document.querySelector('main section.blackgrnd').style.opacity='1';
 
     //esa misma imagen la mando a la ultima pagina.
     imagenFinish.setAttribute("src",imag.getAttribute('src'))
+>>>>>>> master
 
 }
