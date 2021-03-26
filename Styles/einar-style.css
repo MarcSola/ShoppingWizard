@@ -134,8 +134,8 @@ Selector price menu
     height: 200px;
     width: 100%;
     padding-top: 10px;
-    left: 600px;
-    transform: translateY(-200px);
+    left: .1vw;
+    transform: translateY(-220px);
 }
 
 .customSelectEinarDiv {
