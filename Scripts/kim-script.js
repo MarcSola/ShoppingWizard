@@ -115,7 +115,7 @@ function shippingInterval(){
     document.querySelector("section.finish div.precios span.add_price").innerText="10 €";
     precio_add=10;
   }
-  
+
   let minutes = current_minutes;
 
   // adjusting minutes value when it's less than 10
@@ -127,7 +127,7 @@ function shippingInterval(){
   let shipping_hour = current_hour;
   let max_date_day = min_date_day + shipping_time_range;
 
-  
+
   // adjusting shipping day and hour depending on working shift and day of the month
   if(shipping_hour >=19){
 
@@ -202,6 +202,7 @@ buyButton.addEventListener("click", clickBuy);
 nextButton[0].addEventListener("click", checkUserProfile);
 nextButton[1].addEventListener("click", checkAdress);
 nextButton[2].addEventListener("click", goToFinish);
+nextButton[3].addEventListener("click", goBackToProduct);
 
 
 
@@ -228,88 +229,41 @@ clearButton.forEach(ele=> {
 
 
 function checkUserProfile() {
-  var regTypeUser = /^[A-Za-z0-9*]{5,20}$/;
-  var regTypeEmail = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
-  var regTypePassword = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,20}$/;
-
-  if (userName.validity.valueMissing) {
-    warningMessage[0].style.visibility = "visible";
-    warningMessage[0].textContent = "Please Enter your username";
-    //removeEventProfile();
-  } else if (!regTypeUser.test(userName.value)) {
-    warningMessage[0].style.visibility = "visible";
-    warningMessage[0].textContent =
-      "Only letters (either case), numbers, between 5 and 20 characters.";
-  //  removeEventProfile();
-  } else {
-    warningMessage[0].style.visibility = "hidden";
+  let success = 0;
+  for (var i = 0; i < profileInputs.length; i++) {
+    if (!profileInputs[i].checkValidity()) {
+      if (profileInputs[i].validity.valueMissing) {
+        warningMessage[i].style.visibility = "visible";
+        warningMessage[i].textContent = `Please enter your ${profileInputs[i].name}`;
+     } else if (profileInputs[i].validity.patternMismatch) {
+        warningMessage[i].style.visibility = "visible";
+        profileInputs[0].validity.patternMismatch
+          ? warningMessage[0].textContent = "Only letters (either case), numbers, between 5 and 20 characters."
+          : warningMessage[0].style.visibility = "hidden";
+        profileInputs[1].validity.patternMismatch
+          ? warningMessage[1].textContent = "Only letters, numbers and (_), (.), less than 50 characters. example_@example.com, example.2@example.com.es"
+          : warningMessage[1].style.visibility = "hidden";
+        profileInputs[2].validity.patternMismatch
+          ? warningMessage[2].textContent = "Password should contain at least one number, one uppercase, one lowercase, one special character. Between 8 and 20 characters."
+          : warningMessage[2].style.visibility = "hidden";
+          profileInputs[3].validity.patternMismatch
+          ? warningMessage[3].textContent = "Password should contain at least one number, one uppercase, one lowercase, one special character. Between 8 and 20 characters."
+          : warningMessage[3].style.visibility = "hidden";  
+      };
+    } else if (profileInputs[i].checkValidity()) {
+        if (profileInputs[2].value !== profileInputs[3].value) {
+          warningMessage[3].visibility = "visible";  
+          warningMessage[3].textContent = "Passwords do not match.";
+        } else {
+         success += 1;
+          warningMessage[i].style.visibility = "hidden"; 
+          if(success === profileInputs.length && profileInputs[2].value === profileInputs[3].value) {
+            goToAddress() 
+          }
+        };
+    };
   }
-
-  if (userEmail.validity.valueMissing) {
-    warningMessage[1].style.visibility = "visible";
-    warningMessage[1].textContent = "Please enter your email address.";
-   // removeEventProfile();
-  } else if (!regTypeEmail.test(userEmail.value) || userEmail.value.length >= 50) {
-    warningMessage[1].style.visibility = "visible";
-    warningMessage[1].textContent =
-      "Only letters, numbers and (_), (.), less than 50 characters. example_@example.com, example.2@example.com.es";
-   // removeEventProfile();
-  } else {
-    warningMessage[1].style.visibility = "hidden";
-  }
-
-  if (userPassword1.validity.valueMissing) {
-    warningMessage[2].style.visibility = "visible";
-    warningMessage[2].textContent = "Please enter your password.";
-   // removeEventProfile();
-  } else if (!regTypePassword.test(userPassword1.value)) {
-    warningMessage[2].style.visibility = "visible";
-    warningMessage[2].textContent =
-      "Password should contain at least one number, one uppercase, one lowercase, one special character. Between 8 and 20 characters.";
-  //  removeEventProfile();
-  } else {
-    warningMessage[2].style.visibility = "hidden";
-  }
-
-  if (userPassword2.validity.valueMissing) {
-    warningMessage[3].style.visibility = "visible";
-    warningMessage[3].textContent = "Please enter your confirm password.";
-   // removeEventProfile();
-  } else if (userPassword1.value !== userPassword2.value) {
-    warningMessage[3].style.visibility = "visible";
-    warningMessage[3].textContent = "Passwords do not match.";
-  //  removeEventProfile();
-  } else {
-    warningMessage[3].style.visibility = "hidden";
-  }
- removeEventProfile();
- nextButton[0].addEventListener("click", goToAddress);
 }
-
-
-
-    
-
-// function checkAdress() {​​​​​​​​
-//   for(i=0;i<all_Imputs_Adress.length;i++){​​​​​​​​
-//     if (all_Imputs_Adress[i].checkValidity()===false) {​​​​​​​​
-//       if (i===2){​​​​​​​​
-//         all_message_Adress[i].style.visibility='visible';
-//         all_message_Adress[i].innerText = "Please writeby this format: dd/mm/aaaa";
-//       }​​​​​​​​ else {​​​​​​​​
-//         all_message_Adress[i].style.visibility='visible';
-//         all_message_Adress[i].innerText = "Please Enter the "+all_Imputs_Adress[i].name;
-//         console.log(all_message_Adress[i].innerText);
-//       }​​​​​​​​
-//     }​​​​​​​​ else if(all_Imputs_Adress[i].checkValidity()===true){​​​​​​​​
-//       x=x+1;
-//       all_message_Adress[i].style.visibility='hidden';
-//       if(x===all_Imputs_Adress.length){​​​​​​​​
-//         goToShipping();
-//       };​​​​​​​​
-//     };​​​​​​​​
-//   };​​​​​​​​
-// };​​​​​​​​
 
 
 function checkAdress() {
@@ -358,8 +312,6 @@ function goToAddress() {
   profileButtons.forEach((ele) => (ele.style.visibility = "hidden"));
   addressButtons.forEach((ele) => (ele.style.visibility = "visible"));
   displayAddress();
-
- 
 }
 
 function goToShipping() {
@@ -376,6 +328,7 @@ function goToFinish() {
   finishButton.style.visibility = "visible";
   shippingForm.style.display = "none";
   document.querySelector("section.finish div.der p.total span.total_price").innerText = precio_add+moto_price+" "+"€";
+  productPage.style.display = "none";
   displayFinish();
 }
 
@@ -390,10 +343,19 @@ function goBackToProduct() {
 
   mainBackground.style.display = "block";
   profilePage.style.display = "none";
-  progressInBox.style.display="none"
-  
- 
+  progressInBox.style.display="none";
+  /*
+  document.querySelector("section.finish").style.display="none";
+  document.querySelector("section div.izq").style.display="none";
+  document.querySelector("section div.der").style.display="none";
+  */
+  adressForm.style.display = "none";
+  shippingForm.style.display="none";
 }
+
+
+
+
 
 
 function displayProfile() {
