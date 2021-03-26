@@ -35,7 +35,7 @@ html{
 	display: grid;
 	display: none;
 	grid-template-columns:1fr 4fr ;
-	
+
 }
 
 .main section p{
