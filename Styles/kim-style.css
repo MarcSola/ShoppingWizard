@@ -329,6 +329,20 @@ ul li {
   outline: none;
   border-radius: 2px;
  }
+ .adress form select.country {
+  border:none;
+  background-color:rgb(0, 0, 0);
+  color: rgba(245, 239, 239, 0.945);
+  height: 40px;
+  width: 250px;
+  border-left: 1px solid rgba(209, 207, 207, 0.651);
+  border-bottom: 1px solid rgba(209, 207, 207, 0.651);
+  margin: 5px 0 3px 0;
+  padding: 10px;
+  outline: none;
+  border-radius: 2px;
+ }
+ 
 
  input:required:valid {
   border-color: rgb(255, 251, 0);
