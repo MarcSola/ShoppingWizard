@@ -1,9 +1,9 @@
 
 .main {
-    /*background-image: url("../Resources//images/product-images//aether_air_purifying_bike_1.jpg");*/
-    animation: transitionMainPage 7s;
-    background-repeat: no-repeat;
-    background-position: right;
+  /*background-image: url("../Resources//images/product-images//aether_air_purifying_bike_1.jpg");*/
+  animation: transitionMainPage 7s;
+  background-repeat: no-repeat;
+  background-position: right;
 }
 
 .profile-background {
@@ -329,6 +329,20 @@ ul li {
   outline: none;
   border-radius: 2px;
  }
+ .adress form select.country {
+  border:none;
+  background-color:rgb(0, 0, 0);
+  color: rgba(245, 239, 239, 0.945);
+  height: 40px;
+  width: 250px;
+  border-left: 1px solid rgba(209, 207, 207, 0.651);
+  border-bottom: 1px solid rgba(209, 207, 207, 0.651);
+  margin: 5px 0 3px 0;
+  padding: 10px;
+  outline: none;
+  border-radius: 2px;
+ }
+ 
 
  input:required:valid {
   border-color: rgb(255, 251, 0);
@@ -387,6 +401,7 @@ html[mode-changes = "light"] {
 --header-picker:#FF00E6;
 --nymbus:#FF00E6;
 --footer:#000000;
+--gradient-pink:linear-gradient(45deg,#0004ff00,#b4008721,#9900ff6b);
 }
 
 :root {
@@ -402,6 +417,8 @@ html[mode-changes = "light"] {
   --header-picker:#ffffff;
   --nymbus:#ffffff;
   --footer:#c7c7c7;
+  --gradient-pink:none;
+
 }
 
 #instagram {

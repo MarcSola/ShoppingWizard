@@ -6,6 +6,7 @@
 	width: 90%;
 	right: 0;
 	bottom: 0;
+	z-index: 1000;
 }
 
 .footer section p{
