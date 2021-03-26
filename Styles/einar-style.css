@@ -162,5 +162,9 @@ Selector price menu
 }
 
 .asideImgContainerClassEinar {
+<<<<<<< HEAD
     background-color: var(--main-background);
+=======
+    background-color: rgb(255, 255, 255);
+>>>>>>> afe277aa39de45a30a25ab05d9293b6d353cb832
 }

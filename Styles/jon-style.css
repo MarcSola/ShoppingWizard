@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 main.main section div{
     position: absolute;
     transition: 0.5s;
@@ -12,6 +13,15 @@ main section.blackgrnd{
    width: 100%;
    transition: 2s;
    transform: translateX(100px);
+=======
+
+    background-image: url("../Resources/images/product-images/aether_air_purifying_bike_1.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    transition: 2s;
+>>>>>>> afe277aa39de45a30a25ab05d9293b6d353cb832
 }
 main.main section.jon_slide{
    position: relative;

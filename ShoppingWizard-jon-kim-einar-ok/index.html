@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Styles/einar-style.css">
+    <link rel="stylesheet" href="Styles/erick-style.css">
+    <link rel="stylesheet" href="Styles/marc-style.css">
+    <link rel="stylesheet" href="Styles/jon-style.css">
+    <link rel="stylesheet" href="Styles/kim-style.css">
+    <link rel="stylesheet" href="Styles/footer.css">
+    <link rel="stylesheet" href="Styles/header.css">
+    <link rel="stylesheet" href="Styles/body.css">
+    <link rel="stylesheet" href="Styles/aside.css">
+    <link rel="stylesheet" href="Styles/typography.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Nunito+Sans:wght@200&family=Source+Code+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Einar links -->
+    <!-- Do not remove - CDN fa fa icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <title>Shopping Wizard</title>
+
+</head>
+<!-- --------------------------------------------------------------- -->
+
+<body class="body" id="body">
+
+    <!-- Separation with FLEX of the main body and the Aside section  -->
+    <div class="aside-div">
+        <!----------------
+  ----  ASIDE  ----
+  ----------------->
+        <!-- EINAR ASIDE
+    <aside class="aside" id="aside">
+      <div class="asideLogoEinar">
+          <img src="Resources/images/logo/Negro Blanco Toro Moderno Restaurante Logotipo.gif" alt="Logo">
+      </div>
+      <section class="asideContainerEinar">
+        <h3>Related products</h3>
+        <div class="asideImgContainerClassEinar">
+            <input type='image' src="Resources/images/product-images/sedov_b2_bike_2.jpg" alt="Mandragora">
+            <p>Mandragora</p>
+        </div>
+        <div class="asideImgContainerClassEinar">
+            <input type='image' src="Resources/images/product-images/sedov_b2_bike_1.jpg" alt="Stylus fire1">
+            <p>Stylus fire</p>
+        </div>
+        <div class="asideImgContainerClassEinar">
+            <input type='image' src="Resources/images/product-images/sedov_b2_bike_7.jpg" alt="Zebryta">
+            <p>Zebryta</p>
+        </div>
+        <div class="asideImgContainerClassEinar">
+            <input type='image' src="Resources/images/product-images/aether_air_purifying_bike_5.jpg" alt="Mamba black">
+            <p>Mamba black</p>
+        </div>
+        <div class="asideSocialMediaContainerClassEinar">
+          <h3>Social Media</h3>
+
+          <span class="spanSocialMediaContainerClass">
+            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+
+          </span>
+          <span class="spanSocialMediaContainerClass">
+            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+          </span>
+          <span class="spanSocialMediaContainerClass">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </span>
+        </div>
+      </section>
+    </aside>
+    -->
+        <aside class="aside" id="aside">
+            <section class="erick-aside-grid">
+                <div class="asideLogoEinar">
+                    <img src="Resources/images/logo/Negro Blanco Toro Moderno Restaurante Logotipo.gif" alt="Logo">
+                </div>
+                <div class="erick-mobile-grid">
+                    <h3>Related products</h3>
+                    <div class="asideImgContainerClassEinar">
+                        <input type='image' src="Resources/images/product-images/sedov_b2_bike_2.jpg" alt="Mandragora">
+                        <p>Mandragora</p>
+                    </div>
+                    <div class="asideImgContainerClassEinar">
+                        <input type='image' src="Resources/images/product-images/sedov_b2_bike_1.jpg" alt="Stylus fire1">
+                        <p>Stylus fire</p>
+                    </div>
+                    <div class="asideImgContainerClassEinar">
+                        <input type='image' src="Resources/images/product-images/Voisin-Motorcycle-Concept-by-Andrew-Fabishevskiy_Motorcycle-Concept-5.jpg" alt="Zebryta">
+                        <p>Zebryta</p>
+                    </div>
+                    <div class="asideImgContainerClassEinar">
+                        <input type='image' src="Resources/images/product-images/aether_air_purifying_bike_5.jpg" alt="Mamba black">
+                        <p>Mamba black</p>
+                    </div>
+                </div>
+                <div class="erick-social-media">
+                    <h3>Social Media</h3>
+                    <i class="fa fa-youtube-play" aria-hidden="true" style="color: red;"></i>
+                    <i class="fa fa-twitter-square" aria-hidden="true" style="color:#1DA1F2"></i>
+                    <i class="fa fa-instagram" aria-hidden="true" id="instagram"></i>
+                </div>
+            </section>
+        </aside>
+    </div>
+    <!-- Separation with FLEX of the main body and the Aside section  -->
+    <div class="grid-body">
+        <div class="profile-p">
+
+            <form id="profile-form" name="profile-form">
+                <div class="profile-wrappers">
+                    Username <br> <input type="text" name="username" id="username" required>
+                    <span style="font-size:8px">Only letters (either case), numbers, between 5 and 20 characters.</span><br>
+                    <span class="warning-message"></span>
+                </div>
+                <div class="profile-wrappers">
+                    Email <br> <input type="email" name="email" id="user-email" required>
+                    <span style="font-size:8px">Less than 50 characters. The general format of an email address is required.</span><br>
+                    <span class="warning-message"></span>
+                </div>
+                <div class="profile-wrappers">
+                    Password <br> <input type="password" name="password1" id="password1" required>
+                    <span style="font-size:8px">Password should contain at least one number, one uppercase, one lowercase, one special character.</span><br>
+                    <span class="warning-message"></span>
+                </div>
+                <div class="profile-wrappers">
+                    Confirm Password <br><input type="password" name="password2" id="password2" required>
+                    <span style="font-size:8px">Confirm your password.</span><br>
+                    <span class="warning-message"></span>
+                </div>
+
+
+            </form>
+
+            <p id=demo></p>
+        </div>
+        <!--_____________________________-adress-___________________________-->
+        <div class="adress">
+
+            <form id="adress-form">
+
+                <div class="adress-wrappers">
+                    First name <input type="text" name="firstname" id="firstname" required>
+                    <span class="warning-message"></span>
+                </div>
+
+                <div class="adress-wrappers">
+                    Last name<input type="text" name="lastname" id="lastname" maxlength="50" required>
+                    <span class="warning-message"></span>
+
+                </div>
+                <div class="adress-wrappers">
+                    Birthday<input type="text" name="birthday" id="birthday" pattern="[0-9]{2}\/[0-9]{2}\/[0-9]{4}" required>
+                    <span class="warning-message"></span>
+                </div>
+
+                <div class="adress-wrappers">
+                    Address 1<input type="text" name="Address 1" id="Address 1" required>
+                    <span class="warning-message"></span>
+                </div>
+
+                <div class="adress-wrappers">
+                    Address 2<input type="text" name="Address 2" id="Address 2" required>
+                    <span class="warning-message"></span>
+                </div>
+
+                <div class="adress-wrappers">
+                    Postal code<input type="number" name="postal" id="postal" required>
+                    <span class="warning-message"></span>
+                </div>
+
+                <div class="adress-wrappers">
+                    Country<input type="text" name="Country" id="Country" required>
+                    <span class="warning-message"></span>
+                </div>
+
+                <div class="adress-wrappers">
+                    Phone<input type="number" name="phone" id="phone" minlength="8" maxlength="20" required>
+                    <span class="warning-message"></span>
+                </div>
+
+
+            </form>
+            <p id=demo></p>
+        </div>
+        <!--_____________________________-Shipping-___________________________-->
+        <!--_____________________________-Finish-___________________________-->
+        <section class='finish'>
+            <div class='izq'>
+                <img class='image' src="Resources/images/product-images/sedov_b2_bike_2.jpg">
+                <h1 class='chossen_one'>Your purchase</h1>
+                <p class='p_name'>Product: <span>Nymbus</span></p>
+                <p class=p_model>Model: <span>S 300w</span></p>
+                <form class="accept policy">
+                    <input type="checkbox" id='policy'>
+                    <label for="policy"> I had read and accept the terms and condition</label>
+                </form>
+                <p class=conditions-terms>Please accept terms and conditions</p>
+            </div>
+            <div class='der'>
+                <div class='your_order'>
+                    <h1>Your order</h1>
+                </div>
+                <div class='precios'>
+                    <p>NYmbus: <span class="base_price"></span></p>
+                    <p>Premium Shipping: <span class="add_price">95555</span></p>
+                </div>
+                <p class='total'>Total:<span class="total_price">388383838</span></p>
+            </div>
+        </section>
+        <!----------------
+    ----  HEADER  ----
+    ----------------->
+        <header class="header" id="header">
+            <section class="title-header">
+                <nav class="erick-nav" id="erick-nav">
+                    <ul class="erick-nav-list" id="erick-nav-list">
+                        <li>Home</li>
+                        <li>products</li>
+                        <li>About</li>
+                        <li>Location</li>
+                        <li>Cart</li>
+                        <i class="material-icons">policy</i>
+                        <p id="timer-msg"></p>
+                        <div class="switch-wrapper">
+                            <label class="switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+              </label>
+                        </div>
+                    </ul>
+                </nav>
+            </section>
+        </header>
+
+        <!----------------
+  ----  MAIN  ----
+  ----------------->
+        <main class="main" id="main">
+
+            <section class='jon_slide'>
+
+                <div class='uno'>
+                    <input class='uno' type='image' src="Resources/images/product-images/aether_air_purifying_bike_1.jpg" alt="">
+
+                </div>
+                <div class='dos'>
+
+                    <input type='image' src="Resources/images/product-images/aether_air_purifying_bike_5.jpg" alt="">
+                </div>
+                <div class='tres'>
+
+
+                    <input type='image' src="Resources/images/product-images/aether_air_purifying_bike_6.jpg" alt="">
+                </div>
+                <div class='cuatr'>
+
+                    <input type='image' src="Resources/images/product-images/aether_air_purifying_bike_7.jpg" alt="">
+                </div>
+                <div class='cinc'>
+
+                    <input type='image' src="Resources/images/product-images/aether_air_purifying_bike_8.jpg" alt="">
+                </div>
+            </section>
+            <section class='blackgrnd'>
+
+            </section>
+
+            <section class='jon_text'>
+                <h1 class="glitch"><span class="glitch-span" aria-hidden="true">Nymbus 3000</span>Nymbus 3000<span class="glitch-span" aria-hidden="true">Nymbus 3000</span></h1>
+
+                <p>This ambitious electric motorcycle concept<br>has filteredintakes that can purify the air as you drive</p>
+                <!-- </section>
+          <section class='einarMain'> -->
+
+                <div id="allBikeDataInContainer" class="allBikeDataInContainerClass">
+                    <p>Price:&nbsp; &nbsp; &nbsp;
+                        <span id="finalPriceEinar" class="finalPriceEinarClass"></span><br>
+                        <span id="finalColorEinar" class="finalColorEinarClass"></span><br>
+                        <span><input type="color" id="head" name="head" value="#e66465">
+                      <label for="head"></label></span>
+                    </p>
+                    <div class="customSelectEinarDiv" style="width:400px;">
+                        <select id="priceSelectorEinar" class="priceSelectorEinarClass">
+    <option class="priceOptionEinar" value="Select your dream bike!!" >select a bike:</option>
+    <option class="priceOptionEinar" value="4.500" >MANDRAGORA</option>
+    <option class="priceOptionEinar" value="5.300">STYLUS FIRE</option>
+    <option class="priceOptionEinar" value="6.000">ZEBRYTA</option>
+    <option class="priceOptionEinar" value="6.500">MAMBA BLACK</option>
+  </select>
+                    </div>
+
+                    <p>Price:&nbsp; &nbsp; &nbsp;<span id="finalColorEinar" class="finalColorEinarClass">PRICE</span></p>
+                    <div class="customSelectColorEinarDiv" style="width:400px;">
+                        <select id="priceSelectorEinar" class="colorSelectorEinarClass">
+<option class="colorOptionEinar" value="Select your favorite engine" >select an engine:</option>
+<option class="colorOptionEinar" value="with engine A" >Type A</option>
+<option class="colorOptionEinar" value="with engine B">Type B</option>
+<option class="colorOptionEinar" value="with engine C">Type C</option>
+<option class="colorOptionEinar" value="with engine D">Type D</option>
+</div>
+    </select>
+                    </div>
+            </section>
+
+            <!--<section>
+      <div class="profile-p">
+        <form action="">
+          <input type="text" name="" id="">
+          <input type="email" name="" id="">
+          <input type="password" name="" id="">
+          <input type="password" name="" id="">
+        </form>
+      </div>
+    </section>-->
+        </main>
+
+        <!----------------
+  ----  FOOTER  ----
+  ----------------->
+        <footer class="footer" id="footer">
+            <section>
+                <div id="product-p">
+                    <div id="main-footer-box">
+                        <div id="progress-name">
+                            product
+                        </div>
+                        <div id="progress">
+                            <div id="progress-bar"></div>
+                        </div>
+                        <div id="footer-buttons">
+                            <input id="buyButton" type="submit" value="BUY">
+                        </div>
+                    </div>
+
+                    <!-- <div id="main-footer-picture"><img src="./Resources/images/product-images/sedov_b2_bike_7.jpg" alt="moto" style="width: 100%; height: 100%;"></div> -->
+                    <div id="main-footer-disc">
+                        <p>Think about it. What if, instead of emitting carbon monoxide, your motorcycle could do the absolute opposite? <br> What if, instead of relying on a fuel-powered engine, your motorcycle could be powered by cleaner energy while also
+                            cleaning the air around you as you drive down the roads? <br> It’s an ambitious idea that Lin Yu Cheng is working on through his concept motorcycle Aether.
+                        </p>
+                    </div>
+                </div>
+                <div id="profile-p">
+
+                    <div class="progress-box">
+                        <ul>
+                            <li id="profile-li">
+                                <p>Profile</p>
+                                <div class="progress" id="profile">
+                                    <div class="progress-bar"></div>
+                                </div>
+                                <input type="reset" name="reset" value="CLEAR" class="buttons">
+                                <input type="submit" name="next" value="NEXT" class="buttons">
+                            </li>
+                            <li id="address-li">
+
+                                <p>Address</p>
+                                <div class="progress" id="address">
+                                    <div class="progress-bar"></div>
+                                </div>
+                                <input type="reset" name="reset" value="CLEAR" class="buttons">
+                                <input type="submit" name="next" value="NEXT" class="buttons">
+                            </li>
+                            <li id="shipping-li">
+                                <p>Shipping</p>
+                                <div class="progress" id="shipping">
+                                    <div class="progress-bar"></div>
+                                </div>
+                                <input type="reset" name="reset" value="CLEAR" class="buttons">
+                                <input type="submit" name="next" value="NEXT" class="buttons">
+                            </li>
+                            <li id="finish-li">
+                                <p>Finish</p>
+                                <div class="progress" id="finish">
+                                    <div class="progress-bar"></div>
+                                </div>
+
+                                <input type="submit" name="next" value="BUY NOW" class="buttons">
+                            </li>
+                        </ul>
+                        <div class="progress"></div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+
+        <!---------------------
+  ----  SCRIPT zone  ----
+  ---------------------->
+
+        <script src="Scripts/einar-script.js"></script>
+        <script src="Scripts/marc-script.js"></script>
+        <script src="Scripts/kim-script.js"></script>
+        <script src="Scripts/erick-script.js"></script>
+        <script src="Scripts/jon-script.js"></script>
+
+</body>
+
+</html>
