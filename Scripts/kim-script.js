@@ -369,8 +369,7 @@ function goBackToProduct() {
   mainBackground.style.display = "block";
   profilePage.style.display = "none";
   progressInBox.style.display="none"
-  
- 
+
 }
 
 
