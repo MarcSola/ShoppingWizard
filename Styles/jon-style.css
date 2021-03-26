@@ -21,7 +21,7 @@ main.main section.jon_slide{
 }
 
 section.jon_text{
-   margin-bottom: 20%;
+   padding-bottom: 20%;
    margin-left: 3%;
    margin-top: 50vh;
    position: absolute;
@@ -62,21 +62,15 @@ main.main section.jon_text p span{
 main.main section div input{
   max-width: 200px;
   max-height: 200px;
-  border: 0.5px solid grey; 
-  border-radius: 5px; 
-   
-
+  border: 0.5px solid grey;
+  border-radius: 5px;
 }
 
 .uno{
-   
    z-index: 4;
    transform: scale(1);
    top:70px;
    left: 10px;
-   
-   
-   
 }
 .dos{
    z-index:3 ;
@@ -110,20 +104,21 @@ main.main section div input{
 /*________________________________finish styles*/
 
 section.finish{
-   margin: 15% 5%;
+   margin-top: 10vh;
+   margin-left: 10vw;
    position: absolute;
    display: none;
    z-index: 2;
    flex-direction: row;
+   transform: scale(.9);
   }
   /*________________________-your order price styles*/
   section.finish div.der {
    margin-left: 50px;
    background-color:rgba(128, 128, 128, 0.5);
    padding: 20px 20px 20px 20px;
-   max-height: 400px;
+   height: max-content;
    backdrop-filter: blur(5px);
-   border-radius: 20px;
   }
   section.finish div.der div.your_order {
    border-bottom: 1px solid rgb(12, 11, 11);
@@ -143,46 +138,37 @@ section.finish{
   }
   /*________________________-your purchase styles*/
   section.finish div.izq{
-   
-   max-height: 400px;
+   height: max-content;
    padding: 50px 50px;
    background-color:rgba(128, 128, 128, 0.3);
    backdrop-filter: blur(5px);
-   border-radius: 20px;
-   
-   
   }
   section.finish div.izq img{
    padding-bottom: 30px;
    max-width: 300px;
-   
-   
   }
   section.finish div.izq h1{
    color:white;
    padding-bottom: 15px;
-   
-   
-   
   }
   section.finish div.izq p{
    padding-bottom: 15px;
    color:white;
-   
+
   }
   section.finish div.izq form label{
    color:rgb(233, 229, 229);
-   
+
   }
   section.finish div.izq p.conditions-terms{
    font-size: 10px;
    color:rgb(224, 211, 19);
-   
+
   }
   /*_______________________________________-precios*/
-   
+
   section.finish div.der div.precios span.base_price {
-   
+
    color:white;
    padding-left: 250px;
    padding-right: 20px;
@@ -191,17 +177,15 @@ section.finish{
    color:white;
    padding-left: 180px;
    padding-right: 20px;
-   
+
   }
   section.finish div.der p.total span.total_price {
    color:white;
    padding-left: 280px;
    padding-right: 20px;
-  }   
+  }
   section.finish div.der p.date {
     color:white;
     padding-top: 20px;
     font-size: 10px;
-    
-   }   
- 
+   }
