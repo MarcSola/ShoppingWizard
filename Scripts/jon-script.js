@@ -1,12 +1,15 @@
 var imagArry=document.querySelectorAll('main.main section.jon_slide div input');
 var imagenFinish=document.querySelector('section.finish div.izq img')
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 imagArry.forEach(function(elem){
     elem.addEventListener('mouseover',hov)
     elem.addEventListener('mouseleave',no_hov)
     elem.addEventListener('click',change)
     elem.addEventListener('keydown',run)
     console.log(elem.parentNode)
-    
 });
 
 function run(){
@@ -44,8 +47,6 @@ function no_hov(event){
 
 
 function hov(event){
-    
-    
     option=event.target;
     option.style.transform='translateY(-20px) translateX(20px)';
     option.style.transition='0.5s';
@@ -57,7 +58,7 @@ function change(event){
 
     var frst_picture=document.querySelector('.uno');
         //por un lado la que esta primera
-        
+
     var imag=event.target;
         //por otro lado la imagen que recive el click
     var back="url('"+imag.getAttribute('src')+"')";
@@ -68,7 +69,7 @@ function change(event){
 
 
     //Las imagenes intercambian posiciones y classes.
-   
+
     total_cont.insertBefore(container, total_cont.firstChild);
     frst_picture.classList=container.classList;
     container.classList='uno';
@@ -76,10 +77,18 @@ function change(event){
 
     document.querySelector('main section.blackgrnd').style.backgroundImage=back;
     document.querySelector('main section.blackgrnd').style.opacity='0';
+<<<<<<< HEAD
     document.querySelector('main section.blackgrnd').style.opacity='1';
     
     //esa misma imagen la mando a la ultima pagina.  
    
     imagenFinish.setAttribute("src",imag.getAttribute('src')) 
+=======
+
+    document.querySelector('main section.blackgrnd').style.opacity='1';
+
+    //esa misma imagen la mando a la ultima pagina.
+    imagenFinish.setAttribute("src",imag.getAttribute('src'))
+>>>>>>> master
 
 }
