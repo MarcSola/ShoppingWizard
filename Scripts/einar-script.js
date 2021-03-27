@@ -27,7 +27,16 @@ function hovimg(event) {
     option.style.transform = 'translateY(-2px) translateX(+2px) scale(1.1)';
     option.style.transition = '0.5s';
     option.style.borderRadius = '15px';
+<<<<<<< HEAD
     option.style.border = '5px solid #FF00E6';
+=======
+    option.style.border = '5px solid black';
+}
+
+function changeimg(event) {
+    option = event.target;
+    option.style.border = '8px solid #FFB300';
+>>>>>>> afe277aa39de45a30a25ab05d9293b6d353cb832
 }
 
 function changeimg(event) {
